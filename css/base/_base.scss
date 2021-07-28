@@ -38,15 +38,31 @@ body {
   a {
     margin: 0.5rem;
   }
-
 }
 
+
+a {
+  &:hover {
+    color: $hover_color_dark;
+  }
+  &:active,
+  &:focus {
+    background: linear-gradient(to right,$hover_color_light, $secondary_color_light);
+  }
+}
 
 .dark-mode {
   background-color: $secondary_color_dark;
   color: $neutral_color_light;
   a {
     color: $brand_color_light;
+    &:hover {
+      color: $hover_color_light;
+    }
+    &:active,
+    &:focus {
+    background: linear-gradient(to right,$hover_color_dark, $secondary_color_dark);
+    }
   }
   .container {
     background-color: $neutral_color_dark;
@@ -60,6 +76,5 @@ body {
     border-color: $neutral_color_light;
   }
 }
-
 
 

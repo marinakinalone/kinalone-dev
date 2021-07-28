@@ -62,7 +62,6 @@ body {
   border-right: $regular_border_line;
 }
 
-
 #copyright {
   font-size: $font_size_xs;
 }
@@ -73,8 +72,6 @@ body {
   border-top: 1rem solid $neutral_color_dark;
   margin-bottom: 1rem;
 }
-
-
 
 .highlight {
   display: flex;
@@ -92,7 +89,6 @@ body {
 }
 
 // ABOUT //
-
 #about {
   grid-area: about;
   img {
@@ -119,6 +115,12 @@ body {
   border-left: 1rem solid $neutral_color_dark;
   margin-left: -0.5rem;
   padding: 0.5rem 0rem 1rem 0.5rem;
+  a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
 }
 
 // CONTACT //
@@ -151,4 +153,3 @@ body {
     }
   }
 }
-

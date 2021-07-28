@@ -99,8 +99,6 @@ $arrow-head-thickness: $shaft-thickness;
   }
 }
 
-// Animated Arrow Button
-
 .animated-arrow {
   display: inline-block;
   color: $neutral_color_dark;
@@ -176,6 +174,30 @@ $arrow-head-thickness: $shaft-thickness;
 
     > .the-arrow {
       position: relative;
+    }
+  }
+}
+
+.dark-mode { 
+  .animated-arrow {
+    .shaft {
+      &:before,
+      &:after {
+        background-color: $brand_color_light;
+      }
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      > .the-arrow.-left {
+        > .shaft {
+          background-color: $hover_color_light;
+          &:before,
+          &:after {
+            background-color: $hover_color_light;
+          }
+        }
+      }
     }
   }
 }
