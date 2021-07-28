@@ -23,3 +23,9 @@
     margin: 0 auto 1.5rem auto;
   }
 }
+
+.dark-mode {
+  .card {
+    background-color: $neutral_color_dark;
+  }
+}

@@ -27,7 +27,7 @@ body {
 
 .container {
   background-color: #f6dbbc;
-  border: 1px solid #3b1726;
+  border: 1px solid;
   margin-top: -1px;
   margin-bottom: 1rem;
   padding: 0 0.5rem;
@@ -52,6 +52,14 @@ body {
 
 .dark-mode .container {
   background-color: #3b1726;
+  border-color: #e4e4e4;
+}
+
+.dark-mode .portrait,
+.dark-mode #projects,
+.dark-mode #about_title,
+.dark-mode .skills,
+.dark-mode #contact_title {
   border-color: #e4e4e4;
 }
 
@@ -134,7 +142,11 @@ h3 {
 }
 
 .title {
-  border-bottom: 1px solid #3b1726;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: title;
+  border-bottom: 1px solid;
   padding: 0.5rem;
 }
 
@@ -159,7 +171,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-top: 1px solid #3b1726;
+  border-top: 1px solid;
   font-size: 0.75rem;
 }
 
@@ -360,7 +372,7 @@ footer #heart {
 
 .card {
   text-decoration: none;
-  border: 1px solid #3b1726;
+  border: 1px solid;
   min-width: 150px;
   max-width: 47%;
   background-color: #f6dbbc;
@@ -371,7 +383,7 @@ footer #heart {
 .card img {
   max-width: 100%;
   margin-top: 1rem;
-  border: 1px solid #3b1726;
+  border: 1px solid;
 }
 
 .card h3 {
@@ -381,6 +393,10 @@ footer #heart {
 .card p {
   font-size: 0.9rem;
   margin: 0 auto 1.5rem auto;
+}
+
+.dark-mode .card {
+  background-color: #3b1726;
 }
 
 /* The switch - the box around the slider - ok */
@@ -471,19 +487,12 @@ body {
       grid-template-areas: "title title" "cta menu" "projects projects" "about about" "contact contact" "footer footer";
 }
 
-.title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: title;
-}
-
 .menu {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: menu;
   text-align: center;
-  border-left: 1px solid #3b1726;
+  border-left: 1px solid;
 }
 
 .menu ul {
@@ -532,7 +541,7 @@ body {
   max-width: 100%;
   background-color: #3b1726;
   border-left: 1rem solid #3b1726;
-  border-right: 1px solid #3b1726;
+  border-right: 1px solid;
 }
 
 #copyright {
@@ -595,7 +604,7 @@ body {
 .bio img {
   margin-top: 1rem;
   margin-left: 0.5rem;
-  border: 1px solid #3b1726;
+  border: 1px solid;
 }
 
 .skills {

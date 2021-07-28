@@ -52,6 +52,13 @@ body {
     background-color: $neutral_color_dark;
     border-color: $neutral_color_light;
   }
+  .portrait,
+  #projects,
+  #about_title,
+  .skills,
+  #contact_title {
+    border-color: $neutral_color_light;
+  }
 }
 
 
