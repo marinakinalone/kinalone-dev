@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the "project" card.
+// -----------------------------------------------------------------------------
+
+.card {
+  text-decoration: none;
+  border: $regular_border_line;
+  min-width: 150px; //!to delete once set up done
+  max-width: 47%;
+  background-color: $brand_color_light;
+  padding: 0 0.5rem;
+  margin: 1%;
+  img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border: $regular_border_line;
+  }
+  h3 {
+    margin: 0.5rem auto;
+  }
+  p {
+    font-size: 0.9rem;
+    margin: 0 auto 1.5rem auto;
+  }
+}

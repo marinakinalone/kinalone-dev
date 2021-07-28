@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  border-top: $regular_border_line;
+  font-size: $font_size_xs;
+  #heart {
+    max-height: $font_size_xs;
+  }
+  #realisation {
+    @include mobile_max_height {
+      display: none;
+    }
+  }
+}

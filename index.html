@@ -1,0 +1,183 @@
+<!doctype html>
+<html class="no-js" lang="">
+<!--
+  Hej hej! | Bonjour ! | Miaou ^_^
+-->
+<head>
+  <meta charset="utf-8">
+  <title>marina kinalone simonnet | front-end developer </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.jpg">
+ 
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="./js/colormode.js"></script>
+
+</head>
+
+<body>
+  <header class="title">
+    <a class="logo" href="https://kinalone.dev">kinalone.<span class="logo_last">dev</span></a>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li>
+        <a href="#projects">
+          <div class="circle_frame">
+          <img class="menu_icon" src="img/projects.svg" alt="icon of a computer screen with a link leading to the 'projects' section of the homepage" />
+          </div>
+          projects
+        </a>
+      </li>
+      <li>
+        <a href="#about">
+          <div class="circle_frame">
+          <img class="menu_icon" src="img/about.svg" alt="icon of a notepad with a link leading to the 'about' section of the homepage" />
+          </div>
+          about
+        </a>
+      </li>
+      <li>
+        <a href="#contact">
+          <div class="circle_frame">
+          <img class="menu_icon" src="img/contact.svg" alt="icon of an envelop with a link leading to the 'contact' section of the homepage" />
+          </div>
+          contact
+        </a>
+      </li>
+      <li>
+        <label class="switch" for="myCheck">
+          <input type="checkbox" id="myCheck" name="myCheck" value="dark" onclick="toggleDarkMode()">
+          <span class="slider"></span>
+          <img class="toggleicon" id="moon" alt="" src="./img/moon.svg" />
+          <img class="toggleicon" id="sun" alt="" src="./img/sun.svg" />
+        </label>
+      </li>
+    </ul>
+   
+  </nav>
+
+  <section class="cta">
+    <img class="portrait" id="marina" src="./img/portraitmarinaparlulo.png" alt="drawn portrait of Marina by artist Lu Lo"/>
+    <div class="container">
+      <h1>Marina Kinalone Simonnet</h1>
+      <h2>front-end developer</h2>
+      <p>Enthusiastic and disciplined front-end developer with a focus on user experience.</p>
+      <p id="copyright">p.s.: drawing is from amazing artist Lu Lo</p>
+    </div>
+    
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h1>highlighted projects</h1>
+    </div>
+    <div class="highlight">
+      <a class="card" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
+        <img src="img/project_sailormoon.png" alt="template image for card project" />
+        <h3>Sailor Moon Quote Machine</h3>
+        <p>To build this cute project, I've used ReactJS associated with concepts of randomness and manipulation of arrays.</p>
+    </a>
+      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+        <img src="img/template_350x260.jpg" alt="template image for card project" />
+        <h3>new title project</h3>
+        <p>this is a quick and short description of my project</p>
+    </a>
+      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+          <img src="img/template_350x260.jpg" alt="template image for card project" />
+          <h3>new title project</h3>
+          <p>this is a quick and short description of my project</p>
+      </a>
+      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+        <img src="img/template_350x260.jpg" alt="template image for card project" />
+        <h3>new title project</h3>
+        <p>this is a quick and short description of my project</p>
+    </a>
+    </div>
+    <div class="more container">
+      <a class="animated-arrow" href="https://github.com/marinakinalone?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <span class="the-arrow -left">
+          <span class="shaft"></span>
+        </span>
+        <span class="main">
+          <span class="text">more projects</span>
+          <span class="the-arrow -right">
+            <span class="shaft"></span>
+          </span>
+        </span>
+      </a> <!-- TODO: currently not important as I don't have more than three projects = redirect to Github? or hidden till it's get interesting // commit to another branch -->
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container" id="about_title">
+      <h1>about</h1>
+    </div>
+    <div class="bio container">
+      <img src="img/avatarmarina.jpg" />
+      <h2>Marina Kinalone Simonnet</h2>
+      <h3>front-end developer</h3>
+      <p>hey, it's my bio</p>
+      <p>I have a coding assistant with a moustache whose name is Stormy!</p>
+      <div class="skills">
+        <h3>coding skills</h3>
+        <p>HTML, CSS, Javascript, ReactJS, SASS</p>
+        <a class="animated-arrow" href="#">
+          <span class="the-arrow -left">
+            <span class="shaft"></span>
+          </span>
+          <span class="main">
+            <span class="text">download my resume</span>
+            <span class="the-arrow -right">
+              <span class="shaft"></span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <div class="container" id="contact_title">
+      <h1>contact</h1>
+    </div>
+    <div class="social container">
+      <ul>
+        <li>
+          <a href="mailto:kinalone.dev@gmail.com?subject=new message from kinalone.dev" target="_blank" rel="noopener noreferrer">
+            <img src="./img/icon_email_dark.svg" alt="icon of an envelop linking to e-mail address" id="email_icon" />
+          kinalone.dev @ gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/marinakinalone" target="_blank" rel="noopener noreferrer">
+            <img src="./img/icon_github_dark.png" alt="icon of a cat octopus linking to github" id="github_icon"/>
+            github
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/marinakinalone/" target="_blank" rel="noopener noreferrer">
+            <img src="./img/icon_instagram_dark.svg" alt="icon of an envelop linking to e-mail address" id="instagram_icon" />
+            instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="copyright"><span id="realisation">Made with <img class="drawing" id="heart" src="./img/heart.svg" alt=""/> between Nantes & Sthlm </span>© Marina Kinalone Simonnet 2021 | <a href="#" target="_blank" rel="noopener noreferrer">license</a></p>
+  </footer>
+
+</body>
+
+
+</html>
