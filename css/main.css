@@ -586,6 +586,10 @@ body {
   background-color: #3b1726;
 }
 
+.menu .circle_frame:hover, .menu .circle_frame:active, .menu .circle_frame:focus {
+  border: 3px solid #f6dbbc;
+}
+
 .menu .menu_icon {
   display: inline;
   width: 50px;
