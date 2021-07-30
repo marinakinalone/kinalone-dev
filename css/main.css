@@ -392,6 +392,10 @@ footer #heart {
   background-color: #f6dbbc;
 }
 
+.dark-mode .animated-arrow:hover, .dark-mode .animated-arrow:focus, .dark-mode .animated-arrow:active {
+  color: #eba941;
+}
+
 .dark-mode .animated-arrow:hover > .the-arrow.-left > .shaft, .dark-mode .animated-arrow:focus > .the-arrow.-left > .shaft, .dark-mode .animated-arrow:active > .the-arrow.-left > .shaft {
   background-color: #eba941;
 }
@@ -650,6 +654,10 @@ body {
   border-right: 6rem solid #3b1726;
 }
 
+.more a:focus, .more a:active {
+  background: none;
+}
+
 #about {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
@@ -712,6 +720,7 @@ body {
 }
 
 .social ul a {
+  margin-left: -1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

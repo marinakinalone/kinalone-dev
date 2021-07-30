@@ -189,6 +189,7 @@ $arrow-head-thickness: $shaft-thickness;
     &:hover,
     &:focus,
     &:active {
+      color: $hover_color_light;
       > .the-arrow.-left {
         > .shaft {
           background-color: $hover_color_light;

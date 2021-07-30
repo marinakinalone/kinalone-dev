@@ -91,6 +91,12 @@ body {
   padding: 0.5rem 1rem;
   font-size: $font_size_1;
   border-right: 6rem solid $neutral_color_dark;
+    a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
 }
 
 // ABOUT //
@@ -144,10 +150,12 @@ body {
   border-top: none;
   padding: 0.5rem 0rem 1rem 0rem;
   line-height: 2rem;
+
   ul {
     font-family: $fira;
     list-style-type: none;
     a {
+      margin-left: -1.5rem;
       display: flex;
       flex-direction: row;
       align-items: center;
