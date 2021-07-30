@@ -57,9 +57,14 @@ body {
 
 .portrait {
   max-width: 100%;
-  background-color: $neutral_color_dark;
+  background-color: $brand_color_light;
   border-left: 1rem solid $neutral_color_dark;
   border-right: $regular_border_line;
+}
+.dark-mode {
+  .portrait {
+    background-color: $secondary_color_dark;
+  }
 }
 
 #copyright {

@@ -605,9 +605,13 @@ body {
 
 .portrait {
   max-width: 100%;
-  background-color: #3b1726;
+  background-color: #f6dbbc;
   border-left: 1rem solid #3b1726;
   border-right: 1px solid;
+}
+
+.dark-mode .portrait {
+  background-color: #717171;
 }
 
 #copyright {
