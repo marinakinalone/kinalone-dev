@@ -77,4 +77,9 @@ a {
   }
 }
 
+@include tablet_min_height {
+  body {
+    margin: 0 5rem;
+  }
+}
 

@@ -81,6 +81,12 @@ a:active, a:focus {
   border-color: #e4e4e4;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0 5rem;
+  }
+}
+
 /**
  * Basic typography style for copy text
  */
@@ -473,7 +479,7 @@ footer #heart {
   position: absolute;
   width: 70px;
   height: 35px;
-  margin-left: -10%;
+  margin-left: -35px;
   margin-top: 0.5rem;
 }
 
