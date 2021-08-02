@@ -8,9 +8,17 @@ footer {
   justify-content: center;
   border-top: $regular_border_line;
   font-size: $font_size_xs;
+  @include desktop_min_width {
+    font-size: $desktop_font_size_xs;
+  }
   #heart {
     max-height: $font_size_xs;
+    margin-bottom: -0.1rem;
+    @include desktop_min_width {
+      max-height: $desktop_font_size_xs;
+    }
   }
+  
   #realisation {
     @include mobile_max_width {
       display: none;

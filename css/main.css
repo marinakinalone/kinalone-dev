@@ -239,8 +239,21 @@ footer {
   font-size: 0.75rem;
 }
 
+@media screen and (min-width: 1024px) {
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
 footer #heart {
   max-height: 0.75rem;
+  margin-bottom: -0.1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  footer #heart {
+    max-height: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -720,6 +733,12 @@ body {
   border-right: 6rem solid #3b1726;
 }
 
+@media screen and (min-width: 1024px) {
+  .more {
+    border-right-width: 20rem;
+  }
+}
+
 .more a:focus, .more a:active {
   background: none;
 }
@@ -734,6 +753,12 @@ body {
 
 #about img {
   max-width: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+  #about img {
+    margin-left: 3.5rem;
+  }
 }
 
 #about_title {
@@ -758,6 +783,15 @@ body {
   padding: 0.5rem 0rem 1rem 0.5rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .skills {
+    border-left-width: 4rem;
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+  }
+}
+
 .skills a:focus, .skills a:active {
   background: none;
 }
@@ -774,6 +808,12 @@ body {
   border-right: 10rem solid #3b1726;
 }
 
+@media screen and (min-width: 1024px) {
+  #contact_title {
+    border-right-width: 30rem;
+  }
+}
+
 .social {
   margin-top: -1rem;
   border-top: none;
@@ -784,6 +824,12 @@ body {
 .social ul {
   font-family: "Fira Code", serif;
   list-style-type: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .social ul {
+    margin-left: 3.5rem;
+  }
 }
 
 .social ul a {

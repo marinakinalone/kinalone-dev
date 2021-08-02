@@ -110,6 +110,9 @@ body {
   padding: 0.5rem 1rem;
   font-size: $font_size_1;
   border-right: 6rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-right-width: 20rem;
+  }
     a {
     &:focus,
     &:active {
@@ -123,6 +126,9 @@ body {
   grid-area: about;
   img {
     max-width: 80%;
+    @include desktop_min_width {
+      margin-left: 3.5rem;
+    }
   }
   margin-bottom: 1rem;
 }
@@ -144,6 +150,12 @@ body {
 
 .skills {
   border-left: 1rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-left-width: 4rem;
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+  }
   margin-left: -0.5rem;
   padding: 0.5rem 0rem 1rem 0.5rem;
   a {
@@ -163,6 +175,9 @@ body {
 
 #contact_title {
   border-right: 10rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-right-width: 30rem;
+  }
 }
 
 .social {
@@ -174,6 +189,9 @@ body {
   ul {
     font-family: $fira;
     list-style-type: none;
+    @include desktop_min_width {
+      margin-left: 3.5rem;
+    }
     a {
       margin-left: -1.5rem;
       display: flex;
