@@ -316,6 +316,9 @@ AddDefaultCharset utf-8
     # (5)
     # RewriteOptions <options>
 
+	RewriteCond %{SERVER_PORT} 80
+	RewriteRule ^(.*)$ https://kinalone.dev/$1 [R,L
+
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -410,15 +413,15 @@ AddDefaultCharset utf-8
 # Be aware that the following might not be a good idea if you use "real"
 # subdomains for certain parts of your website.
 
-# <IfModule mod_rewrite.c>
+<IfModule mod_rewrite.c>
 
 #     RewriteEngine On
 
-#     # (1)
-#     RewriteCond %{HTTPS} =on
-#     RewriteRule ^ - [E=PROTO:https]
-#     RewriteCond %{HTTPS} !=on
-#     RewriteRule ^ - [E=PROTO:http]
+#    #(1)
+#    RewriteCond %{HTTPS} =on
+#    RewriteRule ^ - [E=PROTO:https]
+#    RewriteCond %{HTTPS} !=on
+#    RewriteRule ^ - [E=PROTO:http]
 
 #     # (2)
 #     # RewriteCond %{HTTPS} !=on
@@ -428,7 +431,7 @@ AddDefaultCharset utf-8
 #     RewriteCond %{SERVER_ADDR} !=::1
 #     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# </IfModule>
+</IfModule>
 
 # ######################################################################
 # # SECURITY                                                           #
@@ -590,6 +593,7 @@ AddDefaultCharset utf-8
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
 </IfModule>
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
