@@ -12,6 +12,7 @@ body {
     "about about"
     "contact contact"
     "footer footer";
+  
 }
 
 // NAVIGATION //
@@ -52,19 +53,29 @@ body {
 
 // MAIN //
 
-.cta {
+#cta {
   grid-area: cta;
   margin-right: -1px;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  .container {
+    padding: 1rem 0rem 1.5rem 0.5rem;
+  }
 }
 
 .portrait {
   max-width: 100%;
   background-color: $brand_color_light;
   border-left: 1rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
   border-right: $regular_border_line;
+  
 }
 .dark-mode {
   .portrait {
@@ -74,6 +85,9 @@ body {
 
 #copyright {
   font-size: $font_size_xs;
+  a {
+    margin: 0;
+  }
 }
 
 // PROJECTS //
@@ -124,6 +138,7 @@ body {
     margin-top: 1rem;
     margin-left: 0.5rem;
     border: $regular_border_line;
+    width: 350px;
   }
 }
 

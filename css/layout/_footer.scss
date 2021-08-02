@@ -12,7 +12,7 @@ footer {
     max-height: $font_size_xs;
   }
   #realisation {
-    @include mobile_max_height {
+    @include mobile_max_width {
       display: none;
     }
   }

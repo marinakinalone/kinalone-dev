@@ -41,6 +41,16 @@ body {
   margin: 0.5rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .container h1,
+  .container h2,
+  .container h3,
+  .container p,
+  .container a {
+    margin: 0.5rem 3.5rem;
+  }
+}
+
 a:hover {
   color: #3a4e64;
 }
@@ -83,7 +93,13 @@ a:active, a:focus {
 
 @media screen and (min-width: 768px) {
   body {
-    margin: 0 5rem;
+    margin: 0 7%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    margin: 0 12%;
   }
 }
 
@@ -92,6 +108,12 @@ a:active, a:focus {
  */
 body {
   color: #3b1726;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.1rem;
+  }
 }
 
 a {
@@ -109,16 +131,34 @@ h1 {
   font-weight: 400;
 }
 
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+}
+
 h2 {
   font-family: "Roboto Slab", serif;
   font-size: 1.33rem;
   font-weight: 600;
 }
 
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
 h3 {
   font-family: "Roboto Slab", serif;
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size: 1.4rem;
+  }
 }
 
 /**
@@ -601,7 +641,7 @@ body {
   margin-top: 15px;
 }
 
-.cta {
+#cta {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: cta;
@@ -616,11 +656,24 @@ body {
   margin-bottom: 1rem;
 }
 
+#cta .container {
+  padding: 1rem 0rem 1.5rem 0.5rem;
+}
+
 .portrait {
   max-width: 100%;
   background-color: #f6dbbc;
   border-left: 1rem solid #3b1726;
   border-right: 1px solid;
+}
+
+@media screen and (min-width: 1024px) {
+  .portrait {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
 }
 
 .dark-mode .portrait {
@@ -629,6 +682,10 @@ body {
 
 #copyright {
   font-size: 0.75rem;
+}
+
+#copyright a {
+  margin: 0;
 }
 
 #projects {
@@ -692,6 +749,7 @@ body {
   margin-top: 1rem;
   margin-left: 0.5rem;
   border: 1px solid;
+  width: 350px;
 }
 
 .skills {

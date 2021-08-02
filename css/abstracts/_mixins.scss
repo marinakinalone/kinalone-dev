@@ -3,20 +3,20 @@
 // -----------------------------------------------------------------------------
 
 
-@mixin mobile_max_height {
+@mixin mobile_max_width {
   @media screen and (max-width: map-get($breakpoints, "small")) {
     @content;
   }
 }
 
-@mixin tablet_min_height {
+@mixin tablet_min_width{
   @media screen and (min-width: map-get($breakpoints, "medium")) {
     @content;
   }
 }
 
-@mixin desktop_min_height {
-  @media screen and (max-width: map-get($breakpoints, "large")) {
+@mixin desktop_min_width {
+  @media screen and (min-width: map-get($breakpoints, "large")) {
     @content;
   }
 }
