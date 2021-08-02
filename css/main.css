@@ -470,10 +470,23 @@ footer #heart {
   background-color: #f6dbbc;
   padding: 0 0.5rem;
   margin: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: transform 0.3s, box-shadow 0.4s;
   transition: transform 0.3s, box-shadow 0.4s, -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    padding: 0.5rem 1rem;
+  }
 }
 
 .card img {
@@ -483,12 +496,18 @@ footer #heart {
 }
 
 .card h3 {
-  margin: 0.5rem auto;
+  margin-top: 1rem;
 }
 
 .card p {
   font-size: 0.9rem;
-  margin: 0 auto 1.5rem auto;
+  margin: -1rem auto 1.5rem auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .card p {
+    font-size: 1rem;
+  }
 }
 
 .card:hover {

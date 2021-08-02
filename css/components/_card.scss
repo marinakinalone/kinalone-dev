@@ -9,17 +9,26 @@
   background-color: $brand_color_light;
   padding: 0 0.5rem;
   margin: 1%;
+  @include desktop_min_width {
+    padding: 0.5rem 1rem;
+  }
+  display: flex;
+  flex-direction: column;
+
   img {
     max-width: 100%;
     margin-top: 1rem;
     border: $regular_border_line;
   }
   h3 {
-    margin: 0.5rem auto;
+    margin-top: 1rem;
   }
   p {
     font-size: 0.9rem;
-    margin: 0 auto 1.5rem auto;
+    @include desktop_min_width {
+      font-size: 1rem;
+    }
+    margin: -1rem auto 1.5rem auto;
   }
   transition: transform 0.3s, box-shadow 0.4s;
   &:hover {
