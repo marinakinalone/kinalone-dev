@@ -407,7 +407,6 @@ footer #heart {
 .card {
   text-decoration: none;
   border: 1px solid;
-  min-width: 150px;
   max-width: 47%;
   background-color: #f6dbbc;
   padding: 0 0.5rem;
