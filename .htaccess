@@ -317,7 +317,7 @@ AddDefaultCharset utf-8
     # RewriteOptions <options>
 
 	RewriteCond %{SERVER_PORT} 80
-	RewriteRule ^(.*)$ https://kinalone.dev/$1 [R,L
+	RewriteRule ^(.*)$ https://kinalone.dev/$1 [R,L]
 
 </IfModule>
 
