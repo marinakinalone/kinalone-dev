@@ -161,6 +161,10 @@ h3 {
   }
 }
 
+.bolder {
+  font-weight: 600;
+}
+
 /**
  * Clear inner floats
  */
@@ -794,6 +798,11 @@ body {
   margin-left: 0.5rem;
   border: 1px solid;
   width: 350px;
+}
+
+.bio p {
+  font-size: 1rem;
+  padding: 0.5rem 0;
 }
 
 .skills {
