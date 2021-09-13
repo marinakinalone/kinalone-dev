@@ -196,15 +196,16 @@ body {
     @include desktop_min_width {
       margin-left: 3.5rem;
     }
+    li {
+      margin: 1rem 0rem;
+    }
     a {
       margin-left: -1.5rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
     }
     img {
       max-height: 1rem;
       padding-right: 0.5rem;
+      vertical-align: middle;
     }
   }
 }
