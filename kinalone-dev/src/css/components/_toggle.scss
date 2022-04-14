@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles for the dark/light mode switch
+// -----------------------------------------------------------------------------
+
+/* The switch - the box around the slider - ok */
+.switch {
+  position: absolute;
+  width: 70px;
+  height: 35px;
+  margin-left: -35px;
+  margin-top: 0.5rem;
+  
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $brand_color_light;
+  box-shadow: inset 0 0 0 1px $neutral_color_dark;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 27px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $neutral_color_dark;
+  transition: 0.4s;
+}
+
+.toggleicon {
+  position: absolute;
+  max-height: 30px;
+  bottom: 3px;
+  &#moon {
+    left: 35px;
+  }
+  &#sun {
+    display: none;
+  }
+}
+
+input:checked + .slider {
+  background-color: $neutral_color_dark;
+  box-shadow: inset 0 0 0 1px $neutral_color_dark;
+}
+
+input:checked + .slider::before {
+  transform: translateX(34px);
+  background-color: $brand_color_light;
+}
+
+.dark-mode {
+  #moon {
+    display: none;
+  }
+  #sun {
+    display: inline !important;
+    left: 4px;
+    transition-duration: 0.3s;
+  }
+}
