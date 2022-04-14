@@ -1,11 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Header, Intro, Navigation, Projects, Biography, Contact, Footer } from './components/Index';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Header />
+      <div className=" ">
+        <Intro />
+        <Navigation />
+      </div>
+      <Projects />
+      <Biography />
+      <Contact />
+      <Footer />
+    </>
   );
 }
 
