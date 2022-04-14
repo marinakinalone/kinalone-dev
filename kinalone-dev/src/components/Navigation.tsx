@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Navigation = () => {
+  const toggleDarkMode = () => {};
   return (
     <nav className="navigation">
     <ul>
@@ -30,7 +31,7 @@ const Navigation = () => {
       </li>
       <li>
         <label className="switch" for="lightswitch">
-          <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick="toggleDarkMode()">
+          <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick={toggleDarkMode} />
           <span className="slider"></span>
           <img className="toggleicon" id="moon" alt="" src="./img/moon.svg" />
           <img className="toggleicon" id="sun" alt="" src="./img/sun.svg" />

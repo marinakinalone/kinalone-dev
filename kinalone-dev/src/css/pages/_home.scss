@@ -1,0 +1,211 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+body {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas:
+    "title title"
+    "cta menu"
+    "projects projects"
+    "about about"
+    "contact contact"
+    "footer footer";
+  
+}
+
+// NAVIGATION //
+
+.menu {
+  grid-area: menu;
+  text-align: center;
+  border-left: $regular_border_line;
+  ul {
+    list-style-type: none;
+    margin-left: -35%;
+  }
+  li {
+    line-height: 1.5rem;
+    margin: 1rem auto;
+    text-align: center;
+    text-align: center;
+  }
+  .circle_frame {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: $neutral_color_dark;
+    &:hover,
+    &:active,
+    &:focus {
+      border: 3px solid $brand_color_light;
+    }
+  }
+  .menu_icon {
+    display: inline;
+    width: 50px;
+    margin-top: 15px;
+  }
+}
+
+// MAIN //
+
+#cta {
+  grid-area: cta;
+  margin-right: -1px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  .container {
+    padding: 1rem 0rem 1.5rem 0.5rem;
+  }
+}
+
+.portrait {
+  max-width: 100%;
+  background-color: $brand_color_light;
+  border-left: 1rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
+  border-right: $regular_border_line;
+  
+}
+.dark-mode {
+  .portrait {
+    background-color: $secondary_color_dark;
+  }
+}
+
+#copyright {
+  font-size: $font_size_xs;
+  a {
+    margin: 0;
+  }
+}
+
+// PROJECTS //
+#projects {
+  grid-area: projects;
+  border-top: 1rem solid $neutral_color_dark;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
+}
+
+.more {
+  padding: 0.5rem 1rem;
+  font-size: $font_size_1;
+  border-right: 6rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-right-width: 20rem;
+  }
+    a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
+}
+
+// ABOUT //
+#about {
+  grid-area: about;
+  img {
+    max-width: 80%;
+    @include desktop_min_width {
+      margin-left: 3.5rem;
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+#about_title {
+  border-top: 1rem solid $neutral_color_dark;
+}
+
+.bio {
+  margin-top: -1rem;
+  border-top: none;
+  img {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    border: $regular_border_line;
+    width: 350px;
+  }
+  p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+.skills {
+  border-left: 1rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-left-width: 4rem;
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+  }
+  margin-left: -0.5rem;
+  padding: 0.5rem 0rem 1rem 0.5rem;
+  a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
+}
+
+// CONTACT //
+
+#contact {
+  grid-area: contact;
+  margin-bottom: 1rem;
+}
+
+#contact_title {
+  border-right: 10rem solid $neutral_color_dark;
+  @include desktop_min_width {
+    border-right-width: 30rem;
+  }
+}
+
+.social {
+  margin-top: -1rem;
+  border-top: none;
+  padding: 0.5rem 0rem 1rem 0rem;
+  line-height: 2rem;
+
+  ul {
+    font-family: $fira;
+    list-style-type: none;
+    @include desktop_min_width {
+      margin-left: 3.5rem;
+    }
+    li {
+      margin: 1rem 0rem;
+    }
+    a {
+      margin-left: -1.5rem;
+    }
+    img {
+      max-height: 1rem;
+      padding-right: 0.5rem;
+      vertical-align: middle;
+    }
+  }
+}
