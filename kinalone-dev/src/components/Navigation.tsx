@@ -30,7 +30,7 @@ const Navigation = () => {
         </a>
       </li>
       <li>
-        <label className="switch" for="lightswitch">
+        <label className="switch" htmlFor="lightswitch">
           <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick={toggleDarkMode} />
           <span className="slider"></span>
           <img className="toggleicon" id="moon" alt="" src="./img/moon.svg" />
