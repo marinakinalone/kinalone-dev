@@ -1,16 +1,12 @@
-/**
- * Basic typography style for copy text
- */
-
 body {
-  color: $neutral_color_dark;
+  color: $neutral_dark;
   @include desktop_min_width {
     font-size: $desktop_font_size_0;
   }
 }
 
 a {
-  color: $neutral_color_dark;
+  color: $neutral_dark;
   font-family: $fira;
 }
 

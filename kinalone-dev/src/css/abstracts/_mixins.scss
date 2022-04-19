@@ -2,7 +2,6 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-
 @mixin mobile_max_width {
   @media screen and (max-width: map-get($breakpoints, "small")) {
     @content;
