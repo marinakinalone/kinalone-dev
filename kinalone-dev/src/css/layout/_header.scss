@@ -2,17 +2,17 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.title {
-  grid-area: title;
+.header{
+  // grid-area: title;
   border-bottom: $regular_border;
   padding: 0.5rem;
 }
 
-.logo {
+.header__title {
+  text-decoration: none;
   font-family: $roboto;
   font-size: $font_size_2;
-  text-decoration: none;
-  .logo_last {
+  .header__title-last {
     font-family: $fira;
   }
 }

@@ -80,19 +80,18 @@ h3 {
   font-weight: 600;
 }
 
-.title {
-  grid-area: title;
+.header {
   border-bottom: 1px solid;
   padding: 0.5rem;
 }
 
-.logo {
+.header__title {
+  text-decoration: none;
   font-family: "Roboto Slab", serif;
   font-size: 1.33rem;
-  text-decoration: none;
 }
 
-.logo .logo_last {
+.header__title .header__title-last {
   font-family: "Fira Code", serif;
 }
 
