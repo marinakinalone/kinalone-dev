@@ -10,6 +10,18 @@ html {
   background-color: $brand_primary;
 }
 
+@include tablet_min_width {
+  .page {
+    margin: 0 7%;
+  }
+}
+
+@include desktop_min_width {
+  .page {
+    margin: 0 12%;
+  }
+}
+
 .intro-nav__container {
   display: flex;
   flex-direction: row;

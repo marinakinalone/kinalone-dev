@@ -1,3 +1,7 @@
+import projectsBtn from '../resources/nav/projects.svg'
+import aboutBtn from '../resources/nav/about.svg'
+import contactBtn from '../resources/nav/contact.svg'
+
 const Navigation = () => {
   const toggleDarkMode = () => {};
   return (
@@ -6,7 +10,7 @@ const Navigation = () => {
       <li>
         <a href="#projects">
           <div className="button__frame">
-          <img className="button__icon" src="img/projects.svg" alt="'projects' section of homepage" />
+          <img className="button__icon" src={projectsBtn} alt="'projects' section of homepage" />
           </div>
           projects
         </a>
@@ -14,7 +18,7 @@ const Navigation = () => {
       <li>
         <a href="#about">
           <div className="button__frame">
-          <img className="button__icon" src="img/about.svg" alt="'about' section of homepage" />
+          <img className="button__icon" src={aboutBtn} alt="'about' section of homepage" />
           </div>
           about
         </a>
@@ -22,7 +26,7 @@ const Navigation = () => {
       <li>
         <a href="#contact">
           <div className="button__frame">
-          <img className="button__icon" src="img/contact.svg" alt="'contact' section of homepage" />
+          <img className="button__icon" src={contactBtn} alt="'contact' section of homepage" />
           </div>
           contact
         </a>

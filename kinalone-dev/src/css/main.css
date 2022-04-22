@@ -14,6 +14,18 @@ html {
   background-color: #FFE8E2;
 }
 
+@media screen and (min-width: 768px) {
+  .page {
+    margin: 0 7%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page {
+    margin: 0 12%;
+  }
+}
+
 .intro-nav__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,7 +149,6 @@ h3 {
 }
 
 .intro {
-  margin-right: -1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,10 +157,20 @@ h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 1rem;
+  background-color: white;
+  border: 1px solid;
 }
 
 .intro__content {
-  padding: 1rem 0rem 1.5rem 0.5rem;
+  padding: 1.5rem 0rem 1.5rem 0.5rem;
+  border-top: 1px solid;
+}
+
+@media screen and (min-width: 1024px) {
+  .intro__content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .intro__title {
@@ -164,7 +185,6 @@ h3 {
   max-width: 100%;
   background-color: #FFE8E2;
   border-left: 1rem solid black;
-  border-right: 1px solid;
 }
 
 @media screen and (min-width: 1024px) {
@@ -186,7 +206,6 @@ h3 {
 
 .navigation {
   text-align: center;
-  border-left: 1px solid;
 }
 
 .navigation ul {
@@ -201,7 +220,7 @@ h3 {
   text-align: center;
 }
 
-.navigation .circle_frame {
+.navigation .button__frame {
   position: relative;
   margin: 0 auto;
   border-radius: 50%;
@@ -210,8 +229,14 @@ h3 {
   background-color: black;
 }
 
-.navigation .circle_frame:hover, .navigation .circle_frame:active, .navigation .circle_frame:focus {
+.navigation .button__frame:hover, .navigation .button__frame:active, .navigation .button__frame:focus {
   border: 3px solid #FFE8E2;
+}
+
+.navigation .button__icon {
+  display: inline;
+  width: 50px;
+  margin-top: 15px;
 }
 
 .the-arrow {
