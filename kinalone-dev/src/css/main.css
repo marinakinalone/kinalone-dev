@@ -74,7 +74,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -85,7 +85,7 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -148,14 +148,22 @@ h3 {
   margin-bottom: 1rem;
 }
 
-.intro .intro__content {
+.intro__content {
   padding: 1rem 0rem 1.5rem 0.5rem;
+}
+
+.intro__title {
+  margin: 0 auto;
+}
+
+.intro__subtitle {
+  margin: 0.5rem auto -0.5rem auto;
 }
 
 .intro__portrait {
   max-width: 100%;
   background-color: #FFE8E2;
-  border-left: 1px solid;
+  border-left: 1rem solid black;
   border-right: 1px solid;
 }
 
