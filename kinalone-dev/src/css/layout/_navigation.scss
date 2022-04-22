@@ -1,0 +1,32 @@
+.navigation {
+  text-align: center;
+  border-left: $regular_border;
+  ul {
+    list-style-type: none;
+    margin-left: -35%;
+  }
+  li {
+    line-height: 1.5rem;
+    margin: 1rem auto;
+    text-align: center;
+    text-align: center;
+  }
+  .circle_frame {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: $neutral_dark;
+    &:hover,
+    &:active,
+    &:focus {
+      border: 3px solid $brand_secondary;
+    }
+  }
+//   .menu_icon {
+//     display: inline;
+//     width: 50px;
+//     margin-top: 15px;
+//   }
+}

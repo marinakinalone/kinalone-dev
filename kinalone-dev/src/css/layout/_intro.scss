@@ -1,0 +1,29 @@
+.intro {
+  margin-right: -1px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  .intro__content {
+    padding: 1rem 0rem 1.5rem 0.5rem;
+  }
+}
+
+.intro__portrait {
+  max-width: 100%;
+  background-color: $brand_secondary;
+  border-left: $regular_border;
+  @include desktop_min_width {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
+  border-right: $regular_border;
+}
+
+.intro__copyright {
+  font-size: $font_size_xs;
+  a {
+    margin: 0;
+  }
+}

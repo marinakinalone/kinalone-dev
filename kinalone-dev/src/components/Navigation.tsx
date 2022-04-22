@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Navigation = () => {
   const toggleDarkMode = () => {};
   return (
@@ -8,7 +6,7 @@ const Navigation = () => {
       <li>
         <a href="#projects">
           <div className="button__frame">
-          <img className="button__icon" src="img/projects.svg" alt="icon of a computer screen with a link leading to the 'projects' section of the homepage" />
+          <img className="button__icon" src="img/projects.svg" alt="'projects' section of homepage" />
           </div>
           projects
         </a>
@@ -16,7 +14,7 @@ const Navigation = () => {
       <li>
         <a href="#about">
           <div className="button__frame">
-          <img className="button__icon" src="img/about.svg" alt="icon of a notepad with a link leading to the 'about' section of the homepage" />
+          <img className="button__icon" src="img/about.svg" alt="'about' section of homepage" />
           </div>
           about
         </a>
@@ -24,7 +22,7 @@ const Navigation = () => {
       <li>
         <a href="#contact">
           <div className="button__frame">
-          <img className="button__icon" src="img/contact.svg" alt="icon of an envelop with a link leading to the 'contact' section of the homepage" />
+          <img className="button__icon" src="img/contact.svg" alt="'contact' section of homepage" />
           </div>
           contact
         </a>

@@ -10,6 +10,17 @@ html {
   background-color: $brand_primary;
 }
 
+.intro-nav__container {
+  display: flex;
+  flex-direction: row;
+  .intro {
+    width: 70%;
+  }
+  .navigation {
+    width: 30%;
+  }
+}
+
 .desktop--only {
   @include mobile_max_width {
     display: none;

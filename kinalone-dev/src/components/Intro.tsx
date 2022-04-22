@@ -1,9 +1,9 @@
-import React from 'react'
+import portrait from '../resources/marina_portraitparlulo.png'
 
 const Intro = () => {
   return (
     <section className="intro">
-    <img className="intro__portrait" id="marina" src="./img/marina_portraitparlulo.png" alt="drawn portrait of Marina by artist Lu Lo"/>
+    <img className="intro__portrait" id="marina" src={portrait} alt="drawn portrait of Marina by artist Lu Lo"/>
     <div className="intro__content">
       <h1 className="intro__title">Marina Kinalone Simonnet</h1>
       <h2 className="intro__subtitle">full-stack developer</h2>

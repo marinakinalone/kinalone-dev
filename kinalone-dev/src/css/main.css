@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap");
 html {
   -webkit-box-sizing: border-box;
@@ -15,10 +14,32 @@ html {
   background-color: #FFE8E2;
 }
 
+.intro-nav__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.intro-nav__container .intro {
+  width: 70%;
+}
+
+.intro-nav__container .navigation {
+  width: 30%;
+}
+
 @media screen and (max-width: 600px) {
   .desktop--only {
     display: none;
   }
+}
+
+* {
+  font-family: "Fira Code", serif;
 }
 
 body {
@@ -33,15 +54,9 @@ body {
 
 a {
   color: black;
-  font-family: "Fira Code", serif;
-}
-
-p {
-  font-family: "Fira Code", serif;
 }
 
 h1 {
-  font-family: "Roboto Slab", serif;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -53,8 +68,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Roboto Slab", serif;
-  font-size: 1.33rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
@@ -65,7 +79,6 @@ h2 {
 }
 
 h3 {
-  font-family: "Roboto Slab", serif;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -87,8 +100,8 @@ h3 {
 
 .header__title {
   text-decoration: none;
-  font-family: "Roboto Slab", serif;
-  font-size: 1.33rem;
+  font-family: "Fira Code", serif;
+  font-size: 1.3rem;
 }
 
 .header__title .header__title-last {
@@ -121,6 +134,76 @@ h3 {
   .footer .copyright__img {
     max-height: 0.9rem;
   }
+}
+
+.intro {
+  margin-right: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.intro .intro__content {
+  padding: 1rem 0rem 1.5rem 0.5rem;
+}
+
+.intro__portrait {
+  max-width: 100%;
+  background-color: #FFE8E2;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+@media screen and (min-width: 1024px) {
+  .intro__portrait {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
+}
+
+.intro__copyright {
+  font-size: 0.75rem;
+}
+
+.intro__copyright a {
+  margin: 0;
+}
+
+.navigation {
+  text-align: center;
+  border-left: 1px solid;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin-left: -35%;
+}
+
+.navigation li {
+  line-height: 1.5rem;
+  margin: 1rem auto;
+  text-align: center;
+  text-align: center;
+}
+
+.navigation .circle_frame {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+
+.navigation .circle_frame:hover, .navigation .circle_frame:active, .navigation .circle_frame:focus {
+  border: 3px solid #FFE8E2;
 }
 
 .the-arrow {
