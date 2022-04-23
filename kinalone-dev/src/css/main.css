@@ -211,32 +211,47 @@ h3 {
 .navigation ul {
   list-style-type: none;
   margin-left: -35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .navigation li {
-  line-height: 1.5rem;
   margin: 1rem auto;
   text-align: center;
-  text-align: center;
+  min-height: 80px;
 }
 
-.navigation .button__frame {
-  position: relative;
+.button__frame {
+  text-decoration: none;
+  position: absolute;
   margin: 0 auto;
   border-radius: 50%;
   width: 80px;
   height: 80px;
   background-color: black;
+  border: 3px solid black;
 }
 
-.navigation .button__frame:hover, .navigation .button__frame:active, .navigation .button__frame:focus {
-  border: 3px solid #FFE8E2;
+.button__frame:hover {
+  border-color: #ff61b8;
+  color: #ff61b8;
 }
 
-.navigation .button__icon {
+.button__frame:focus, .button__frame:active {
+  border-color: #00c2a8;
+  color: #00c2a8;
+}
+
+.button__icon {
   display: inline;
   width: 50px;
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .the-arrow {

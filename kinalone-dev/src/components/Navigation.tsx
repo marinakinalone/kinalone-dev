@@ -8,28 +8,26 @@ const Navigation = () => {
     <nav className="navigation">
     <ul>
       <li>
-        <a href="#projects">
-          <div className="button__frame">
+          <div>
+          <a className="button__frame" href="#projects">
           <img className="button__icon" src={projectsBtn} alt="'projects' section of homepage" />
-          </div>
           projects
-        </a>
+          </a>
+          </div>
       </li>
       <li>
-        <a href="#about">
-          <div className="button__frame">
+          <div >
+          <a href="#about" className="button__frame">
           <img className="button__icon" src={aboutBtn} alt="'about' section of homepage" />
-          </div>
           about
-        </a>
+            </a>
+          </div>
       </li>
       <li>
-        <a href="#contact">
-          <div className="button__frame">
+          <a href="#contact" className="button__frame">
           <img className="button__icon" src={contactBtn} alt="'contact' section of homepage" />
-          </div>
           contact
-        </a>
+          </a>
       </li>
       <li>
         <label className="switch" htmlFor="lightswitch">
