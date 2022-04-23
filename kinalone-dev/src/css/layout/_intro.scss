@@ -1,6 +1,7 @@
 .intro {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   background-color: $neutral_light;
   border: $regular_border;
@@ -24,7 +25,6 @@
 }
 .intro__portrait {
   max-width: 100%;
-  background-color: $brand_secondary;
   border-left: 1rem solid $neutral_dark;
   @include desktop_min_width {
     padding-left: 25%;

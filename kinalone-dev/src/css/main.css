@@ -156,6 +156,7 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   background-color: white;
   border: 1px solid;
@@ -183,7 +184,6 @@ h3 {
 
 .intro__portrait {
   max-width: 100%;
-  background-color: #FFE8E2;
   border-left: 1rem solid black;
 }
 
@@ -206,11 +206,11 @@ h3 {
 
 .navigation {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .navigation ul {
   list-style-type: none;
-  margin-left: -35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,9 +221,16 @@ h3 {
 }
 
 .navigation li {
-  margin: 1rem auto;
   text-align: center;
   min-height: 80px;
+}
+
+.navigation__lightswitch {
+  margin: 1rem auto 1rem 25px;
+}
+
+.navigation__button {
+  margin: 1rem auto 1rem -20px;
 }
 
 .button__frame {
