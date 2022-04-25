@@ -1,0 +1,46 @@
+// .about {
+// //   max-width: 80%;
+// //   @include desktop_min_width {
+// //     margin-left: 3.5rem;
+// //   }
+
+// }
+
+.about__header {
+  border-top: 1rem solid $neutral_dark;
+  border-bottom: $regular_border;
+  @include desktop_min_width {
+    padding-left: 3rem;
+  }
+}
+
+.about__bio {
+  @include desktop_min_width {
+    padding: 0rem 3rem;
+  }
+  img {
+    margin-top: 1rem;
+    border: $regular_border;
+    width: 350px;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+.about__skills {
+  border-left: 1rem solid $neutral_dark;
+  @include desktop_min_width {
+    border-left-width: 4rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+  }
+  padding: 0.5rem 0rem 1rem 0.5rem;
+  a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
+}

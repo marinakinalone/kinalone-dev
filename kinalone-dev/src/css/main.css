@@ -26,6 +26,12 @@ html {
   }
 }
 
+.container {
+  border: 1px solid;
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
 .intro-nav__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,7 +57,7 @@ html {
 }
 
 * {
-  font-family: "Fira Code", serif;
+  font-family: "Fira Code", monospace;
 }
 
 body {
@@ -112,12 +118,12 @@ h3 {
 
 .header__title {
   text-decoration: none;
-  font-family: "Fira Code", serif;
+  font-family: "Fira Code", monospace;
   font-size: 1.3rem;
 }
 
 .header__title .header__title-last {
-  font-family: "Fira Code", serif;
+  font-family: "Fira Code", monospace;
 }
 
 .footer {
@@ -259,6 +265,125 @@ h3 {
   width: 50px;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+.projects__header {
+  border-top-width: 1rem;
+}
+
+.projects__highlighted {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
+}
+
+.projects__more {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-right: 6rem solid black;
+}
+
+@media screen and (min-width: 1024px) {
+  .projects__more {
+    border-right-width: 20rem;
+  }
+}
+
+.projects__more a:focus, .projects__more a:active {
+  background: none;
+}
+
+.about__header {
+  border-top: 1rem solid black;
+  border-bottom: 1px solid;
+}
+
+@media screen and (min-width: 1024px) {
+  .about__header {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about__bio {
+    padding: 0rem 3rem;
+  }
+}
+
+.about__bio img {
+  margin-top: 1rem;
+  border: 1px solid;
+  width: 350px;
+}
+
+.about__bio p {
+  font-size: 1rem;
+}
+
+.about__skills {
+  border-left: 1rem solid black;
+  padding: 0.5rem 0rem 1rem 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .about__skills {
+    border-left-width: 4rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.about__skills a:focus, .about__skills a:active {
+  background: none;
+}
+
+.contact__header {
+  border-right: 10rem solid black;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact__header {
+    border-right-width: 30rem;
+  }
+}
+
+.contact__list {
+  margin-top: -1rem;
+  padding: 0.5rem 0rem 1rem 0rem;
+  line-height: 2rem;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact__list {
+    margin-left: 3.5rem;
+  }
+}
+
+.contact__list li {
+  margin: 1rem 0rem;
+}
+
+.contact__list li a {
+  margin-left: -1.5rem;
+}
+
+.contact__list li a img {
+  max-height: 1rem;
+  padding-right: 0.5rem;
+  vertical-align: middle;
 }
 
 .the-arrow {
@@ -446,7 +571,7 @@ h3 {
   position: relative;
 }
 
-.card {
+.projects__card {
   text-decoration: none;
   border: 1px solid;
   max-width: 47%;
@@ -467,33 +592,33 @@ h3 {
 }
 
 @media screen and (min-width: 1024px) {
-  .card {
+  .projects__card {
     padding: 0.5rem 1rem;
   }
 }
 
-.card img {
+.projects__card img {
   max-width: 100%;
   margin-top: 1rem;
   border: 1px solid;
 }
 
-.card h3 {
+.projects__card h3 {
   margin-top: 1rem;
 }
 
-.card p {
+.projects__card p {
   font-size: 0.9rem;
   margin: -1rem auto 1.5rem auto;
 }
 
 @media screen and (min-width: 1024px) {
-  .card p {
+  .projects__card p {
     font-size: 1rem;
   }
 }
 
-.card:hover {
+.projects__card:hover {
   background-color: white;
   color: black;
   -webkit-box-shadow: -6px 6px 0px 0px black;
@@ -502,7 +627,7 @@ h3 {
           transform: translate(4px, -4px);
 }
 
-.card:focus {
+.projects__card:focus {
   -webkit-box-shadow: -6px 6px 0px 0px black;
           box-shadow: -6px 6px 0px 0px black;
   -webkit-transform: translate(4px, -4px);

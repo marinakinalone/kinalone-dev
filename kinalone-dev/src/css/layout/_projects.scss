@@ -1,0 +1,27 @@
+.projects__header {
+  border-top-width: 1rem;
+}
+
+.projects__highlighted {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
+}
+
+.projects__more {
+  padding: 0.5rem 1rem;
+  font-size: $font_size_1;
+  border-right: 6rem solid $neutral_dark;
+  @include desktop_min_width {
+    border-right-width: 20rem;
+  }
+    a {
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
+}

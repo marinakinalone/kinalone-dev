@@ -22,6 +22,12 @@ html {
   }
 }
 
+.container {
+  border: $regular_border;
+  margin-bottom: 2rem;
+  background-color: $neutral_light;
+}
+
 .intro-nav__container {
   display: flex;
   flex-direction: row;

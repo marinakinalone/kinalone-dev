@@ -1,0 +1,27 @@
+.contact__header {
+  border-right: 10rem solid $neutral_dark;
+  @include desktop_min_width {
+    border-right-width: 30rem;
+  }
+}
+
+  .contact__list {
+    margin-top: -1rem;
+    padding: 0.5rem 0rem 1rem 0rem;
+    line-height: 2rem;
+    list-style-type: none;
+    @include desktop_min_width {
+      margin-left: 3.5rem;
+    }
+    li {
+      margin: 1rem 0rem;
+      a {
+        margin-left: -1.5rem;
+        img {
+          max-height: 1rem;
+          padding-right: 0.5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+  }

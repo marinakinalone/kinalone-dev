@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = () => {
   return (
     <section className="projects">
-    <div className="projects__header">
+    <div className="projects__header container">
       <h1>highlighted projects</h1>
     </div>
     <div className="projects__highlighted">
@@ -28,7 +28,7 @@ const Projects = () => {
         <p>A personnality test to find their social dance type built with ReactJS and React Bootstrap.</p>
       </a>
     </div>
-    <div className="projects__more">
+    <div className="projects__more container">
       <a className="animated-arrow" href="https://github.com/marinakinalone?tab=repositories" target="_blank" rel="noopener noreferrer">
         <span className="the-arrow -left">
           <span className="shaft"></span>
