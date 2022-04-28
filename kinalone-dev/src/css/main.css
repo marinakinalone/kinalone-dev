@@ -14,6 +14,12 @@ html {
   background-color: #FFE8E2;
 }
 
+@media screen and (max-width: 600px) {
+  .page {
+    margin: 0 0.5rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .page {
     margin: 0 7%;
@@ -30,6 +36,16 @@ html {
   border: 1px solid;
   margin-bottom: 2rem;
   background-color: white;
+}
+
+.regular-padding {
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .regular-padding {
+    padding-left: 3rem;
+  }
 }
 
 .intro-nav__container {
@@ -310,12 +326,6 @@ h3 {
 }
 
 @media screen and (min-width: 1024px) {
-  .about__header {
-    padding-left: 3rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
   .about__bio {
     padding: 0rem 3rem;
   }
@@ -324,7 +334,7 @@ h3 {
 .about__bio img {
   margin-top: 1rem;
   border: 1px solid;
-  width: 350px;
+  width: 300px;
 }
 
 .about__bio p {
@@ -333,7 +343,7 @@ h3 {
 
 .about__skills {
   border-left: 1rem solid black;
-  padding: 0.5rem 0rem 1rem 0.5rem;
+  padding: 0.5rem 0rem 2rem 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -349,21 +359,27 @@ h3 {
   background: none;
 }
 
-.contact__header {
+.contact__header h1 {
   border-right: 10rem solid black;
 }
 
 @media screen and (min-width: 1024px) {
-  .contact__header {
-    border-right-width: 30rem;
+  .contact__header h1 {
+    border-right: 30rem solid black;
   }
 }
 
 .contact__list {
   margin-top: -1rem;
-  padding: 0.5rem 0rem 1rem 0rem;
+  padding: 0.5rem 0rem 1rem 2.5rem;
   line-height: 2rem;
   list-style-type: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact__list {
+    padding-left: 5.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {

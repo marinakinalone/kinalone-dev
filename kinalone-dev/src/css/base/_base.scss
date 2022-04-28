@@ -8,24 +8,30 @@ html {
 
 .page {
   background-color: $brand_primary;
-}
-
-@include tablet_min_width {
-  .page {
+  @include mobile_max_width {
+    margin: 0 0.5rem;
+  }
+  @include tablet_min_width {
     margin: 0 7%;
   }
-}
-
-@include desktop_min_width {
-  .page {
-    margin: 0 12%;
+  @include desktop_min_width {
+      margin: 0 12%;
   }
 }
+
+
 
 .container {
   border: $regular_border;
   margin-bottom: 2rem;
   background-color: $neutral_light;
+}
+
+.regular-padding {
+  padding-left: 1rem;
+  @include desktop_min_width {
+    padding-left: 3rem;
+  }
 }
 
 .intro-nav__container {

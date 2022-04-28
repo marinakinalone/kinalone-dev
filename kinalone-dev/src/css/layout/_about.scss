@@ -1,17 +1,6 @@
-// .about {
-// //   max-width: 80%;
-// //   @include desktop_min_width {
-// //     margin-left: 3.5rem;
-// //   }
-
-// }
-
 .about__header {
   border-top: 1rem solid $neutral_dark;
   border-bottom: $regular_border;
-  @include desktop_min_width {
-    padding-left: 3rem;
-  }
 }
 
 .about__bio {
@@ -21,7 +10,7 @@
   img {
     margin-top: 1rem;
     border: $regular_border;
-    width: 350px;
+    width: 300px;
   }
   p {
     font-size: 1rem;
@@ -36,7 +25,7 @@
     padding-left: 1rem;
     padding-bottom: 3rem;
   }
-  padding: 0.5rem 0rem 1rem 0.5rem;
+  padding: 0.5rem 0rem 2rem 0.5rem;
   a {
     &:focus,
     &:active {

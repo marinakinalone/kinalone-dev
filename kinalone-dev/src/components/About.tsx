@@ -3,10 +3,10 @@ import me from '../resources/me.jpg'
 const About = () => {
   return (
     <section className="about container" id="about">
-    <div className="about__header">
+    <div className="about__header regular-padding">
       <h1>about</h1>
     </div>
-      <div className="about__bio">
+      <div className="about__bio regular-padding">
       <img className="about__img"src={me} alt="portrait of Marina Kinalone Simonnet" />
       <h2>Marina Kinalone Simonnet</h2>
       <h3>JavaScript developer with a background in research and education.</h3>
