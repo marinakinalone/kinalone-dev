@@ -1,5 +1,5 @@
 import me from '../resources/me.jpg'
-// import resume from '../resources/resume.pdf'
+import resume from '../resources/CV_MarinaKinalone_Simonnet.pdf'
 const About = () => {
   return (
     <section className="about container" id="about">
@@ -22,7 +22,7 @@ const About = () => {
         <h3>coding skills</h3>
         <p>technical skills: JavaScript, React, Node.js, Express, HTML5, CSS3, MongoDB, PostgreSQL, UX/UI, Adobe XD</p>
         <p>general development tools: Git, REST, Docker, Redux, AWS, TDD, CI/CD, design thinking</p>
-        <a className="animated-arrow" href="./img/Simonnet-resume.pdf" target="_blank" rel="noopener noreferrer">
+        <a className="animated-arrow" href={resume} target="_blank" rel="noopener noreferrer">
           <span className="the-arrow -left">
             <span className="shaft"></span>
           </span>
