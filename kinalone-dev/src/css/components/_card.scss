@@ -1,10 +1,12 @@
 .projects__card {
   text-decoration: none;
   border: $regular_border;
-  max-width: 47%;
   background-color: $neutral_light;
   padding: 0 0.5rem;
   margin: 1%;
+  @include tablet_min_width {
+    max-width: 44%;
+  }
   @include desktop_min_width {
     padding: 0.5rem 1rem;
   }
