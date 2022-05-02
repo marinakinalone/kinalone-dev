@@ -20,15 +20,15 @@ const Projects = () => {
           <h3>Le Voyage à Stockholm</h3>
           <p>My favorite places in Stockholm, on a map. Built with React, Sass, Node, Express and the Google Maps API.</p>
       </a>
-      <a className="projects__card" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
-        <img src={sailormoon} alt="project card illustration" />
-        <h3>Sailor Moon Quote Machine</h3>
-        <p>A sailormoon-themed random quote machine. Built with React and Sass.</p>
-      </a>
       <a className="projects__card" href="https://marinakinalone.github.io/la-la-dance/" target="_blank" rel="noopener noreferrer">
         <img src={laladance} alt="project card illustration" />
         <h3>La La Dance</h3>
         <p>A personnality test to find the social dance type that suits us best. Built with React and React Bootstrap.</p>
+      </a>
+      <a className="projects__card" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
+        <img src={sailormoon} alt="project card illustration" />
+        <h3>Sailor Moon Quote Machine</h3>
+        <p>A sailormoon-themed random quote machine. My first React project. Built with React and Sass.</p>
       </a>
     </div>
     <div className="projects__more container">
