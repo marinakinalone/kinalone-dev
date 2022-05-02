@@ -27,6 +27,7 @@ const Navigation = () => {
           contact
           </a>
       </li>
+      {/* 
       <li className="navigation__lightswitch">
         <label className="switch" htmlFor="lightswitch">
           <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick={toggleDarkMode} />
@@ -35,6 +36,7 @@ const Navigation = () => {
           <img className="toggleicon" id="sun" alt="" src={sun} />
         </label>
       </li>
+      */}
     </ul>
   </nav>
   )

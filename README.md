@@ -1,15 +1,15 @@
 # Kinalone Dev
 
-Kinalone Dev is my professional website to share my code projects (portfolio), bio, resume and contact info.
+Kinalone Dev is my professional website to share my code projects (portfolio), bio, resume, and contact info.
 
 ## Built with 
 
-- HTML
-- CSS & SCSS (SASS). I use the awesome [Kitty Giraudel's Sass Boilerplate](https://github.com/KittyGiraudel/sass-boilerplate)
-- Javascript
-
+- React
+- SASS
 ## What's next to do?
-[See to-do list on Notion](https://marinakinalone.notion.site/Tasks-for-kinalone-dev-2b7d7986283e464b8cedde8cf902d80e)
+- re-implement light/dark theme switch
+- add a Books component
+- create animations and small easter eggs :)
 
 ## Team
 
