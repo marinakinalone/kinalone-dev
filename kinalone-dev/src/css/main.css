@@ -545,10 +545,6 @@ h3 {
   transition: all 0.2s;
 }
 
-.animated-arrow:hover, .animated-arrow:focus, .animated-arrow:active {
-  color: black;
-}
-
 .animated-arrow:hover > .the-arrow.-left > .shaft, .animated-arrow:focus > .the-arrow.-left > .shaft, .animated-arrow:active > .the-arrow.-left > .shaft {
   width: 64px;
   -webkit-transition-delay: 0.1s;
@@ -571,6 +567,19 @@ h3 {
 .animated-arrow:hover > .the-arrow.-left > .shaft:after, .animated-arrow:focus > .the-arrow.-left > .shaft:after, .animated-arrow:active > .the-arrow.-left > .shaft:after {
   -webkit-transform: rotate(-40deg);
           transform: rotate(-40deg);
+}
+
+.animated-arrow:hover:focus, .animated-arrow:hover:active, .animated-arrow:focus:focus, .animated-arrow:focus:active, .animated-arrow:active:focus, .animated-arrow:active:active {
+  color: #da2f8d;
+  outline: none;
+}
+
+.animated-arrow:hover:focus > .the-arrow.-left > .shaft, .animated-arrow:hover:active > .the-arrow.-left > .shaft, .animated-arrow:focus:focus > .the-arrow.-left > .shaft, .animated-arrow:focus:active > .the-arrow.-left > .shaft, .animated-arrow:active:focus > .the-arrow.-left > .shaft, .animated-arrow:active:active > .the-arrow.-left > .shaft {
+  background-color: #da2f8d;
+}
+
+.animated-arrow:hover:focus > .the-arrow.-left > .shaft:before, .animated-arrow:hover:focus > .the-arrow.-left > .shaft:after, .animated-arrow:hover:active > .the-arrow.-left > .shaft:before, .animated-arrow:hover:active > .the-arrow.-left > .shaft:after, .animated-arrow:focus:focus > .the-arrow.-left > .shaft:before, .animated-arrow:focus:focus > .the-arrow.-left > .shaft:after, .animated-arrow:focus:active > .the-arrow.-left > .shaft:before, .animated-arrow:focus:active > .the-arrow.-left > .shaft:after, .animated-arrow:active:focus > .the-arrow.-left > .shaft:before, .animated-arrow:active:focus > .the-arrow.-left > .shaft:after, .animated-arrow:active:active > .the-arrow.-left > .shaft:before, .animated-arrow:active:active > .the-arrow.-left > .shaft:after {
+  background-color: #da2f8d;
 }
 
 .animated-arrow:hover > .main, .animated-arrow:focus > .main, .animated-arrow:active > .main {

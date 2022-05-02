@@ -1,4 +1,7 @@
-import React from 'react'
+import gardenJs from "../resources/projects/gardenjs.png"
+import leVoyageAStockholm from "../resources/projects/levoyageastockholm.png"
+import laladance from "../resources/projects/laladance.png"
+import sailormoon from "../resources/projects/sailormoon.png"
 
 const Projects = () => {
   return (
@@ -7,25 +10,25 @@ const Projects = () => {
       <h1>highlighted projects</h1>
     </div>
     <div className="projects__highlighted">
-      <a className="projects__card" href="https://marinakinalone.github.io/geeky-love-letter/" target="_blank" rel="noopener noreferrer">
-        <img src="img/project_geekyloveletter.png" alt="project card illustration" />
+      <a className="projects__card" href={"https://gardenproject-client.herokuapp.com/"} target="_blank" rel="noopener noreferrer">
+        <img src={gardenJs} alt="project card illustration" />
         <h3>Garden JS</h3>
-        <p>A secret message editor (which is only a text to binary convertor) built with ReactJS.</p>
+        <p>A cute game to practice JavaScript. Built with React, Redux, SASS Node, Express and MongoDB.</p>
       </a>
       <a className="projects__card" href="https://excusemyfrench.dev" target="_blank" rel="noopener noreferrer">
-          <img src="img/project_excusemyfrenchdev.png" alt="project card illustration" />
+          <img src={leVoyageAStockholm} alt="project card illustration" />
           <h3>Le Voyage à Stockholm</h3>
-          <p>A website which aims at making English news related to front-end development and UX accessible to French-speaking people.</p>
+          <p>My favorite places in Stockholm, on a map. Built with React, Sass, Node, Express and the Google Maps API.</p>
       </a>
       <a className="projects__card" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
-        <img src="img/project_sailormoon.png" alt="project card illustration" />
+        <img src={sailormoon} alt="project card illustration" />
         <h3>Sailor Moon Quote Machine</h3>
-        <p>To build this cute project, I've used ReactJS associated with concepts of randomness and manipulation of arrays.</p>
+        <p>A sailormoon-themed random quote machine. Built with React and Sass.</p>
       </a>
       <a className="projects__card" href="https://marinakinalone.github.io/la-la-dance/" target="_blank" rel="noopener noreferrer">
-        <img src="img/project_laladance.png" alt="project card illustration" />
+        <img src={laladance} alt="project card illustration" />
         <h3>La La Dance</h3>
-        <p>A personnality test to find their social dance type built with ReactJS and React Bootstrap.</p>
+        <p>A personnality test to find the social dance type that suits us best. Built with React and React Bootstrap.</p>
       </a>
     </div>
     <div className="projects__more container">
