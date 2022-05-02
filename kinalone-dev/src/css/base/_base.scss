@@ -27,7 +27,7 @@ html {
   background-color: $neutral_light;
 }
 
-.regular-padding {
+.padding-regular {
   padding-left: 1rem;
   @include desktop_min_width {
     padding-left: 3rem;

@@ -3,10 +3,10 @@ import resume from '../resources/CV_MarinaKinalone_Simonnet.pdf'
 const About = () => {
   return (
     <section className="about container" id="about">
-    <div className="about__header regular-padding">
+    <div className="about__header padding-regular">
       <h1>about</h1>
     </div>
-      <div className="about__bio regular-padding">
+      <div className="about__bio padding-regular">
       <img className="about__img"src={me} alt="portrait of Marina Kinalone Simonnet" />
       <h2>Marina Kinalone Simonnet</h2>
       <h3>JavaScript developer with a background in research and education.</h3>
@@ -20,7 +20,7 @@ const About = () => {
       </div>
       <div className="about__skills">
         <h3>coding skills</h3>
-        <p>technical skills: JavaScript, React, Node.js, Express, HTML5, CSS3, MongoDB, PostgreSQL, UX/UI, Adobe XD</p>
+        <p>technical skills: JavaScript, React, Node.js, Express, HTML5, CSS3, MongoDB, PostgreSQL, UX/UI, Figma, Adobe XD</p>
         <p>general development tools: Git, REST, Docker, Redux, AWS, TDD, CI/CD, design thinking</p>
         <a className="animated-arrow" href={resume} target="_blank" rel="noopener noreferrer">
           <span className="the-arrow -left">

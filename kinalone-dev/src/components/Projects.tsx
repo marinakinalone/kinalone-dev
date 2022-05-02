@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = () => {
   return (
     <section className="projects">
-    <div className="projects__header container regular-padding">
+    <div className="projects__header container padding-regular">
       <h1>highlighted projects</h1>
     </div>
     <div className="projects__highlighted">

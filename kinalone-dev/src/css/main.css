@@ -38,12 +38,12 @@ html {
   background-color: white;
 }
 
-.regular-padding {
+.padding-regular {
   padding-left: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .regular-padding {
+  .padding-regular {
     padding-left: 3rem;
   }
 }
@@ -88,6 +88,26 @@ body {
 
 a {
   color: black;
+}
+
+.link-regular:hover {
+  color: #287773;
+}
+
+.link-regular:hover .icon {
+  -webkit-filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
+          filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
+}
+
+.link-regular:focus {
+  color: #da2f8d;
+  outline: 2px dashed #da2f8d;
+  outline-offset: 0.2rem;
+}
+
+.link-regular:focus .icon {
+  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
+          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
 }
 
 h1 {
@@ -251,7 +271,7 @@ h3 {
 
 .navigation li {
   text-align: center;
-  min-height: 80px;
+  min-height: 90px;
 }
 
 .navigation__lightswitch {
@@ -274,20 +294,32 @@ h3 {
 }
 
 .button__frame:hover {
-  border-color: #ff61b8;
-  color: #ff61b8;
+  border-color: #287773;
+  color: #287773;
+}
+
+.button__frame:hover .button__icon {
+  -webkit-filter: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%);
+          filter: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%);
 }
 
 .button__frame:focus, .button__frame:active {
-  border-color: #00c2a8;
-  color: #00c2a8;
+  border-color: #da2f8d;
+  color: #da2f8d;
+}
+
+.button__frame:focus .button__icon, .button__frame:active .button__icon {
+  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
+          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
 }
 
 .button__icon {
   display: inline;
   width: 50px;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  -webkit-filter: invert(88%) sepia(3%) saturate(2310%) hue-rotate(317deg) brightness(107%) contrast(101%);
+          filter: invert(88%) sepia(3%) saturate(2310%) hue-rotate(317deg) brightness(107%) contrast(101%);
 }
 
 .projects__header {

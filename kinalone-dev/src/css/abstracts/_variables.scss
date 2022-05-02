@@ -4,11 +4,16 @@
 
 /// Palette
 $brand_primary: #FFE8E2;
-$brand_secondary: #c9e7c8;
+$brand_secondary: #c8dbda;
 $neutral_dark: black;
 $neutral_light: white;
-$hover: rgb(255, 97, 184);//!to adjust
-$focus: rgb(0, 194, 168);//!to adjust
+$hover: #287773;
+$focus: #da2f8d;
+
+$filter_primary: invert(88%) sepia(3%) saturate(2310%) hue-rotate(317deg) brightness(107%) contrast(101%);
+$filter_hover_accessible: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%); //#c8dbda
+$filter_hover: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
+$filter_focus: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
 
 $fira: "Fira Code", monospace;
 

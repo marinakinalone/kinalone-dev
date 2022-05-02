@@ -8,7 +8,7 @@
   }
   li {
     text-align: center;
-    min-height: 80px;
+    min-height: 90px;
   }
 }
 
@@ -31,12 +31,17 @@
   &:hover {
     border-color: $hover;
     color: $hover;
-    
+    .button__icon {
+      filter: $filter_hover_accessible;
+    }
   }
   &:focus,
   &:active {
     border-color: $focus;
     color: $focus;
+    .button__icon {
+      filter: $filter_focus;
+    }
   }
 }
 
@@ -44,5 +49,6 @@
   display: inline;
   width: 50px;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  filter: $filter_primary;
 }

@@ -13,6 +13,23 @@ a {
   color: $neutral_dark;
 }
 
+.link-regular {
+  &:hover {
+    color: $hover;
+    .icon {
+      filter: $filter_hover;
+    }
+  }
+  &:focus {
+    color: $focus;
+    outline: 2px dashed $focus;
+    outline-offset: 0.2rem;
+    .icon {
+      filter: $filter_focus;
+    }
+  }
+}
+
 h1 {  font-size: $font_size_3;
   font-weight: 400;
   @include desktop_min_width {

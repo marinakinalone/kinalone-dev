@@ -11,7 +11,7 @@ const Navigation = () => {
     <ul>
       <li className="navigation__button">
           <a className="button__frame" href="#projects">
-          <img className="button__icon" src={projectsBtn} alt="'projects' section of homepage" />
+          <img className="button__icon icon" src={projectsBtn} alt="'projects' section of homepage" />
           projects
           </a>
       </li>
