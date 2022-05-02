@@ -1,0 +1,46 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  background-color: $neutral_light;
+  border: $regular_border;
+}
+
+.intro__content {
+  padding: 1.5rem 0.5rem 1.5rem 1rem;
+  @include tablet_min_width {
+    padding-left: 1rem;
+  }
+  @include desktop_min_width {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  border-top: $regular_border;
+}
+
+.intro__title {
+  margin: 0 auto;
+}
+
+.intro__subtitle {
+  margin: 0.5rem auto -0.5rem auto;
+}
+.intro__portrait {
+  background-color: $brand_secondary;
+  max-width: 100%;
+  border-left: 1rem solid $neutral_dark;
+  @include desktop_min_width {
+    padding-left: 25%;
+    padding-right: 15%;
+    max-width: 100%;
+    border-left-width: 3rem;
+  }
+}
+
+.intro__copyright {
+  font-size: $font_size_xs;
+  a {
+    margin: 0;
+  }
+}

@@ -1,0 +1,42 @@
+.projects__card {
+  text-decoration: none;
+  border: $regular_border;
+  background-color: $neutral_light;
+  padding: 0 0.5rem;
+  margin: 1%;
+  @include tablet_min_width {
+    max-width: 44%;
+  }
+  @include desktop_min_width {
+    padding: 0.5rem 1rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border: $regular_border;
+  }
+  h3 {
+    margin-top: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+    @include desktop_min_width {
+      font-size: 1rem;
+    }
+    margin: -1rem auto 1.5rem auto;
+  }
+  transition: transform 0.3s, box-shadow 0.4s;
+  &:hover {
+    color: $neutral_dark;
+    box-shadow: -6px 6px 0px 0px $neutral_dark;
+    transform: translate(4px, -4px);
+  }
+  &:focus {
+    background-color: $brand_secondary;
+    box-shadow: -6px 6px 0px 0px $neutral_dark;
+    transform: translate(4px, -4px);
+  }
+}

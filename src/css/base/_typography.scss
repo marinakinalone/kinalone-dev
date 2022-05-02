@@ -1,0 +1,58 @@
+* {
+  font-family: $fira;
+}
+
+body {
+  color: $neutral_dark;
+  @include desktop_min_width {
+    font-size: $desktop_font_size_0;
+  }
+}
+
+a {
+  color: $neutral_dark;
+}
+
+.link-regular {
+  &:hover {
+    color: $hover;
+    .icon {
+      filter: $filter_hover;
+    }
+  }
+  &:focus {
+    color: $focus;
+    outline: 2px dashed $focus;
+    outline-offset: 0.2rem;
+    .icon {
+      filter: $filter_focus;
+    }
+  }
+}
+
+h1 {  font-size: $font_size_3;
+  font-weight: 400;
+  @include desktop_min_width {
+    font-size: $desktop_font_size_3;
+  }
+}
+
+h2 {
+  font-size: $font_size_2;
+  font-weight: 600;
+  @include desktop_min_width {
+    font-size: $desktop_font_size_2;
+  }
+}
+
+h3 {
+  font-size: $font_size_1;
+  font-weight: 500;
+  @include desktop_min_width {
+    font-size: $desktop_font_size_1;
+  }
+}
+
+.bolder {
+  font-weight: 600;
+}
