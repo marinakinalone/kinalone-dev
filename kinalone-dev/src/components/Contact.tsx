@@ -1,6 +1,5 @@
 import github from '../resources/icons/github_dark.png'
 import email from '../resources/icons/email_dark.svg'
-// import instagram from '../resources/icons/instagram_dark.svg'
 import linkedin from '../resources/icons/linkedin_dark.svg'
 
 const Contact = () => {
@@ -25,13 +24,6 @@ const Contact = () => {
             <img className="icon" src={linkedin}  alt="icon of linkedin logo, letters i and n in a square" id="linkedin_icon"/>linkedin
           </a>
         </li>
-        {/* 
-        <li>
-          <a href="https://www.instagram.com/marinakinalone/" target="_blank" rel="noopener noreferrer">
-            <img src={instagram} alt="icon of an envelop linking to e-mail address" id="instagram_icon" />instagram
-          </a>
-        </li>
-        */}
       </ul>
   </section>
   )

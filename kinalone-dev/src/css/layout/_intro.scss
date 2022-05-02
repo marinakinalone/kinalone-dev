@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   background-color: $neutral_light;
   border: $regular_border;
 }
@@ -27,7 +27,7 @@
   margin: 0.5rem auto -0.5rem auto;
 }
 .intro__portrait {
-  background-color: #c8dbda;
+  background-color: $brand_secondary;
   max-width: 100%;
   border-left: 1rem solid $neutral_dark;
   @include desktop_min_width {
