@@ -3,32 +3,32 @@
 // -----------------------------------------------------------------------------
 
 /// Palette
-$brand_color_light: #f6dbbc;
-$secondary_color_light: #ef9884;
-$secondary_color_dark: #717171;
-$neutral_color_dark: #3b1726;
-$neutral_color_light: #e4e4e4;
-$hover_color_light: #eba941;
-$hover_color_dark: #3a4e64;
+$brand_primary: #FFE8E2;
+$brand_secondary: #c8dbda;
+$neutral_dark: black;
+$neutral_light: white;
+$hover: #287773;
+$focus: #da2f8d;
 
-$roboto: "Roboto Slab", serif;
-$fira: "Fira Code", serif;
+$filter_primary: invert(88%) sepia(3%) saturate(2310%) hue-rotate(317deg) brightness(107%) contrast(101%);
+$filter_hover_accessible: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%); //#c8dbda
+$filter_hover: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
+$filter_focus: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
 
-$font_size_3: 1.6rem;
-$font_size_2: 1.33rem;
-$font_size_1: 1.2rem;
+$fira: "Fira Code", monospace;
+
+$font_size_3: 1.5rem;
+$font_size_2: 1.15rem;
+$font_size_1: 1rem;
 $font_size_xs: 0.75rem;
 
 $desktop_font_size_3: 2rem;
-$desktop_font_size_2: 1.6rem;
-$desktop_font_size_1: 1.4rem;
+$desktop_font_size_2: 1.5rem;
+$desktop_font_size_1: 1.3rem;
 $desktop_font_size_0: 1.1rem;
 $desktop_font_size_xs: 0.9rem;
 
-
-
-
-$regular_border_line: 1px solid;
+$regular_border: 1px solid;
 
 /// Breakpoints map
 $breakpoints: (

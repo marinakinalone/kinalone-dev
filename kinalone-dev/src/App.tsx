@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className=" ">
+      <div className="intro-nav__container">
         <Intro />
         <Navigation />
       </div>

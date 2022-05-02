@@ -1,9 +1,9 @@
-import React from 'react'
+import heartIcon from '../resources/icons/heart_dark.svg';
 
 const Footer = () => {
   return (
     <footer className="footer">
-    <p className="footer__copyright">Made with <img className="copyright__img" id="heart" src="" alt=""/> between Nantes & Sthlm © Marina Kinalone Simonnet 2021 | <a href="LICENSE.txt" target="_blank" rel="noopener noreferrer">license</a></p>
+    <p className="footer__copyright"><span className="desktop--only">Made with <img className="copyright__img" id="heart" src={heartIcon} alt="love"/> between Nantes & Sthlm </span>© mks 2022 | <a className="link-regular" href="https://github.com/marinakinalone/kinalone-dev/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">license</a></p>
     </footer>
   )
 }
