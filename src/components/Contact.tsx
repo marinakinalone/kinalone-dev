@@ -4,7 +4,7 @@ import linkedin from '../resources/icons/linkedin_dark.svg'
 
 const Contact = () => {
   return (
-    <section className="contact container">
+    <section className="contact container" id="contact">
     <div className="contact__header padding-regular">
       <h1>contact</h1>
     </div>

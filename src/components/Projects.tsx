@@ -5,7 +5,7 @@ import sailormoon from "../resources/projects/sailormoon.png"
 
 const Projects = () => {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
     <div className="projects__header container padding-regular">
       <h1>highlighted projects</h1>
     </div>

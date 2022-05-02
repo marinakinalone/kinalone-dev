@@ -1,16 +1,16 @@
 import projectsBtn from '../resources/nav/projects.svg'
 import aboutBtn from '../resources/nav/about.svg'
 import contactBtn from '../resources/nav/contact.svg'
-import moon from '../resources/icons/moon.svg'
-import sun from '../resources/icons/sun.svg'
+// import moon from '../resources/icons/moon.svg'
+// import sun from '../resources/icons/sun.svg'
 
 const Navigation = () => {
-  const toggleDarkMode = () => {};
+  // const toggleDarkMode = () => {};
   return (
     <nav className="navigation">
     <ul>
       <li className="navigation__button">
-          <a className="button__frame" href="#projects">
+          <a href="#projects" className="button__frame">
           <img className="button__icon icon" src={projectsBtn} alt="'projects' section of homepage" />
           projects
           </a>
