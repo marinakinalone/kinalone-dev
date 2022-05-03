@@ -643,7 +643,8 @@ h3 {
   border: 1px solid;
   background-color: white;
   padding: 0 0.5rem;
-  margin: 1%;
+  margin: 1% auto;
+  max-width: 88%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -692,16 +693,15 @@ h3 {
 
 .projects__card:hover {
   color: black;
-  -webkit-box-shadow: -6px 6px 0px 0px black;
-          box-shadow: -6px 6px 0px 0px black;
+  -webkit-box-shadow: -6px 6px 0px 0px;
+          box-shadow: -6px 6px 0px 0px;
   -webkit-transform: translate(4px, -4px);
           transform: translate(4px, -4px);
 }
 
 .projects__card:focus {
-  background-color: #c8dbda;
-  -webkit-box-shadow: -6px 6px 0px 0px black;
-          box-shadow: -6px 6px 0px 0px black;
+  -webkit-box-shadow: -6px 6px 0px 0px;
+          box-shadow: -6px 6px 0px 0px;
   -webkit-transform: translate(4px, -4px);
           transform: translate(4px, -4px);
 }

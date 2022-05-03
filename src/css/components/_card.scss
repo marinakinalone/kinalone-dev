@@ -3,7 +3,8 @@
   border: $regular_border;
   background-color: $neutral_light;
   padding: 0 0.5rem;
-  margin: 1%;
+  margin: 1% auto;
+  max-width: 88%;
   @include tablet_min_width {
     max-width: 44%;
   }
@@ -31,12 +32,11 @@
   transition: transform 0.3s, box-shadow 0.4s;
   &:hover {
     color: $neutral_dark;
-    box-shadow: -6px 6px 0px 0px $neutral_dark;
+    box-shadow: -6px 6px 0px 0px;
     transform: translate(4px, -4px);
   }
   &:focus {
-    background-color: $brand_secondary;
-    box-shadow: -6px 6px 0px 0px $neutral_dark;
+    box-shadow: -6px 6px 0px 0px;
     transform: translate(4px, -4px);
   }
 }
