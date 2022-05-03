@@ -10,22 +10,22 @@ const Projects = () => {
       <h1>highlighted projects</h1>
     </div>
     <div className="projects__highlighted">
-      <a className="projects__card" href={"https://gardenproject-client.herokuapp.com/"} target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href={"https://gardenproject-client.herokuapp.com/"} target="_blank" rel="noopener noreferrer">
         <img src={gardenJs} alt="project card illustration" />
         <h3>Garden JS</h3>
         <p>A cute game to practice JavaScript. Built with React, Redux, SASS Node, Express and MongoDB.</p>
       </a>
-      <a className="projects__card" href="https://github.com/marinakinalone/le-voyage-a-stockholm" target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href="https://github.com/marinakinalone/le-voyage-a-stockholm" target="_blank" rel="noopener noreferrer">
           <img src={leVoyageAStockholm} alt="project card illustration" />
           <h3>Le Voyage à Stockholm</h3>
           <p>My favorite places in Stockholm, on a map. Built with React, Sass, Node, Express and the Google Maps API.</p>
       </a>
-      <a className="projects__card" href="https://marinakinalone.github.io/la-la-dance/" target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href="https://marinakinalone.github.io/la-la-dance/" target="_blank" rel="noopener noreferrer">
         <img src={laladance} alt="project card illustration" />
         <h3>La La Dance</h3>
         <p>A personnality test to find the social dance type that suits us best. Built with React and React Bootstrap.</p>
       </a>
-      <a className="projects__card" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
         <img src={sailormoon} alt="project card illustration" />
         <h3>Sailor Moon Quote Machine</h3>
         <p>A sailormoon-themed random quote machine. My first React project. Built with React and Sass.</p>

@@ -26,7 +26,6 @@ $arrow-head-thickness: $shaft-thickness;
       &:before,
       &:after {
         width: 0;
-        background-color: $neutral_dark;
       }
 
       &:before {
@@ -108,13 +107,10 @@ $arrow-head-thickness: $shaft-thickness;
       > .shaft {
         width: $newshaft-width;
         transition-delay: 0.1s;
-        background-color: $neutral_dark;
-
         &:before,
         &:after {
           width: $arrow-head-width;
           transition-delay: 0.1s;
-          background-color: $neutral_dark;
         }
 
         &:before {

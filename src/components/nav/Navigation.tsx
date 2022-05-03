@@ -7,20 +7,20 @@ const Navigation = () => {
     <nav className="navigation">
     <ul>
       <li className="navigation__button">
-          <a href="#projects" className="button__frame">
-          <img className="button__icon icon" src={projectsBtn} alt="'projects' section of homepage" />
+          <a href="#projects" className="button__frame nav-buttons">
+          <img className="button__icon nav-buttons-img" src={projectsBtn} alt="'projects' section of homepage" />
           projects
           </a>
       </li>
       <li className="navigation__button">
-          <a href="#about" className="button__frame">
-          <img className="button__icon" src={aboutBtn} alt="'about' section of homepage" />
+          <a href="#about" className="button__frame nav-buttons">
+          <img className="button__icon nav-buttons-img" src={aboutBtn} alt="'about' section of homepage" />
           about
             </a>
       </li>
       <li className="navigation__button">
-          <a href="#contact" className="button__frame">
-          <img className="button__icon" src={contactBtn} alt="'contact' section of homepage" />
+          <a href="#contact" className="button__frame nav-buttons">
+          <img className="button__icon nav-buttons-img" src={contactBtn} alt="'contact' section of homepage" />
           contact
           </a>
       </li>

@@ -10,8 +10,11 @@ const Lightswitch = () => {
         <label className="switch" htmlFor="lightswitch">
             <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick={toggleTheme} />
             <span className="slider"></span>
-            <img className="toggleicon" id="moon" alt="" src={moon} />
-            <img className="toggleicon" id="sun" alt="" src={sun} />
+            {theme === "light" ? (
+                <img className="toggleicon" id="moon" alt="" src={moon} />
+            ) : (
+                <img className="toggleicon" id="sun" alt="" src={sun} />
+            )}
         </label>
     )
 }
