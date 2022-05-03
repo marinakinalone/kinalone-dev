@@ -23,6 +23,7 @@
     &:focus,
     &:active {
       background: none;
+      color: $focus !important;
     }
   }
 }

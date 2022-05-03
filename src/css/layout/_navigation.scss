@@ -17,6 +17,25 @@
 }
 .navigation__button {
   margin: 1rem auto 1rem -20px;
+  &:hover {
+    .button__frame {
+      color: $hover !important;
+      border-color: $hover !important;
+    }
+    .button__icon {
+      filter: $filter_hover !important;
+    }
+  }
+  &:focus,
+  &:active {
+    .button__frame {
+      border-color: $focus!important;
+      color: $focus !important;
+    }
+    .button__icon {
+      filter: $filter_focus !important;
+    }
+  }
 }
 
 .button__frame {
@@ -28,21 +47,6 @@
   height: 80px;
   background-color: $neutral_dark;
   border: 3px solid $neutral_dark;
-  &:hover {
-    border-color: $hover;
-    color: $hover;
-    .button__icon {
-      filter: $filter_hover_accessible;
-    }
-  }
-  &:focus,
-  &:active {
-    border-color: $focus;
-    color: $focus;
-    .button__icon {
-      filter: $filter_focus;
-    }
-  }
 }
 
 .button__icon {

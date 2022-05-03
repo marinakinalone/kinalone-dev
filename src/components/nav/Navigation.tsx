@@ -7,8 +7,8 @@ const Navigation = () => {
     <nav className="navigation">
     <ul>
       <li className="navigation__button">
-          <a href="#projects" className="button__frame nav-buttons">
-          <img className="button__icon nav-buttons-img" src={projectsBtn} alt="'projects' section of homepage" />
+          <a href="#projects" className="button__frame nav-buttons icon">
+          <img className="button__icon nav-buttons-img " src={projectsBtn} alt="'projects' section of homepage" />
           projects
           </a>
       </li>

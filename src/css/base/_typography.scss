@@ -15,17 +15,17 @@ a {
 
 .link-regular {
   &:hover {
-    color: $hover;
+    color: $hover !important;
     .icon {
-      filter: $filter_hover;
+      filter: $filter_hover !important;
     }
   }
   &:focus {
-    color: $focus;
+    color: $focus !important;
     outline: 2px dashed $focus;
     outline-offset: 0.2rem;
     .icon {
-      filter: $filter_focus;
+      filter: $filter_focus !important;
     }
   }
 }

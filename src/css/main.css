@@ -91,23 +91,23 @@ a {
 }
 
 .link-regular:hover {
-  color: #287773;
+  color: #287773 !important;
 }
 
 .link-regular:hover .icon {
-  -webkit-filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
-          filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%);
+  -webkit-filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%) !important;
+          filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%) !important;
 }
 
 .link-regular:focus {
-  color: #da2f8d;
+  color: #da2f8d !important;
   outline: 2px dashed #da2f8d;
   outline-offset: 0.2rem;
 }
 
 .link-regular:focus .icon {
-  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
-          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
+  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%) !important;
+          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%) !important;
 }
 
 h1 {
@@ -282,6 +282,26 @@ h3 {
   margin: 1rem auto 1rem -20px;
 }
 
+.navigation__button:hover .button__frame {
+  color: #287773 !important;
+  border-color: #287773 !important;
+}
+
+.navigation__button:hover .button__icon {
+  -webkit-filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%) !important;
+          filter: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%) contrast(82%) !important;
+}
+
+.navigation__button:focus .button__frame, .navigation__button:active .button__frame {
+  border-color: #da2f8d !important;
+  color: #da2f8d !important;
+}
+
+.navigation__button:focus .button__icon, .navigation__button:active .button__icon {
+  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%) !important;
+          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%) !important;
+}
+
 .button__frame {
   text-decoration: none;
   position: absolute;
@@ -291,26 +311,6 @@ h3 {
   height: 80px;
   background-color: black;
   border: 3px solid black;
-}
-
-.button__frame:hover {
-  border-color: #287773;
-  color: #287773;
-}
-
-.button__frame:hover .button__icon {
-  -webkit-filter: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%);
-          filter: invert(90%) sepia(6%) saturate(421%) hue-rotate(128deg) brightness(97%) contrast(88%);
-}
-
-.button__frame:focus, .button__frame:active {
-  border-color: #da2f8d;
-  color: #da2f8d;
-}
-
-.button__frame:focus .button__icon, .button__frame:active .button__icon {
-  -webkit-filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
-          filter: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%) contrast(100%);
 }
 
 .button__icon {
@@ -358,6 +358,7 @@ h3 {
 
 .projects__more a:focus, .projects__more a:active {
   background: none;
+  color: #da2f8d !important;
 }
 
 .about__header {
@@ -397,6 +398,7 @@ h3 {
 
 .about__skills a:focus, .about__skills a:active {
   background: none;
+  color: #da2f8d !important;
 }
 
 .contact__header h1 {
