@@ -2,8 +2,18 @@ import gardenJs from "../resources/projects/gardenjs.png"
 import leVoyageAStockholm from "../resources/projects/levoyageastockholm.png"
 import laladance from "../resources/projects/laladance.png"
 import sailormoon from "../resources/projects/sailormoon.png"
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeProvider';
 
 const Projects = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const blackArrow = {
+    "--my-color-var": "black"
+  }
+  const whiteArrow = {
+    "--my-color-var": "white"
+  }
   return (
     <section className="projects" id="projects">
     <div className="projects__header container padding-regular">
@@ -34,12 +44,12 @@ const Projects = () => {
     <div className="projects__more container">
       <a className="animated-arrow" href="https://github.com/marinakinalone?tab=repositories" target="_blank" rel="noopener noreferrer">
         <span className="the-arrow -left">
-          <span className="shaft"></span>
+          <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
         </span>
         <span className="main">
           <span className="text">more projects</span>
           <span className="the-arrow -right">
-            <span className="shaft"></span>
+            <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
           </span>
         </span>
       </a>

@@ -459,7 +459,7 @@ h3 {
 
 .the-arrow.-left > .shaft {
   width: 0;
-  background-color: black;
+  background-color: var(--my-color-var);
 }
 
 .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
@@ -505,7 +505,7 @@ h3 {
 }
 
 .the-arrow > .shaft {
-  background-color: black;
+  background-color: var(--my-color-var);
   display: block;
   height: 1px;
   position: relative;
@@ -517,7 +517,7 @@ h3 {
 }
 
 .the-arrow > .shaft:before, .the-arrow > .shaft:after {
-  background-color: black;
+  background-color: var(--my-color-var);
   content: "";
   display: block;
   height: 1px;
@@ -542,7 +542,7 @@ h3 {
 
 .animated-arrow {
   display: inline-block;
-  color: black;
+  color: var(--my-color-var);
   position: relative;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

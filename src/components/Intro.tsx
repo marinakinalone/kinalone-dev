@@ -1,14 +1,12 @@
 import portrait from '../resources/marina_portraitparlulo.png'
-import { useContext } from 'react';
-import { ThemeContext } from '../ThemeProvider';
 
 const Intro = () => {
-  const { theme } = useContext(ThemeContext);
+
 
   return (
     <section className="intro">
       <img className="intro__portrait" id="marina" src={portrait} alt="drawn portrait of Marina by artist Lu Lo"/>
-      <div className="intro__content" style={theme === "light" ? ({backgroundColor:"white"}) : ({backgroundColor:"black"})}>
+      <div className="intro__content">
         <h1 className="intro__title">Marina Kinalone Simonnet</h1>
         <h2 className="intro__subtitle">full-stack developer</h2>
         <p><span className="bolder">Enthusiastic</span> developer with a <span className="bolder">focus on user experience</span>. Eager learner and researcher, I grow fast in the projects I’m involved with.</p>

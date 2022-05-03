@@ -1,6 +1,17 @@
 import me from '../resources/me.jpg'
 import resume from '../resources/CV_MarinaKinalone_Simonnet.pdf'
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeProvider';
+
 const About = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const blackArrow = {
+    "--my-color-var": "black"
+  }
+  const whiteArrow = {
+    "--my-color-var": "white"
+  }
   return (
     <section className="about container" id="about">
     <div className="about__header padding-regular border-theme">
@@ -25,12 +36,12 @@ const About = () => {
         <p>general development tools: Git, REST, Docker, Redux, AWS, TDD, CI/CD, design thinking</p>
         <a className="animated-arrow" href={resume} target="_blank" rel="noopener noreferrer">
           <span className="the-arrow -left">
-            <span className="shaft"></span>
+            <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
           </span>
           <span className="main">
             <span className="text">download my resume</span>
             <span className="the-arrow -right">
-              <span className="shaft"></span>
+              <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
             </span>
           </span>
         </a>

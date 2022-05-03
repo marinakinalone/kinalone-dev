@@ -21,7 +21,7 @@ $arrow-head-thickness: $shaft-thickness;
 
     > .shaft {
       width: 0;
-      background-color: $neutral_dark;
+      background-color: var(--my-color-var);
 
       &:before,
       &:after {
@@ -63,7 +63,7 @@ $arrow-head-thickness: $shaft-thickness;
   }
 
   > .shaft {
-    background-color: $neutral_dark;
+    background-color: var(--my-color-var);
     display: block;
     height: $shaft-thickness;
     position: relative;
@@ -73,7 +73,7 @@ $arrow-head-thickness: $shaft-thickness;
 
     &:before,
     &:after {
-      background-color: $neutral_dark;
+      background-color: var(--my-color-var);
       content: "";
       display: block;
       height: $arrow-head-thickness;
@@ -96,7 +96,7 @@ $arrow-head-thickness: $shaft-thickness;
 
 .animated-arrow {
   display: inline-block;
-  color: $neutral_dark;
+  color: var(--my-color-var);
   position: relative;
   transition: all 0.2s;
 
