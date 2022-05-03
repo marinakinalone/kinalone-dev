@@ -1,11 +1,8 @@
-import projectsBtn from '../resources/nav/projects.svg'
-import aboutBtn from '../resources/nav/about.svg'
-import contactBtn from '../resources/nav/contact.svg'
-// import moon from '../resources/icons/moon.svg'
-// import sun from '../resources/icons/sun.svg'
-
+import projectsBtn from '../../resources/nav/projects.svg'
+import aboutBtn from '../../resources/nav/about.svg'
+import contactBtn from '../../resources/nav/contact.svg'
+import Lightswitch from './Lightswitch'
 const Navigation = () => {
-  // const toggleDarkMode = () => {};
   return (
     <nav className="navigation">
     <ul>
@@ -27,16 +24,9 @@ const Navigation = () => {
           contact
           </a>
       </li>
-      {/* 
       <li className="navigation__lightswitch">
-        <label className="switch" htmlFor="lightswitch">
-          <input type="checkbox" id="lightswitch" name="lightswitch" value="dark" onClick={toggleDarkMode} />
-          <span className="slider"></span>
-          <img className="toggleicon" id="moon" alt="" src={moon} />
-          <img className="toggleicon" id="sun" alt="" src={sun} />
-        </label>
+        <Lightswitch />
       </li>
-      */}
     </ul>
   </nav>
   )
