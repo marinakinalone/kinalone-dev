@@ -3,11 +3,10 @@
 Kinalone Dev is my professional website to share my code projects (portfolio), bio, resume, and contact info.
 
 ## Built with 
-
+- TypeScript
 - React
 - SASS
 ## What's next to do?
-- re-implement light/dark theme switch
 - add a Books component
 - create animations and small easter eggs :)
 
