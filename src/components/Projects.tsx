@@ -25,7 +25,7 @@ const Projects = () => {
         <h3>Garden JS</h3>
         <p>A cute game to practice JavaScript. Built with React, Redux, SASS Node, Express and MongoDB.</p>
       </a>
-      <a className="projects__card sub-containers" href="https://github.com/marinakinalone/le-voyage-a-stockholm" target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href="https://le-voyage-a-stockholm.herokuapp.com/" target="_blank" rel="noopener noreferrer">
           <img src={leVoyageAStockholm} alt="project card illustration" />
           <h3>Le Voyage à Stockholm</h3>
           <p>My favorite places in Stockholm, on a map. Built with React, Sass, Node, Express and the Google Maps API.</p>
