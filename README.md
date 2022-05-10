@@ -12,7 +12,7 @@ Kinalone Dev is my professional website to share my code projects (portfolio), b
 - enhance light/dark mode
 - befriend TypeScript even more
 - create animations and small easter eggs :)
-## What I have learnt from this project
+## What I have learned from this project
 The first version of the portfolio was built with HTML and CSS and this is the first project I decided to refactor using the combination of React and TypeScript. I also love React hooks and wanted to try useContext to implement light/dark mode!
 ## Team
 
