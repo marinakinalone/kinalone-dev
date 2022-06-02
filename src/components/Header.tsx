@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header className="header">
-      <a className="header__title link-regular" href="https://kinalone.dev">kinalone.<span className="header__title-last">dev</span></a>
+      <h1 className="header__title">kinalone.<span className="header__title-last">dev</span></h1>
     </header>
   )
 }

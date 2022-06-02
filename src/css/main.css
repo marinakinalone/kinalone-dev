@@ -149,7 +149,7 @@ h3 {
 
 .header {
   border-bottom: 1px solid;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .header__title {
