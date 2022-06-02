@@ -1,10 +1,10 @@
-import React from 'react';
 import { Header, Intro, Navigation, Projects, About, Contact, Footer } from './components/Index';
 import './css/main.css';
+import { ThemeProvider } from './ThemeProvider';
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <div className="intro-nav__container">
         <Intro />
@@ -14,7 +14,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 

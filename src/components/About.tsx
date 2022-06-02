@@ -1,13 +1,24 @@
 import me from '../resources/me.jpg'
 import resume from '../resources/CV_MarinaKinalone_Simonnet.pdf'
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeProvider';
+
 const About = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const blackArrow = {
+    "--my-color-var": "black"
+  }
+  const whiteArrow = {
+    "--my-color-var": "white"
+  }
   return (
     <section className="about container" id="about">
-    <div className="about__header padding-regular">
+    <div className="about__header padding-regular border-theme">
       <h1>about</h1>
     </div>
       <div className="about__bio padding-regular">
-      <img className="about__img"src={me} alt="portrait of Marina Kinalone Simonnet" />
+      <img className="about__img" src={me} alt="portrait of Marina Kinalone Simonnet" />
       <h2>Marina Kinalone Simonnet</h2>
       <h3>JavaScript developer with a background in research and education.</h3>
       <p>I have always loved art for its cross-disciplinary scope. When I was a researcher in art history, I was already using technology to create easy-to-use databases, improve my productivity and make the information accessible. <span className="bolder">When things can be automated, why should we do them manually?</span></p>
@@ -19,18 +30,18 @@ const About = () => {
       <p>I come from France, have lived in California, USA, and <span className="bolder">currently live in Stockholm, Sweden</span>.</p>
 
       </div>
-      <div className="about__skills">
+      <div className="about__skills border-theme">
         <h3>coding skills</h3>
         <p>technical skills: JavaScript, React, Node.js, Express, HTML5, CSS3, MongoDB, PostgreSQL, UX/UI, Figma, Adobe XD</p>
         <p>general development tools: Git, REST, Docker, Redux, AWS, TDD, CI/CD, design thinking</p>
         <a className="animated-arrow" href={resume} target="_blank" rel="noopener noreferrer">
           <span className="the-arrow -left">
-            <span className="shaft"></span>
+            <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
           </span>
           <span className="main">
             <span className="text">download my resume</span>
             <span className="the-arrow -right">
-              <span className="shaft"></span>
+              <span className="shaft" style={theme === "light" ? (blackArrow as React.CSSProperties) :(whiteArrow as React.CSSProperties)}></span>
             </span>
           </span>
         </a>
