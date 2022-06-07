@@ -35,7 +35,7 @@ const Projects = () => {
         <h3>La La Dance</h3>
         <p>A personnality test to find the social dance type that suits us best. Built with React and React Bootstrap.</p>
       </a>
-      <a className="projects__card sub-containers" href="https://marinakinalone.github.io/sailor-moon-quote-machine/" target="_blank" rel="noopener noreferrer">
+      <a className="projects__card sub-containers" href="https://sailor-moon-quote-machine.vercel.app/" target="_blank" rel="noopener noreferrer">
         <img src={sailormoon} alt="project card illustration" />
         <h3>Sailor Moon Quote Machine</h3>
         <p>A sailormoon-themed random quote machine. My first React project. Built with React and Sass.</p>
