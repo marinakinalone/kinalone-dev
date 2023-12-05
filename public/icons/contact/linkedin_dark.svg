@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="804.499px" height="802.5px" viewBox="100.001 0 804.499 802.5" enable-background="new 100.001 0 804.499 802.5"
+	 xml:space="preserve">
+<g>
+	<rect x="318.75" y="306.25" width="50" height="250"/>
+	<rect x="318.75" y="193.75" width="50" height="50"/>
+	<path d="M493.75,462.5v-31.25c0-38.125,30.625-68.75,68.75-68.75s68.75,30.625,68.75,68.75v125h50v-125
+		c0-65.625-53.125-118.75-118.75-118.75c-25.625,0-49.375,8.125-68.75,21.875V306.25h-50v125v31.25v93.75h50V462.5z"/>
+	<path d="M893.75,6.25h-787.5v787.5h787.5V6.25z M843.75,743.75h-687.5V56.25h687.5V743.75z"/>
+</g>
+<image overflow="visible" width="32" height="32" xlink:href="icon_github_dark.png"  transform="matrix(1 0 0 1 1063.0007 497)">
+</image>
+</svg>

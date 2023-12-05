@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'animations' as *;
+@use 'fonts' as *;
+@use 'mixins' as *;
+@use 'sprites' as *;
+@use 'typography' as *;
+
+html {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.page {
+  background-color: $brand_primary;
+  @include mobile_max_width {
+    margin: 0 0.5rem;
+  }
+  @include tablet_min_width {
+    margin: 0 7%;
+  }
+  @include desktop_min_width {
+    margin: 0 12%;
+  }
+}
+
+.container {
+  border: $regular_border;
+  margin-bottom: 2.5rem;
+  background-color: $neutral_light;
+}
+
+.padding-regular {
+  padding-left: 1rem;
+  @include desktop_min_width {
+    padding-left: 3rem;
+  }
+}
+
+.intro-nav__container {
+  display: flex;
+  flex-direction: row;
+  .intro {
+    width: 70%;
+  }
+  .navigation {
+    width: 30%;
+  }
+}
+
+.desktop--only {
+  @include mobile_max_width {
+    display: none;
+  }
+}
