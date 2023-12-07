@@ -1,37 +1,4 @@
-@use 'fonts';
-
-// Palette
-// $brand_primary: #ffe8e2;
-// $brand_primary_dark: #11001f;
-// $brand_secondary: #c8dbda;
-// $neutral_dark: #303030;
-// $neutral_light: #f5f5f5;
-// $hover: #287773;
-// $focus: #da2f8d;
-
-$filter_primary: invert(88%) sepia(3%) saturate(2310%) hue-rotate(317deg) brightness(107%)
-  contrast(101%);
-$filter_hover: invert(38%) sepia(13%) saturate(2135%) hue-rotate(128deg) brightness(96%)
-  contrast(82%);
-$filter_focus: invert(30%) sepia(97%) saturate(1353%) hue-rotate(299deg) brightness(86%)
-  contrast(100%);
-
-$fira: 'Fira Code', monospace;
-
-$font_size_3: 1.5rem;
-$font_size_2: 1.15rem;
-$font_size_1: 1rem;
-$font_size_xs: 0.75rem;
-
-$desktop_font_size_3: 2rem;
-$desktop_font_size_2: 1.5rem;
-$desktop_font_size_1: 1.3rem;
-$desktop_font_size_0: 1.1rem;
-$desktop_font_size_xs: 0.9rem;
-
-$regular_border: 1px solid;
-
-/// Breakpoints map
+// TODO remove file => switch to styled components
 $breakpoints: (
   'small': 600px,
   'medium': 768px,
