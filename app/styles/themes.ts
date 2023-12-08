@@ -1,4 +1,3 @@
-//#f55cb0
 const defaultTheme = {
   color: {
     highlight: '#cadede',
