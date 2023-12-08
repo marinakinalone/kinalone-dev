@@ -1,4 +1,4 @@
-name: CI Branch - Le Journal
+name: CI Branch - Kinalone Dev
 on:
   push:
     branches:
