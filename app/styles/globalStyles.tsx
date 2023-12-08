@@ -39,6 +39,15 @@ export const GlobalStyles = styled.createGlobalStyle`
   
     a {
       color: ${color.neutral};
+      &:hover {
+        color: ${color.hover};
+      }
+      
+      &:focus {
+        color: ${color.focus};
+        outline: 2px dashed ${color.focus};
+        outline-offset: 0.2rem;
+      }
     }
   
     h1 {

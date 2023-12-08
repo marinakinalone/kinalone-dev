@@ -1,3 +1,4 @@
+//#f55cb0
 const defaultTheme = {
   color: {
     highlight: '#cadede',
@@ -44,6 +45,8 @@ export const lightTheme = {
     background: '#ffe8e2',
     neutral: '#303030',
     secondary: '#f5f5f5',
+    hover: '#0c5d5f',
+    focus: '#a3005a',
   },
   border: {
     regular: '1px solid #303030',
@@ -57,7 +60,9 @@ export const darkTheme = {
     ...defaultTheme.color,
     background: '#11001f',
     neutral: '#f5f5f5',
-    secondary: '#303030',
+    secondary: '#171717',
+    hover: '#70aeb2',
+    focus: '#dd78b0',
   },
   border: {
     regular: '1px solid #f5f5f5',

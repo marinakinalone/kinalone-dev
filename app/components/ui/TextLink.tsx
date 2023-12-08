@@ -9,12 +9,7 @@ interface ITextLinkProps {
 }
 
 //TODO change color to theme
-const Link = styled.a`
-  color: #0070f3;
-  &:hover {
-    text-decoration: none;
-  }
-`
+const Link = styled.a``
 const TextLink = ({
   href,
   target = '_blank',
