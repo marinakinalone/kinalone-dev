@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { device } from '../../styles/breakpoints'
-import heartIcon from '../../../public/icons/heart_dark.svg'
+import { device, screenSize } from '../../styles/breakpoints'
+import TextLink from '../ui/TextLink'
 
 const FooterContainter = styled.footer`
   border-top: ${(props) => props.theme.border.regular};
@@ -25,8 +25,7 @@ const FooterIcon = styled.img`
 `
 
 const Footer = () => {
-  const isDesktop = true // TODO implement isDesktop
-
+  const isDesktop = window.innerWidth > 600
   return (
     <FooterContainter>
       <FooterContent>
@@ -35,15 +34,11 @@ const Footer = () => {
             Made with <FooterIcon src={'./icons/heart_dark.svg'} alt="love" /> between Nantes &
             Sthlm
           </>
-        )}
-        {/* <FooterText>
-          <FooterIcon src={heartIcon} alt="love" />
-          <FooterTextSpan>between Nantes & Sthlm</FooterTextSpan>
-        </FooterText>
-        <FooterText>
-          <FooterTextSpan>© mks 2022 | </FooterTextSpan>
-          <FooterLink
-            href=" */}
+        )}{' '}
+        © mks 2022 |{' '}
+        <TextLink href="https://github.com/marinakinalone/kinalone-dev/blob/main/LICENSE.txt">
+          License
+        </TextLink>
       </FooterContent>
     </FooterContainter>
   )

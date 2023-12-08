@@ -4,14 +4,14 @@ interface Size {
   large: string
 }
 
-const size: Size = {
+export const screenSize: Size = {
   small: '600px',
   medium: '768px',
   large: '1024px',
 }
 
 export const device = {
-  mobileMaxWidth: `(max-width: ${size.small})`,
-  tabletMinWidth: `(min-width: ${size.medium})`,
-  desktopMinWidth: `(min-width: ${size.large})`,
+  mobileMaxWidth: `(max-width: ${screenSize.small})`,
+  tabletMinWidth: `(min-width: ${screenSize.medium})`,
+  desktopMinWidth: `(min-width: ${screenSize.large})`,
 }
