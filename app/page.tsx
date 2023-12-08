@@ -1,15 +1,15 @@
 'use client'
+import React, { useEffect, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import useDarkMode from 'use-dark-mode'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Intro from './components/Intro'
 import Projects from './components/Projects'
-import { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme } from './styles/themes'
-import useDarkMode from 'use-dark-mode'
-import React, { useEffect, useState } from 'react'
 import { GlobalStyles } from './styles/globalStyles'
+import { darkTheme, lightTheme } from './styles/themes'
 
 //TODO: add providers: translation, scroll, game?
 export default function Home() {

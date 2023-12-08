@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { device } from './breakpoints'
 import fontsCss from './fonts.module.css'
 
 const styled = { createGlobalStyle }
@@ -26,9 +27,38 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.fontSize.regular.l};
-    text-decoration: none;
+    font-size: ${({ theme }) => theme.fontSize.regular.s};
     font-family: ${({ theme }) => theme.fontFamily};
     font-weight: 400;
+    @media ${device.desktopMinWidth} {
+      font-size: ${(props) => props.theme.fontSize.desktop.xs};
+    }
+  }
+
+  h2 {
+    font-size: ${({ theme }) => theme.fontSize.regular.l};
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 300;
+    @media ${device.desktopMinWidth} {
+      font-size: ${(props) => props.theme.fontSize.desktop.l};
+    }
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.regular.m};
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 600;
+    @media ${device.desktopMinWidth} {
+      font-size: ${(props) => props.theme.fontSize.desktop.m};
+    }
+  }
+
+  p {
+    font-size: ${({ theme }) => theme.fontSize.regular.s};
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 400;
+    @media ${device.desktopMinWidth} {
+      font-size: ${(props) => props.theme.fontSize.desktop.s};
+    }
   }
 `

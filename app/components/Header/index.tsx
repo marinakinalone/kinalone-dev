@@ -2,8 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
-  border-bottom: ${(props) => props.theme.border.regular};
-  padding: 0 0.5rem;
+  ${(props) => {
+    const { theme } = props
+    return `
+      border-bottom: ${theme.border.regular};
+      padding: 0 0.5rem;
+      margin-bottom: ${theme.spacing.s}; 
+    `
+  }}
 `
 
 const HeaderTitle = styled.h1`

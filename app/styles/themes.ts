@@ -30,6 +30,8 @@ const defaultTheme = {
   },
   spacing: {
     xs: '0.5rem',
+    s: '1rem',
+    m: '1.5rem',
   },
 }
 
@@ -38,6 +40,7 @@ export const lightTheme = {
   color: {
     background: '#ffe8e2',
     neutral: '#303030',
+    secondary: '#f5f5f5',
   },
   border: {
     regular: '1px solid #303030',
@@ -49,6 +52,7 @@ export const darkTheme = {
   color: {
     background: '#11001f',
     neutral: '#f5f5f5',
+    secondary: '#303030',
   },
   border: {
     regular: '1px solid #f5f5f5',
