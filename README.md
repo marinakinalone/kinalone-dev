@@ -21,7 +21,6 @@ portfolio-mks is my professional website to share my code projects (portfolio), 
 
 - TypeScript
 - NextJS
-- SASS
 - Styled components
 - Bun JS
 

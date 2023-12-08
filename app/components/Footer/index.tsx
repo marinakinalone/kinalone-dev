@@ -25,7 +25,7 @@ const FooterIcon = styled.img`
 `
 
 const Footer = () => {
-  const isDesktop = window.innerWidth > 600
+  const isDesktop = window.innerWidth > 500
   return (
     <FooterContainter>
       <FooterContent>

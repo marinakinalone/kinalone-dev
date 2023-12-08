@@ -1,4 +1,4 @@
-name: CD Le Journal
+name: CD Kinalone Dev
 on:
   push:
     branches:
@@ -7,11 +7,11 @@ on:
       - '**'
 jobs:
   build:
-    name: 'build-pnp-checkout'
+    name: 'build-kinalone-dev'
     runs-on: ubuntu-latest
 
     steps:
       - name: Lint/test
         run: |
-          npm ci
-          npm run lint
+          bun install
+          bun lint
