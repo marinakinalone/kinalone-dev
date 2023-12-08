@@ -35,6 +35,14 @@ const defaultTheme = {
     l: '2rem',
     xl: '2.5rem',
   },
+  arrow: {
+    textArrowSpace: '16',
+    shaftWidth: '1',
+    newshaftWidth: '64',
+    shaftThickness: '1',
+    headWidth: '8',
+    headThickness: '1',
+  },
 }
 
 export const lightTheme = {

@@ -6,6 +6,7 @@ import Navigation from '../Navigation'
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: ${(props) => props.theme.spacing.xl};
 `
 
 const HeroContainer = styled.div`
