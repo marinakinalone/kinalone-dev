@@ -4,61 +4,77 @@ import fontsCss from './fonts.module.css'
 
 const styled = { createGlobalStyle }
 
+// We use styled with GlobalStyles so ESLint can lint the CSS
 export const GlobalStyles = styled.createGlobalStyle`
   ${fontsCss}
 
-  html {
-    box-sizing: border-box;
-  }
-
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  body {
-    background: ${({ theme }) => theme.color.background};
-    color: ${({ theme }) => theme.color.neutral};
-    transition: all 0.5s linear;
-  }
-
-  a {
-    color: ${({ theme }) => theme.color.neutral};
-  }
-
-  h1 {
-    font-size: ${({ theme }) => theme.fontSize.regular.s};
-    font-family: ${({ theme }) => theme.fontFamily};
-    font-weight: 400;
-    @media ${device.desktopMinWidth} {
-      font-size: ${(props) => props.theme.fontSize.desktop.xs};
+  ${(props) => {
+    const { color, fontFamily, fontSize } = props.theme
+    return `
+    html {
+      box-sizing: border-box;
     }
-  }
-
-  h2 {
-    font-size: ${({ theme }) => theme.fontSize.regular.l};
-    font-family: ${({ theme }) => theme.fontFamily};
-    font-weight: 300;
-    @media ${device.desktopMinWidth} {
-      font-size: ${(props) => props.theme.fontSize.desktop.l};
+  
+    *::before,
+    *::after {
+      box-sizing: inherit;
     }
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize.regular.m};
-    font-family: ${({ theme }) => theme.fontFamily};
-    font-weight: 600;
-    @media ${device.desktopMinWidth} {
-      font-size: ${(props) => props.theme.fontSize.desktop.m};
+  
+    body {
+      background: ${color.background};
+      color: ${color.neutral};
+      transition: all 0.5s linear;
     }
-  }
-
-  p {
-    font-size: ${({ theme }) => theme.fontSize.regular.s};
-    font-family: ${({ theme }) => theme.fontFamily};
-    font-weight: 400;
-    @media ${device.desktopMinWidth} {
-      font-size: ${(props) => props.theme.fontSize.desktop.s};
+  
+    main {
+    @media ${device.mobileMaxWidth} {
+      margin: 0 0.5rem;
     }
+    @media ${device.tabletMinWidth} {
+      margin: 0 7%;
+    }
+    @media ${device.desktopMinWidth} {
+      margin: 0 12%;
   }
+  
+    a {
+      color: ${color.neutral};
+    }
+  
+    h1 {
+      font-size: ${fontSize.regular.s};
+      font-family: ${fontFamily};
+      font-weight: 400;
+      @media ${device.desktopMinWidth} {
+        font-size: ${fontSize.desktop.xs};
+      }
+    }
+  
+    h2 {
+      font-size: ${fontSize.regular.l};
+      font-family: ${fontFamily};
+      font-weight: 300;
+      @media ${device.desktopMinWidth} {
+        font-size: ${fontSize.desktop.l};
+      }
+    }
+  
+    h3 {
+      font-size: ${fontSize.regular.m};
+      font-family: ${fontFamily};
+      font-weight: 600;
+      @media ${device.desktopMinWidth} {
+        font-size: ${fontSize.desktop.m};
+      }
+    }
+  
+    p {
+      font-size: ${fontSize.regular.s};
+      font-family: ${fontFamily};
+      font-weight: 400;
+      @media ${device.desktopMinWidth} {
+        font-size: ${fontSize.desktop.s};
+      }
+      `
+  }}
 `

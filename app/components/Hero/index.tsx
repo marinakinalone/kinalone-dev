@@ -1,23 +1,57 @@
 import React from 'react'
+import styled from 'styled-components'
 import Container from '../ui/Container'
+import SmallText from '../ui/SmallText'
 import Subtitle from '../ui/Subtitle'
 import Text from '../ui/Text'
+import TextLink from '../ui/TextLink'
 import Title from '../ui/Title'
 
 const STRINGS = {
   title: 'Marina Kinalone Simonnet',
-  subtitle: 'front-end developer',
+  subtitle: 'joyful frontend developer',
   description:
     'Enthusiastic developer with a focus on user experience. Avid learner and dedicated researcher, I thrive on the dynamic energy of projects.',
+  copyright: 'p.s.: drawing is from ',
+  copyrightLink: 'amazing artist Lu Lo',
 }
+
+const MainContainer = styled(Container)`
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+`
+
+const Portrait = styled.img`
+  max-width: 100%;
+  ${(props) => {
+    const { theme } = props
+    return `
+      background-color: ${theme.color.highlight};
+      border-left: ${theme.border.highlight};
+    `
+  }}
+`
+const TextContainer = styled(Container)``
 
 const Hero = () => {
   return (
-    <Container>
-      <Title>{STRINGS.title}</Title>
-      <Subtitle>{STRINGS.subtitle}</Subtitle>
-      <Text>{STRINGS.description}</Text>
-    </Container>
+    <MainContainer>
+      <Portrait
+        id="marinakinalone"
+        src="./portrait_parlulo.png"
+        alt="drawn portrait of Marina by artist Lu Lo"
+      />
+      <TextContainer>
+        <Title>{STRINGS.title}</Title>
+        <Subtitle>{STRINGS.subtitle}</Subtitle>
+        <Text>{STRINGS.description}</Text>
+        <SmallText>
+          {STRINGS.copyright}
+          <TextLink href="https://www.instagram.com/lulu.xalo/">{STRINGS.copyrightLink}</TextLink>
+        </SmallText>
+      </TextContainer>
+    </MainContainer>
   )
 }
 

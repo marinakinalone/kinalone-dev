@@ -1,6 +1,6 @@
 const defaultTheme = {
   color: {
-    hightlight: '#c8dbda',
+    highlight: '#cadede',
     hover: '#287773',
     focus: '#da2f8d',
   },
@@ -32,29 +32,35 @@ const defaultTheme = {
     xs: '0.5rem',
     s: '1rem',
     m: '1.5rem',
+    l: '2rem',
+    xl: '2.5rem',
   },
 }
 
 export const lightTheme = {
   ...defaultTheme,
   color: {
+    ...defaultTheme.color,
     background: '#ffe8e2',
     neutral: '#303030',
     secondary: '#f5f5f5',
   },
   border: {
     regular: '1px solid #303030',
+    highlight: '1rem solid #303030',
   },
 }
 
 export const darkTheme = {
   ...defaultTheme,
   color: {
+    ...defaultTheme.color,
     background: '#11001f',
     neutral: '#f5f5f5',
     secondary: '#303030',
   },
   border: {
     regular: '1px solid #f5f5f5',
+    highlight: '1rem solid #f5f5f5',
   },
 }

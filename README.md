@@ -34,7 +34,7 @@ bun run dev
 
 ## Resources
 
-- Portrait by Lulu Xalo
+- Portrait by [Lulu Xalo](https://www.instagram.com/lulu.xalo/)
 
 ## Team
 
