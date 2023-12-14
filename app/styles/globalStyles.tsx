@@ -41,6 +41,8 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
   
     a {
+      font-family: ${fontFamily};
+      font-size: ${fontSize.regular.s};
       color: ${color.neutral};
       &:hover {
         color: ${color.hover};

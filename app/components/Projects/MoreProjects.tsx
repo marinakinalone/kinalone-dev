@@ -9,6 +9,7 @@ const SHAFT_THICKNESS = 1
 const ARROW_HEAD_WIDTH = 8
 const ARROW_HEAD_THICKNESS = SHAFT_THICKNESS
 
+const Container = styled.div``
 const ArrowShaft = styled.span``
 const ArrowMain = styled.span``
 const ArrowText = styled.span``
@@ -18,7 +19,7 @@ const AnimatedArrow = styled.a<{ theme: DefaultTheme }>`
     const { theme } = props
 
     return `
-    
+      text-decoration: none;
       display: inline-block;
       color: ${theme.color.neutral};
       position: relative;
@@ -204,7 +205,7 @@ const Arrow = styled.span<{ theme: DefaultTheme }>`
 
 const MoreProjects = () => {
   return (
-    <div>
+    <Container>
       <AnimatedArrow
         href="https://github.com/marinakinalone?tab=repositories"
         target="_blank"
@@ -221,7 +222,7 @@ const MoreProjects = () => {
           </Arrow>
         </ArrowMain>
       </AnimatedArrow>
-    </div>
+    </Container>
   )
 }
 
