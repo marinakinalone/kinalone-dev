@@ -3,12 +3,11 @@ import styled from 'styled-components'
 import { projects } from '../../data/projects'
 import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
-import Text from '../ui/Text'
 import Title from '../ui/Title'
+import MoreProjects from './MoreProjects'
 import ProjectCard from './ProjectCard'
-import MyComponent from './MoreProjects'
 
-const STRINGS = {
+export const STRINGS = {
   title: 'highlighted projects',
   cta: 'more projects',
 }
@@ -56,8 +55,7 @@ const Projects = () => {
         })}
       </ProjectCardsContainer>
       <CtaContainer>
-        {/* <Text>{STRINGS.cta}</Text> */}
-        <MyComponent message={STRINGS.cta} />
+        <MoreProjects />
       </CtaContainer>
     </>
   )

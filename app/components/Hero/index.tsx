@@ -21,27 +21,36 @@ const MainContainer = styled(Container)`
   display: flex;
   flex-direction: column;
 `
-
-const Portrait = styled.img`
-  max-width: 100%;
+const ImageContainer = styled(Container)`
+  padding: 0;
+  display: flex;
   ${(props) => {
     const { theme } = props
     return `
       background-color: ${theme.color.highlight};
       border-left: ${theme.border.highlight};
     `
-  }}
+  }};
+`
+
+const Portrait = styled.img`
+  max-height: 70vh;
+  object-fit: contain;
+  margin-left: auto;
 `
 const TextContainer = styled(Container)``
 
+//TODO highlight words in description
 const Hero = () => {
   return (
     <MainContainer>
-      <Portrait
-        id="marinakinalone"
-        src="./portrait_parlulo.png"
-        alt="drawn portrait of Marina by artist Lu Lo"
-      />
+      <ImageContainer>
+        <Portrait
+          id="marinakinalone"
+          src="./portrait_parlulo.png"
+          alt="drawn portrait of Marina by artist Lu Lo"
+        />
+      </ImageContainer>
       <TextContainer>
         <Title>{STRINGS.title}</Title>
         <Subtitle>{STRINGS.subtitle}</Subtitle>

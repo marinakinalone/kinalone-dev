@@ -35,6 +35,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     }
     @media ${device.desktopMinWidth} {
       margin: 0 12%;
+
+    @media ${device.desktopMinWidth} {
+      margin: 0 25%;
   }
   
     a {
