@@ -29,7 +29,7 @@ const AnimatedArrow = styled.a<{ theme: DefaultTheme }>`
       &:active {
         > .arrowleft {
           > .shaft {
-            width: ${SHAFT_WIDTH}px;
+            width: ${NEWSHAFT_WIDTH}px;
             transition-delay: 0.1s;
             &:before,
             &:after {
@@ -115,7 +115,6 @@ const Arrow = styled.span<{ theme: DefaultTheme }>`
   ${(props) => {
     const { theme } = props
     return `
-    
       width: ${SHAFT_WIDTH}px;
       transition: all 0.2s;
     
