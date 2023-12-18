@@ -78,7 +78,7 @@ const Lightswitch = () => {
       {theme === 'light' ? (
         <MoonIcon alt="" src={'./icons/moon.svg'} />
       ) : (
-        <SunIcon id="sun" alt="" src={'./icons/sun.svg'} />
+        <SunIcon alt="" src={'./icons/sun.svg'} />
       )}
     </Wrapper>
   )

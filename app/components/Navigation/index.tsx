@@ -27,6 +27,24 @@ const NavigationItem = styled.li`
   margin-bottom: ${({ theme }) => theme.spacing.xl};
   display: flex;
   justify-content: center;
+  &:hover {
+    .button {
+      color: ${({ theme }) => theme.color.hover};
+      border-color: ${({ theme }) => theme.color.hover};
+    }
+    .icon {
+      filter: ${({ theme }) => theme.filter.hover};
+    }
+  }
+  &:focus,
+  &:active {
+    .button {
+      border-color: ${({ theme }) => theme.color.focus};
+      color: ${({ theme }) => theme.color.focus};
+    }
+    .icon {
+      filter: ${({ theme }) => theme.color.focus};
+    }
 `
 
 const SwitchContainer = styled.li`
@@ -49,7 +67,8 @@ const Icon = styled.img`
   display: inline;
   width: 50px;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  filter: ${({ theme }) => theme.filter.primary};
 `
 
 const Navigation = () => {
@@ -61,8 +80,12 @@ const Navigation = () => {
 
           return (
             <NavigationItem key={id}>
-              <Button href={`#${id}`}>
-                <Icon src={`./icons/navigation/${id}.svg`} alt={`go to '${id}' section`} />
+              <Button className="button" href={`#${id}`}>
+                <Icon
+                  className="icon"
+                  src={`./icons/navigation/${id}.svg`}
+                  alt={`go to '${id}' section`}
+                />
                 {item.id}
               </Button>
             </NavigationItem>
