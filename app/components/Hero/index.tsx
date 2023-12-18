@@ -35,6 +35,7 @@ const ImageContainer = styled(Container)`
 
 const Portrait = styled.img`
   max-height: 70vh;
+  max-width: 100%;
   object-fit: contain;
   margin-left: auto;
 `

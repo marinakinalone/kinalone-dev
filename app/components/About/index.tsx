@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Container from '../ui/Container'
 import Title from '../ui/Title'
+import CodingSkills from './CodingSkills'
 
 const STRINGS = {
   title: 'about',
@@ -21,12 +22,18 @@ const TitleContainer = styled(Container)`
   }}
 `
 
+const InnerContainer = styled(Container)``
+
 const About = () => {
   return (
     <MainContainer>
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
+      <InnerContainer>
+        <p>add about here!</p>
+      </InnerContainer>
+      <CodingSkills />
     </MainContainer>
   )
 }

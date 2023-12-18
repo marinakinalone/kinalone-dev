@@ -11,6 +11,7 @@ const Container = styled.div`
 
 const HeroContainer = styled.div`
   flex: 7;
+  max-width: 70%;
 `
 
 const NavigationContainer = styled.div`
