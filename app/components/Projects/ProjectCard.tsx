@@ -35,6 +35,8 @@ const Card = styled.a`
     &:focus {
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
+        outline: none;
+        color: ${color.neutral};
     }
     `
   }}

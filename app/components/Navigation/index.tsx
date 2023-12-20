@@ -47,7 +47,7 @@ const NavigationItem = styled.li`
         color: ${color.focus};
       }
       .icon {
-        filter: ${color.focus};
+        filter: ${filter.focus};
       }
     `
   }}
