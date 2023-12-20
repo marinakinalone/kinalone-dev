@@ -15,9 +15,10 @@ const MainContainer = styled(Container)`
 `
 const TitleContainer = styled(Container)`
   ${(props) => {
-    const { theme } = props
+    const { color } = props.theme
+
     return `
-    border-right: 10rem solid ${theme.color.neutral};
+    border-right: 10rem solid ${color.neutral};
     @media ${device.desktopMinWidth} {
       border-right-width: 30rem;
     }
@@ -30,20 +31,20 @@ const ContactListContainer = styled.ul`
   list-style-type: none;
 `
 const ContactListItem = styled.li`
-  margin: 1rem 0rem;
+  margin: ${(props) => props.theme.spacing.s} 0rem;
 `
 const ContactLink = styled.a`
-  margin-left: -1.5rem;
+  margin-left: -${(props) => props.theme.spacing.s};
 `
 const ContactIcon = styled.img`
   max-height: 1rem;
-  padding-right: 0.5rem;
+  padding-right: ${(props) => props.theme.spacing.xs};
   vertical-align: middle;
 `
 
 const Contact = () => {
   return (
-    <MainContainer>
+    <MainContainer id="contact">
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>

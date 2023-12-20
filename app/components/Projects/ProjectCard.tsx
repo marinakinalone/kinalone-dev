@@ -9,13 +9,14 @@ interface IProjectCardProps {
 
 const Card = styled.a`
   ${(props) => {
-    const { theme } = props
+    const { border, color, spacing } = props.theme
+
     return `
     text-decoration: none;
-    border: ${theme.border.regular};
-    background: ${theme.color.secondary};
+    border: ${border.regular};
+    background: ${color.secondary};
     margin: 1% auto;
-    padding: 0 ${theme.spacing.xs};
+    padding: 0 ${spacing.xs};
     display: flex;
     flex-direction: column;
     max-width: 88%;
@@ -23,11 +24,11 @@ const Card = styled.a`
       max-width: 44%;
     }
     @media ${device.desktopMinWidth} {
-      padding: 0.5rem 1rem;
+      padding: ${spacing.xs} ${spacing.s};
     }
     transition: transform 0.3s, box-shadow 0.4s;
     &:hover {
-        color: ${theme.color.neutral};
+        color: ${color.neutral};
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
       }
@@ -40,8 +41,14 @@ const Card = styled.a`
 `
 
 const CardCover = styled.img`
-  border: ${(props) => props.theme.border.regular};
-  margin-top: ${(props) => props.theme.spacing.s};
+  ${(props) => {
+    const { border, spacing } = props.theme
+
+    return `
+    border: ${border.regular};
+    margin-top: ${spacing.s};
+    `
+  }}
 `
 
 const CardTitle = styled.h3`
@@ -51,9 +58,15 @@ const CardTitle = styled.h3`
 `
 
 const CardDescription = styled.p`
-  margin-top: ${(props) => props.theme.spacing.xs};
-  margin-bottom: ${(props) => props.theme.spacing.m};
-  font-size: ${(props) => props.theme.fontSize.regular.s};
+  ${(props) => {
+    const { fontSize, spacing } = props.theme
+
+    return `
+    margin-top: ${spacing.xs};
+    margin-bottom: ${spacing.m};
+    font-size: ${fontSize.regular.s};
+    `
+  }}
 `
 
 const getImageName = (imageTitle: string) => imageTitle.toLowerCase().replace(/\s+/g, '_')

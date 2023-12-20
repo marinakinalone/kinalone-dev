@@ -22,29 +22,35 @@ const NavigationList = styled.ul`
 `
 
 const NavigationItem = styled.li`
-  text-align: center;
-  min-height: 100px;
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-  display: flex;
-  justify-content: center;
-  &:hover {
-    .button {
-      color: ${({ theme }) => theme.color.hover};
-      border-color: ${({ theme }) => theme.color.hover};
+  ${(props) => {
+    const { color, filter, spacing } = props.theme
+
+    return `
+    text-align: center;
+    min-height: 100px;
+    margin-bottom: ${spacing.xl};
+    display: flex;
+    justify-content: center;
+    &:hover {
+      .button {
+        color: ${color.hover};
+        border-color: ${color.hover};
+      }
+      .icon {
+        filter: ${filter.hover};
+      }
     }
-    .icon {
-      filter: ${({ theme }) => theme.filter.hover};
-    }
-  }
-  &:focus,
-  &:active {
-    .button {
-      border-color: ${({ theme }) => theme.color.focus};
-      color: ${({ theme }) => theme.color.focus};
-    }
-    .icon {
-      filter: ${({ theme }) => theme.color.focus};
-    }
+    &:focus,
+    &:active {
+      .button {
+        border-color: ${color.focus};
+        color: ${color.focus};
+      }
+      .icon {
+        filter: ${color.focus};
+      }
+    `
+  }}
 `
 
 const SwitchContainer = styled.li`
@@ -53,14 +59,20 @@ const SwitchContainer = styled.li`
 `
 
 const Button = styled.a`
-  width: 80px;
-  height: 80px;
-  text-decoration: none;
-  position: absolute;
-  margin: 0 auto;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.color.neutral};
-  border: 3px solid ${({ theme }) => theme.color.neutral};
+  ${(props) => {
+    const { color } = props.theme
+
+    return `
+    width: 80px;
+    height: 80px;
+    text-decoration: none;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: ${color.neutral};
+    border: 3px solid ${color.neutral};
+    `
+  }}
 `
 
 const Icon = styled.img`

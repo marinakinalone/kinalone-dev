@@ -14,19 +14,14 @@ const MainContainer = styled(Container)`
 `
 
 const TitleContainer = styled(Container)`
-  ${(props) => {
-    const { theme } = props
-    return `
-    border-top: ${theme.border.highlight};
-    `
-  }}
+  border-top: ${(props) => props.theme.border.highlight};
 `
 
 const InnerContainer = styled(Container)``
 
 const About = () => {
   return (
-    <MainContainer>
+    <MainContainer id="about">
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>

@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Subtitle from '../ui/Subtitle'
 import Container from '../ui/Container'
-
-// const Container = styled.div`
-//   padding: 0;
-//   margin-bottom: ${(props) => props.theme.spacing.xl};
-// `
+import Subtitle from '../ui/Subtitle'
 
 const SubContainer = styled(Container)`
   border-left: ${(props) => props.theme.border.highlight};

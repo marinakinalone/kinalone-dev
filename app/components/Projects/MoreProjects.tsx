@@ -16,12 +16,12 @@ const ArrowText = styled.span``
 
 const AnimatedArrow = styled.a<{ theme: DefaultTheme }>`
   ${(props) => {
-    const { theme } = props
+    const { color } = props.theme
 
     return `
       text-decoration: none;
       display: inline-block;
-      color: ${theme.color.neutral};
+      color: ${color.neutral};
       position: relative;
       transition: all 0.2s;
     
@@ -49,15 +49,15 @@ const AnimatedArrow = styled.a<{ theme: DefaultTheme }>`
         }
         &:focus,
         &:active {
-          color: ${theme.color.focus};
+          color: ${color.focus};
           outline: none;
           > .arrowleft {
             > .shaft {
-              background-color: ${theme.color.focus};
+              background-color: ${color.focus};
     
               &:before,
               &:after {
-                background-color: ${theme.color.focus};
+                background-color: ${color.focus};
               }
             }
           }
@@ -114,7 +114,8 @@ const AnimatedArrow = styled.a<{ theme: DefaultTheme }>`
 
 const Arrow = styled.span<{ theme: DefaultTheme }>`
   ${(props) => {
-    const { theme } = props
+    const { color } = props.theme
+
     return `
       width: ${SHAFT_WIDTH}px;
       transition: all 0.2s;
@@ -126,7 +127,7 @@ const Arrow = styled.span<{ theme: DefaultTheme }>`
     
         > .shaft {
           width: 0;
-          background-color: ${theme.color.neutral};
+          background-color: ${color.neutral};
     
           &:before,
           &:after {
@@ -168,7 +169,7 @@ const Arrow = styled.span<{ theme: DefaultTheme }>`
       }
     
       > .shaft {
-        background-color: ${theme.color.neutral};
+        background-color: ${color.neutral};
         display: block;
         height: ${SHAFT_THICKNESS}px;
         position: relative;
@@ -178,7 +179,7 @@ const Arrow = styled.span<{ theme: DefaultTheme }>`
     
         &:before,
         &:after {
-          background-color: ${theme.color.neutral};
+          background-color: ${color.neutral};
           content: '';
           display: block;
           height: ${ARROW_HEAD_THICKNESS}px;

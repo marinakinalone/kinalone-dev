@@ -11,11 +11,16 @@ const FooterContainter = styled.footer`
 `
 
 const FooterIcon = styled.img`
-  max-height: ${(props) => props.theme.fontSize.regular.xs};
-  margin-bottom: -0.1rem;
-  @media ${device.desktopMinWidth} {
-    max-height: ${(props) => props.theme.fontSize.desktop.xs};
-  }
+  ${(props) => {
+    const { fontSize } = props.theme
+
+    return `
+    max-height: ${fontSize.regular.xs};
+    margin-bottom: -0.1rem;
+    @media ${device.desktopMinWidth} {
+      max-height: ${fontSize.desktop.xs};
+      `
+  }}
 `
 
 const Footer = () => {

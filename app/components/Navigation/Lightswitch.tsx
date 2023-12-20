@@ -6,42 +6,54 @@ const Wrapper = styled.label`
   position: absolute;
   width: 70px;
   height: 35px;
-  margin-top: 0.5rem;
+  margin-top: ${(props) => props.theme.spacing.xs};
 `
 
 const Switch = styled.input`
-  opacity: 0;
-  width: 0;
-  height: 0;
-  &:checked + .slider {
-    background-color: ${({ theme }) => theme.color.background};
-    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.color.neutral};
-  }
-  &:checked + .slider::before {
-    transform: translateX(34px);
-    background-color: ${({ theme }) => theme.color.neutral};
-  }
+  ${(props) => {
+    const { color } = props.theme
+
+    return `
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:checked + .slider {
+        background-color: ${color.background};
+        box-shadow: inset 0 0 0 1px ${color.neutral};
+      }
+      &:checked + .slider::before {
+        transform: translateX(34px);
+        background-color: ${color.neutral};
+      }
+    `
+  }}
 `
 
 const Slider = styled.span`
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: ${({ theme }) => theme.color.secondary};
-  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.color.neutral};
-  transition: 0.4s;
-  &:before {
+  ${(props) => {
+    const { color } = props.theme
+
+    return `
     position: absolute;
-    content: '';
-    height: 27px;
-    width: 27px;
-    left: 4px;
-    bottom: 4px;
-    background-color: ${({ theme }) => theme.color.neutral};
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${color.secondary};
+    box-shadow: inset 0 0 0 1px ${color.neutral};
     transition: 0.4s;
+    &:before {
+      position: absolute;
+      content: '';
+      height: 27px;
+      width: 27px;
+      left: 4px;
+      bottom: 4px;
+      background-color: ${color.neutral};
+      transition: 0.4s;
+    `
+  }}
   }
 `
 

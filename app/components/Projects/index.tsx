@@ -14,20 +14,23 @@ export const STRINGS = {
 
 const TitleContainer = styled(Container)`
   ${(props) => {
-    const { theme } = props
+    const { border, spacing } = props.theme
+
     return `
-    border-top: ${theme.border.highlight};
-    margin-bottom: ${theme.spacing.s};
+    border-top: ${border.highlight};
+    margin-bottom: ${spacing.s};
     `
   }}
 `
+
 const CtaContainer = styled(Container)`
   ${(props) => {
-    const { theme } = props
+    const { color, spacing } = props.theme
+
     return `
-    margin-bottom: ${theme.spacing.xl};
-    margin-top: ${theme.spacing.s};
-    border-right: 6rem solid ${theme.color.neutral};
+    margin-bottom: ${spacing.xl};
+    margin-top: ${spacing.s};
+    border-right: 6rem solid ${color.neutral};
     @media ${device.desktopMinWidth} {
       border-right-width: 20rem;
     }
@@ -45,7 +48,7 @@ const ProjectCardsContainer = styled.div`
 const Projects = () => {
   return (
     <>
-      <TitleContainer>
+      <TitleContainer id="projects">
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
       <ProjectCardsContainer>

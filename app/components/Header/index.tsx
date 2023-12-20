@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
   ${(props) => {
-    const { theme } = props
+    const { border, spacing } = props.theme
     return `
-      border-bottom: ${theme.border.regular};
-      padding: 0 0.5rem;
-      margin-bottom: ${theme.spacing.l}; 
-      margin-top: ${theme.spacing.s};
+      border-bottom: ${border.regular};
+      padding: 0 ${spacing.ws} ;
+      margin-bottom: ${spacing.l}; 
+      margin-top: ${spacing.s};
     `
   }}
 `
