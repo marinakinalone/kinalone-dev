@@ -17,10 +17,10 @@ const LinkContainer = styled.div`
 const STRINGS = {
   title: 'technical skills',
   technicalSkills:
-    'coding skills: JavaScript, TypeScript, React, Node.js, NextJS,  CSS (+ SASS), MongoDB, PostgreSQL, ',
+    'coding skills: JavaScript, TypeScript, React, Node.js, NextJS,  CSS (+ SASS), MongoDB, PostgreSQL',
   generalSkills:
     'general development tools: UX design, design thinking, CI/CD, Test Driven Development, Figma, Adobe XD',
-  cta: 'download my resume',
+  cta: 'see my resume',
 }
 
 //TODO: add resume link

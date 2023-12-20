@@ -34,10 +34,10 @@ export const GlobalStyles = styled.createGlobalStyle`
       margin: 0 7%;
     }
     @media ${device.desktopMinWidth} {
-      margin: 0 12%;
+      margin: 0 15%;
 
-    @media ${device.desktopMinWidth} {
-      margin: 0 25%;
+    @media ${device.largeDesktopMinWidth} {
+      margin: 0 30%;
   }
   
     a {

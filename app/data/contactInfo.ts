@@ -9,19 +9,20 @@ link: string (link to the contact)
 export const contactInfo = [
   {
     id: 'email',
-    iconName: 'email',
     title: 'kinalone.dev @ gmail.com',
     link: 'mailto:kinalone.dev@gmail.com?subject=new message from kinalone.dev',
+    icon: 'email.svg',
   },
   {
     id: 'github',
-    iconName: 'github',
     title: 'github',
     link: 'https://github.com/marinakinalone',
+    icon: 'github.png',
   },
   {
     id: 'linkedin',
     title: 'linkedin',
     link: 'https://www.linkedin.com/in/marinakinalone-simonnet/',
+    icon: 'linkedin.svg',
   },
 ]

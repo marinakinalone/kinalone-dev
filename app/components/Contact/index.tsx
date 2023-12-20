@@ -37,9 +37,10 @@ const ContactLink = styled.a`
   margin-left: -${(props) => props.theme.spacing.s};
 `
 const ContactIcon = styled.img`
-  max-height: 1rem;
-  padding-right: ${(props) => props.theme.spacing.xs};
+  max-height: 1.25rem;
+  padding-right: ${(props) => props.theme.spacing.s};
   vertical-align: middle;
+  filter: ${(props) => props.theme.filter.secondary};
 `
 
 const Contact = () => {
@@ -50,11 +51,11 @@ const Contact = () => {
       </TitleContainer>
       <ContactListContainer>
         {contactInfo.map((contact) => {
-          const { id, title, link } = contact
+          const { id, title, icon, link } = contact
           return (
             <ContactListItem key={id}>
               <ContactLink href={link} target="_blank" rel="noopener noreferrer">
-                <ContactIcon src={''} alt={'yo'} />
+                <ContactIcon src={`./icons/contact/${icon}`} alt={id} />
                 {title}
               </ContactLink>
             </ContactListItem>

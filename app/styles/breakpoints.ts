@@ -9,7 +9,7 @@ export const screenSize: Size = {
   small: '600px',
   medium: '768px',
   large: '1200px',
-  xlarge: '1920',
+  xlarge: '1920px',
 }
 
 export const device = {
