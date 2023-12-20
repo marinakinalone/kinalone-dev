@@ -50,7 +50,7 @@ export const lightTheme = {
     // based on color.background
     primary:
       'invert(88%) sepia(6%) saturate(1248%) hue-rotate(316deg) brightness(107%) contrast(101%)',
-    hover: 'invert(27%) sepia(80%) saturate(437%) hue-rotate(133deg) brightness(93%) contrast(97%)',
+    hover: 'invert(66%) sepia(54%) saturate(229%) hue-rotate(135deg) brightness(87%) contrast(92%)',
     focus:
       'invert(11%) sepia(59%) saturate(6186%) hue-rotate(314deg) brightness(94%) contrast(118%)',
   },
@@ -74,7 +74,7 @@ export const darkTheme = {
     // based on color.background
     primary:
       'invert(5%) sepia(71%) saturate(5152%) hue-rotate(276deg) brightness(52%) contrast(111%)',
-    hover: 'invert(66%) sepia(54%) saturate(229%) hue-rotate(135deg) brightness(87%) contrast(92%)',
+    hover: 'invert(27%) sepia(80%) saturate(437%) hue-rotate(133deg) brightness(93%) contrast(97%)',
     focus:
       'invert(86%) sepia(20%) saturate(6859%) hue-rotate(286deg) brightness(91%) contrast(88%)',
   },
