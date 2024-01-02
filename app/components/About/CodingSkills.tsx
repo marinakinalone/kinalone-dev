@@ -31,7 +31,10 @@ const CodingSkills = () => {
       <Text>{STRINGS.technicalSkills}</Text>
       <Text>{STRINGS.generalSkills}</Text>
       <LinkContainer>
-        <ArrowLink href={'resume'} label={STRINGS.cta} />
+        <ArrowLink
+          href={'https://marinakinalone.notion.site/resume-e78e614a0ac946a4995e80549fb600dc?pvs=4'}
+          label={STRINGS.cta}
+        />
       </LinkContainer>
     </SubContainer>
   )

@@ -6,10 +6,12 @@ import Subtitle from '../ui/Subtitle'
 import Text from '../ui/Text'
 import TextLink from '../ui/TextLink'
 import Title from '../ui/Title'
+import RainbowText from '../ui/animations/RainbowText'
 
 const STRINGS = {
   title: 'Marina Kinalone Simonnet',
-  subtitle: 'joyful frontend developer',
+  animatedSubtitle: 'joyful',
+  subtitle: ' frontend developer',
   description:
     'Enthusiastic developer with a focus on user experience. Avid learner and dedicated researcher, I thrive on the dynamic energy of projects.',
   copyright: 'p.s.: drawing is from ',
@@ -54,7 +56,10 @@ const Hero = () => {
       </ImageContainer>
       <TextContainer>
         <Title>{STRINGS.title}</Title>
-        <Subtitle>{STRINGS.subtitle}</Subtitle>
+        <Subtitle>
+          <RainbowText word={STRINGS.animatedSubtitle} />
+          {STRINGS.subtitle}
+        </Subtitle>
         <Text>{STRINGS.description}</Text>
         <SmallText>
           {STRINGS.copyright}

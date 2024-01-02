@@ -1,20 +1,4 @@
-import me from '../resources/me.jpg'
-import resume from '../resources/CV_MarinaKinalone_Simonnet.pdf'
 
-const About = () => {
-  const blackArrow = {
-    '--my-color-var': 'black',
-  }
-  const whiteArrow = {
-    '--my-color-var': 'white',
-  }
-  return (
-    <section className="about container" id="about">
-      <div className="about__header padding-regular border-theme">
-        <h1>about</h1>
-      </div>
-      <div className="about__bio padding-regular">
-        <img className="about__img" src={me} alt="portrait of Marina Kinalone Simonnet" />
         <h2>Marina Kinalone Simonnet</h2>
         <h3>JavaScript developer with a background in research and education.</h3>
         <p>
@@ -70,42 +54,4 @@ const About = () => {
           I come from France, have lived in California, USA, and{' '}
           <span className="bolder">currently live in Stockholm, Sweden</span>.
         </p>
-      </div>
-      <div className="about__skills border-theme">
-        <h3>coding skills</h3>
-        <p>
-          technical skills: JavaScript, React, Node.js, Express, HTML5, CSS3, MongoDB, PostgreSQL,
-          UX/UI, Figma, Adobe XD
-        </p>
-        <p>general development tools: Git, REST, Docker, Redux, AWS, TDD, CI/CD, design thinking</p>
-        <a className="animated-arrow" href={resume} target="_blank" rel="noopener noreferrer">
-          <span className="the-arrow -left">
-            <span
-              className="shaft"
-              style={
-                theme === 'light'
-                  ? (blackArrow as React.CSSProperties)
-                  : (whiteArrow as React.CSSProperties)
-              }
-            ></span>
-          </span>
-          <span className="main">
-            <span className="text">download my resume</span>
-            <span className="the-arrow -right">
-              <span
-                className="shaft"
-                style={
-                  theme === 'light'
-                    ? (blackArrow as React.CSSProperties)
-                    : (whiteArrow as React.CSSProperties)
-                }
-              ></span>
-            </span>
-          </span>
-        </a>
-      </div>
-    </section>
-  )
-}
-
-export default About
+    

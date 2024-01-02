@@ -12,14 +12,15 @@ const FooterContainter = styled.footer`
 
 const FooterIcon = styled.img`
   ${(props) => {
-    const { fontSize } = props.theme
+    const { filter, fontSize } = props.theme
 
     return `
+    filter: ${filter.secondary};
     max-height: ${fontSize.regular.xs};
     margin-bottom: -0.1rem;
     @media ${device.desktopMinWidth} {
       max-height: ${fontSize.desktop.xs};
-      `
+    `
   }}
 `
 
