@@ -55,11 +55,11 @@ const Contact = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <MainContainer id={SECTIONS.CONTACT} ref={ref}>
+    <MainContainer id={SECTIONS.CONTACT}>
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
-      <ContactListContainer>
+      <ContactListContainer ref={ref}>
         {contactInfo.map((contact) => {
           const { id, title, icon, link } = contact
           return (

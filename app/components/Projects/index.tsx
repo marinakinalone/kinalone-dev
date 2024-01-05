@@ -58,10 +58,10 @@ const Projects = () => {
   }, [])
   return (
     <>
-      <TitleContainer id={SECTIONS.PROJECTS} ref={ref}>
+      <TitleContainer id={SECTIONS.PROJECTS}>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
-      <ProjectCardsContainer>
+      <ProjectCardsContainer ref={ref}>
         {projects.map((project) => {
           const { id, title, description } = project
           return <ProjectCard key={id} title={title} description={description} />

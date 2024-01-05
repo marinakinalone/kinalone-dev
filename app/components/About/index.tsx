@@ -46,11 +46,11 @@ const About = () => {
   }, [])
 
   return (
-    <MainContainer id={SECTIONS.ABOUT} ref={ref}>
+    <MainContainer id={SECTIONS.ABOUT}>
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
-      <InnerContainer>
+      <InnerContainer ref={ref}>
         <Portrait
           src="./portrait_marina_stormy.png"
           alt="portrait of Marina Kinalone Simonnet with her cat, Stormy"
