@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { SECTIONS } from '../../constants/sections'
 import { contactInfo } from '../../data/contactInfo'
+import useScroll from '../../hooks/useScroll'
 import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
 import Title from '../ui/Title'
@@ -44,8 +46,16 @@ const ContactIcon = styled.img`
 `
 
 const Contact = () => {
+  const { updateSection } = useScroll()
+  const ref = useRef(null)
+
+  useEffect(() => {
+    updateSection(SECTIONS.CONTACT, ref)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
-    <MainContainer id="contact">
+    <MainContainer id={SECTIONS.CONTACT} ref={ref}>
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>

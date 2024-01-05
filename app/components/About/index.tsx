@@ -40,28 +40,8 @@ const About = () => {
   const ref = useRef(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          updateSection(SECTIONS.ABOUT)
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5,
-      },
-    )
+    updateSection(SECTIONS.ABOUT, ref)
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

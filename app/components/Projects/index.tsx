@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { SECTIONS } from '../../constants/sections'
 import { projects } from '../../data/projects'
+import useScroll from '../../hooks/useScroll'
 import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
 import Title from '../ui/Title'
@@ -46,9 +48,17 @@ const ProjectCardsContainer = styled.div`
 `
 
 const Projects = () => {
+  const { updateSection } = useScroll()
+  const ref = useRef(null)
+
+  useEffect(() => {
+    updateSection(SECTIONS.PROJECTS, ref)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <>
-      <TitleContainer id="projects">
+      <TitleContainer id={SECTIONS.PROJECTS} ref={ref}>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
       <ProjectCardsContainer>

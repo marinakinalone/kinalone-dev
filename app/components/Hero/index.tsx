@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { SECTIONS } from '../../constants/sections'
+import useScroll from '../../hooks/useScroll'
 import Container from '../ui/Container'
 import SmallText from '../ui/SmallText'
 import Subtitle from '../ui/Subtitle'
@@ -45,8 +47,17 @@ const TextContainer = styled(Container)``
 
 //TODO highlight words in description
 const Hero = () => {
+  const { updateSection } = useScroll()
+  const ref = useRef(null)
+
+  useEffect(() => {
+    updateSection(SECTIONS.INTRO, ref)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <MainContainer>
+    <MainContainer id={SECTIONS.INTRO} ref={ref}>
       <ImageContainer>
         <Portrait
           id="marinakinalone"
