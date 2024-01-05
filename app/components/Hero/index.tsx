@@ -13,7 +13,7 @@ const STRINGS = {
   animatedSubtitle: 'joyful',
   subtitle: ' frontend developer',
   description:
-    'Enthusiastic developer with a focus on user experience. Avid learner and dedicated researcher, I thrive on the dynamic energy of projects.',
+    'Enthusiastic developer with a focus on user experience. Eager learner and researcher, I grow fast in the projects I’m involved with.',
   copyright: 'p.s.: drawing is from ',
   copyrightLink: 'amazing artist Lu Lo',
 }

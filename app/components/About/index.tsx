@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { SECTIONS } from '../../constants/sections'
+import useScroll from '../../hooks/useScroll'
 import Container from '../ui/Container'
+import Subtitle from '../ui/Subtitle'
 import Title from '../ui/Title'
 import CodingSkills from './CodingSkills'
-import Subtitle from '../ui/Subtitle'
 
 const STRINGS = {
   title: 'about',
@@ -34,8 +36,37 @@ const Portrait = styled.img`
 `
 
 const About = () => {
+  const { updateSection } = useScroll()
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          updateSection(SECTIONS.ABOUT)
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      },
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <MainContainer id="about">
+    <MainContainer id={SECTIONS.ABOUT} ref={ref}>
       <TitleContainer>
         <Title>{STRINGS.title}</Title>
       </TitleContainer>
@@ -44,9 +75,12 @@ const About = () => {
           src="./portrait_marina_stormy.png"
           alt="portrait of Marina Kinalone Simonnet with her cat, Stormy"
         />
-        <Subtitle>frontend developer with a background in research and education</Subtitle>
+        <Subtitle>
+          Hi, I&apos;m Marina Kinalone, frontend developer with a background in research and
+          education.
+        </Subtitle>
 
-        <p>Hi! I&apos;m Marina Kinalone. add about here!</p>
+        <p> add about here!</p>
       </InnerContainer>
       <CodingSkills />
     </MainContainer>

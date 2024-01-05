@@ -8,10 +8,10 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Intro from './components/Intro'
 import Projects from './components/Projects'
+import ScrollProvider from './providers/ScrollProvider'
 import { GlobalStyles } from './styles/globalStyles'
 import { darkTheme, lightTheme } from './styles/themes'
 
-//TODO: add providers: translation, scroll, game?
 export default function Home() {
   const [isAppMounted, setIsAppMounted] = useState(false)
   const darkmode = useDarkMode(false)
@@ -22,18 +22,20 @@ export default function Home() {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {isAppMounted && (
-        <main>
-          <Header />
-          <Intro />
-          <Projects />
-          <About />
-          <Contact />
-          <Footer />
-        </main>
-      )}
-    </ThemeProvider>
+    <ScrollProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {isAppMounted && (
+          <main>
+            <Header />
+            <Intro />
+            <Projects />
+            <About />
+            <Contact />
+            <Footer />
+          </main>
+        )}
+      </ThemeProvider>
+    </ScrollProvider>
   )
 }
