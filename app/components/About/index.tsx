@@ -62,7 +62,7 @@ const About = () => {
       </TitleContainer>
       <InnerContainer ref={ref}>
         <Portrait
-          src="./portrait_marina_stormy.png"
+          src="./portrait_marinakinalone.jpg"
           alt="portrait of Marina Kinalone Simonnet with her cat, Stormy"
         />
         <Subtitle>{STRINGS.subtitle}</Subtitle>
