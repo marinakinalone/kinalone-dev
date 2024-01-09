@@ -31,11 +31,11 @@ const Footer = () => {
       <SmallText>
         {isDesktop && (
           <>
-            Made with <FooterIcon src={'./icons/heart_dark.svg'} alt="love" /> between Nantes &
-            Sthlm
+            Made with <FooterIcon src={'./icons/heart_dark.svg'} alt="love" /> between Lisbon,
+            Nantes & Sthlm
           </>
         )}{' '}
-        © mks 2022 |{' '}
+        © mks 2024 |{' '}
         <TextLink href="https://github.com/marinakinalone/kinalone-dev/blob/main/LICENSE.txt">
           License
         </TextLink>
