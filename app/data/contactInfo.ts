@@ -17,7 +17,7 @@ export const contactInfo = [
     id: 'github',
     title: 'github',
     link: 'https://github.com/marinakinalone',
-    icon: 'github.png',
+    icon: 'github.svg',
   },
   {
     id: 'linkedin',

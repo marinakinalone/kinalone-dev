@@ -1,14 +1,20 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { SECTIONS } from '../../constants/sections'
+import { aboutInfo } from '../../data/aboutInfo'
+import interpolate from '../../helpers/interpolate'
 import useScroll from '../../hooks/useScroll'
 import Container from '../ui/Container'
 import Subtitle from '../ui/Subtitle'
+import Text from '../ui/Text'
 import Title from '../ui/Title'
 import CodingSkills from './CodingSkills'
 
 const STRINGS = {
   title: 'about',
+  subtitle:
+    'Hi there! I’m Marina Kinalone - developer and UX designer with a background in research and education.',
+  description: aboutInfo,
 }
 
 const MainContainer = styled(Container)`
@@ -21,7 +27,11 @@ const TitleContainer = styled(Container)`
 `
 
 const InnerContainer = styled(Container)`
-  padding: ${(props) => props.theme.spacing.m};
+  padding: ${(props) => `${props.theme.spacing.m} ${props.theme.spacing.xl}`};
+`
+
+const Paragraph = styled(Text)`
+  margin-top: ${(props) => props.theme.spacing.m};
 `
 
 const Portrait = styled.img`
@@ -55,12 +65,10 @@ const About = () => {
           src="./portrait_marina_stormy.png"
           alt="portrait of Marina Kinalone Simonnet with her cat, Stormy"
         />
-        <Subtitle>
-          Hi, I&apos;m Marina Kinalone, frontend developer with a background in research and
-          education.
-        </Subtitle>
-
-        <p> add about here!</p>
+        <Subtitle>{STRINGS.subtitle}</Subtitle>
+        {STRINGS.description.map((paragraph, index) => {
+          return <Paragraph key={index}>{interpolate(paragraph)}</Paragraph>
+        })}
       </InnerContainer>
       <CodingSkills />
     </MainContainer>
