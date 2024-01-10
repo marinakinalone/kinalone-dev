@@ -11,10 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: 1.0.16
       - name: Lint/test
         run: |
-          bun install --ignore-scripts
-          bun lint
+          npm install
+          npm run lint
