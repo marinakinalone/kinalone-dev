@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: oven-sh/setup-bun@v1
         with:
-          bun-version: latest
+          bun-version: 1.0.16
       - name: Lint/test
         run: |
           bun install
