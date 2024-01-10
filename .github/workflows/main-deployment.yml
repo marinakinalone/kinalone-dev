@@ -14,7 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Lint/test
-        run: |
-          bun install 
-          bun lint
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.0.16
+      - run: bun install --ignore-scripts
+      - run: bun lint
