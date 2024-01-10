@@ -16,5 +16,5 @@ jobs:
           bun-version: 1.0.16
       - name: Lint/test
         run: |
-          bun install
+          bun install --ignore-scripts
           bun lint
