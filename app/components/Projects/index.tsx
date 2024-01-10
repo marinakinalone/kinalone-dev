@@ -63,8 +63,8 @@ const Projects = () => {
       </TitleContainer>
       <ProjectCardsContainer ref={ref}>
         {projects.map((project) => {
-          const { id, title, description } = project
-          return <ProjectCard key={id} title={title} description={description} />
+          const { id, title, description, link } = project
+          return <ProjectCard key={id} title={title} description={description} link={link} />
         })}
       </ProjectCardsContainer>
       <CtaContainer>

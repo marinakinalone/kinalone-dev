@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { getImageName } from '../../helpers/getImageName'
 import { device } from '../../styles/breakpoints'
 
 interface IProjectCardProps {
   title: string
   description: string
+  link: string
 }
 
 const Card = styled.a`
@@ -71,14 +73,11 @@ const CardDescription = styled.p`
   }}
 `
 
-const getImageName = (imageTitle: string) => imageTitle.toLowerCase().replace(/\s+/g, '_')
-
-const ProjectCard = ({ title, description }: IProjectCardProps) => {
-  //TODO create helper function to get image from title
+const ProjectCard = ({ title, description, link }: IProjectCardProps) => {
   const imageSource = './projects/' + getImageName(title) + '.png'
 
   return (
-    <Card href={''}>
+    <Card href={link} target="_blank" rel="noopener noreferrer">
       <CardCover src={imageSource} alt={'cover: ' + title} />
       <CardTitle>{title}</CardTitle>
       <CardDescription>{description}</CardDescription>
