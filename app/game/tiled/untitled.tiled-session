@@ -1,0 +1,44 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "map.tmx": {
+            "scale": 1.0708,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 343.6682853940979,
+                "y": 377.7549495704146
+            }
+        },
+        "tileset_base.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/Users/mks/Downloads/interior_pack",
+    "map.height": 30,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "openFiles": [
+        "map.tmx",
+        "tileset_base.tsx"
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+        "tileset_base.tsx",
+        "map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

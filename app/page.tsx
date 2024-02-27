@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Intro from './components/Intro'
 import Projects from './components/Projects'
+import ReadingCorner from './components/ReadingCorner'
 import ScrollProvider from './providers/ScrollProvider'
 import { GlobalStyles } from './styles/globalStyles'
 import { darkTheme, lightTheme } from './styles/themes'
@@ -27,12 +28,13 @@ export default function Home() {
         <GlobalStyles />
         {isAppMounted && (
           <main>
-            <Header />
+            {/* <Header />
             <Intro />
             <Projects />
-            <About />
-            <Contact />
-            <Footer />
+            <About /> */}
+            <ReadingCorner />
+            {/* <Contact />
+            <Footer /> */}
           </main>
         )}
       </ThemeProvider>
