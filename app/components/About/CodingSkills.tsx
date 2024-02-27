@@ -32,7 +32,7 @@ const CodingSkills = () => {
       <Text>{STRINGS.generalSkills}</Text>
       <LinkContainer>
         <ArrowLink
-          href={'https://marinakinalone.notion.site/resume-e78e614a0ac946a4995e80549fb600dc?pvs=4'}
+          href={'https://marinakinalone.notion.site/resume-e78e614a0ac946a4995e80549fb600dc'}
           label={STRINGS.cta}
         />
       </LinkContainer>
