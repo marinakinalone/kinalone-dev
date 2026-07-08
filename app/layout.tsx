@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-fira-code',
+})
 
 export const metadata: Metadata = {
   title: 'Kinalone Dev',
@@ -10,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={firaCode.variable}>
+      <body className={firaCode.className}>{children}</body>
     </html>
   )
 }

@@ -35,7 +35,7 @@ const Footer = () => {
             Nantes & Sthlm
           </>
         )}{' '}
-        © mks 2024 |{' '}
+        © mks 2026 |{' '}
         <TextLink href="https://github.com/marinakinalone/kinalone-dev/blob/main/LICENSE.txt">
           License
         </TextLink>

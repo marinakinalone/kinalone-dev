@@ -2,7 +2,7 @@ const defaultTheme = {
   color: {
     highlight: '#cadede',
   },
-  fontFamily: `'Fira Code', monospace`,
+  fontFamily: 'var(--font-fira-code), monospace',
   fontSize: {
     regular: {
       xs: '0.75rem',

@@ -1,13 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 import { device } from './breakpoints'
-import fontsCss from './fonts.module.css'
 
 const styled = { createGlobalStyle }
 
 // We use styled with GlobalStyles so ESLint can lint the CSS
 export const GlobalStyles = styled.createGlobalStyle`
-  ${fontsCss}
-
   ${(props) => {
     const { color, fontFamily, fontSize } = props.theme
     return `
@@ -23,23 +20,25 @@ export const GlobalStyles = styled.createGlobalStyle`
     body {
       background: ${color.background};
       color: ${color.neutral};
+      font-family: ${fontFamily};
       transition: all 0.5s linear;
     }
   
     main {
-    @media ${device.mobileMaxWidth} {
-      margin: 0 0.5rem;
+      @media ${device.mobileMaxWidth} {
+        margin: 0 0.5rem;
+      }
+      @media ${device.tabletMinWidth} {
+        margin: 0 7%;
+      }
+      @media ${device.desktopMinWidth} {
+        margin: 0 15%;
+      }
+      @media ${device.largeDesktopMinWidth} {
+        margin: 0 30%;
+      }
     }
-    @media ${device.tabletMinWidth} {
-      margin: 0 7%;
-    }
-    @media ${device.desktopMinWidth} {
-      margin: 0 15%;
 
-    @media ${device.largeDesktopMinWidth} {
-      margin: 0 30%;
-  }
-  
     a {
       font-family: ${fontFamily};
       font-size: ${fontSize.regular.s};
@@ -89,6 +88,7 @@ export const GlobalStyles = styled.createGlobalStyle`
       @media ${device.desktopMinWidth} {
         font-size: ${fontSize.desktop.s};
       }
+    }
       `
   }}
 `
