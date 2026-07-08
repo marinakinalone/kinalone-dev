@@ -2,32 +2,33 @@
   "name": "kinalone-dev",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=26"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . && bun run typecheck",
+    "lint": "eslint . && npm run typecheck",
     "lint:staged": "eslint $(git diff --cached --name-only --diff-filter=ACM \"*.ts\" \"*.tsx\" | sed 's| |\\\\ |g')",
     "prettier": "prettier --write **/*.{ts,tsx}",
     "prettier:staged": "prettier --write $(git diff --cached --name-only --diff-filter=ACM \"*.ts\" \"*.tsx\" | sed 's| |\\\\ |g')",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "styled-components": "^6.1.1",
-    "use-dark-mode": "^2.3.1"
+    "next": "16.2.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^26",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
     "@types/ua-parser-js": "^0.7.39",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
     "classnames": "^2.3.2",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
     "typescript": "^5",
     "ua-parser-js": "^1.0.37"
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import useDarkMode from 'use-dark-mode'
+import { useDarkMode } from '../../providers/DarkModeProvider'
 
 const Wrapper = styled.label`
   position: absolute;
@@ -74,8 +74,7 @@ const SunIcon = styled(SwitchIcon)`
 const LIGHTSWITCH = 'lightswitch'
 
 const Lightswitch = () => {
-  const darkmode = useDarkMode()
-  const theme = darkmode.value ? 'dark' : 'light'
+  const { value: isDark, toggle } = useDarkMode()
 
   return (
     <Wrapper htmlFor={LIGHTSWITCH}>
@@ -83,14 +82,14 @@ const Lightswitch = () => {
         type="checkbox"
         id={LIGHTSWITCH}
         name={LIGHTSWITCH}
-        onClick={darkmode.toggle}
-        checked={darkmode.value}
+        onChange={toggle}
+        checked={isDark}
       />
       <Slider className="slider" />
-      {theme === 'light' ? (
-        <MoonIcon alt="" src={'./icons/moon.svg'} />
-      ) : (
+      {isDark ? (
         <SunIcon alt="" src={'./icons/sun.svg'} />
+      ) : (
+        <MoonIcon alt="" src={'./icons/moon.svg'} />
       )}
     </Wrapper>
   )
