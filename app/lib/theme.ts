@@ -1,5 +1,4 @@
 export const THEME_STORAGE_KEY = 'theme'
-const LEGACY_STORAGE_KEY = 'darkMode'
 
 export type ThemePreference = 'light' | 'dark'
 
@@ -11,10 +10,6 @@ export function readStoredPreference(): ThemePreference | null {
   const theme = localStorage.getItem(THEME_STORAGE_KEY)
   if (theme === 'light' || theme === 'dark') {
     return theme
-  }
-
-  if (localStorage.getItem(LEGACY_STORAGE_KEY) !== null) {
-    localStorage.removeItem(LEGACY_STORAGE_KEY)
   }
 
   return null
@@ -48,8 +43,6 @@ export function setStoredPreference(isDark: boolean) {
 export const themeInitScript = `
 (function () {
   try {
-    var legacy = localStorage.getItem('${LEGACY_STORAGE_KEY}');
-    if (legacy !== null) localStorage.removeItem('${LEGACY_STORAGE_KEY}');
     var stored = localStorage.getItem('${THEME_STORAGE_KEY}');
     var isDark =
       stored === 'dark'

@@ -13,10 +13,9 @@ import RainbowText from '../ui/animations/RainbowText'
 
 const STRINGS = {
   title: 'Marina Kinalone Simonnet',
-  animatedSubtitle: 'joyful',
-  subtitle: ' frontend developer',
+  subtitle: 'Software Engineer | UX-informed developer',
   description:
-    '{{bold}}Enthusiastic developer{{/bold}} with a {{bold}}focus on user experience{{/bold}}. Eager learner and researcher, I grow fast in the projects I’m involved with.',
+  'Driving {{bold}}frontend architecture decisions{{/bold}} while keeping {{bold}}users at the center{{/bold}}. Currently managing legacy-to-modern migration at {{bold}}Trustly{{/bold}}. Based in {{bold}}Lisbon, Portugal{{/bold}}.',
   copyright: 'p.s.: drawing is from ',
   copyrightLink: 'amazing artist Lu Lo',
 }
@@ -46,7 +45,6 @@ const Portrait = styled.img`
 `
 const TextContainer = styled(Container)``
 
-//TODO highlight words in description
 const Hero = () => {
   const { updateSection } = useScroll()
   const ref = useRef(null)
@@ -69,7 +67,6 @@ const Hero = () => {
       <TextContainer>
         <Title>{STRINGS.title}</Title>
         <Subtitle>
-          <RainbowText word={STRINGS.animatedSubtitle} />
           {STRINGS.subtitle}
         </Subtitle>
         <Text>{interpolate(STRINGS.description)}</Text>

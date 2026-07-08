@@ -8,9 +8,11 @@ import Container from '../ui/Container'
 import Title from '../ui/Title'
 import MoreProjects from './MoreProjects'
 import ProjectCard from './ProjectCard'
+import RainbowText from '../ui/animations/RainbowText'
 
 export const STRINGS = {
-  title: 'highlighted projects',
+  title: ' projects',
+  animatedTitle: 'highlighted',
   cta: 'more projects',
 }
 
@@ -59,7 +61,10 @@ const Projects = () => {
   return (
     <>
       <TitleContainer id={SECTIONS.PROJECTS}>
-        <Title>{STRINGS.title}</Title>
+        <Title>
+          <RainbowText word={STRINGS.animatedTitle} />
+          {STRINGS.title}
+        </Title>
       </TitleContainer>
       <ProjectCardsContainer ref={ref}>
         {projects.map((project) => {

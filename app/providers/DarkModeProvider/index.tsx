@@ -14,6 +14,7 @@ import {
   readStoredPreference,
   resolveIsDark,
   setStoredPreference,
+  THEME_STORAGE_KEY,
 } from '../../lib/theme'
 
 const listeners = new Set<() => void>()
@@ -22,7 +23,7 @@ function subscribe(listener: () => void) {
   listeners.add(listener)
 
   const onStorage = (event: StorageEvent) => {
-    if (event.key === 'theme' || event.key === 'darkMode') {
+    if (event.key === THEME_STORAGE_KEY) {
       listener()
     }
   }
