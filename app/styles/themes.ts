@@ -5,7 +5,7 @@ const defaultTheme = {
   fontFamily: 'var(--font-fira-code), monospace',
   fontSize: {
     regular: {
-      xs: '0.75rem',
+      xs: '0.8rem',
       s: '1rem',
       m: '1.15rem',
       l: '1.5',
