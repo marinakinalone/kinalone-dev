@@ -18,21 +18,24 @@ const subscribe = () => () => {}
 function ThemedMain() {
   const isAppMounted = useSyncExternalStore(subscribe, () => true, () => false)
   const { value: isDark } = useDarkMode()
+
+  if (!isAppMounted) {
+    return null
+  }
+
   const theme = isDark ? darkTheme : lightTheme
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {isAppMounted && (
-        <main>
-          <Header />
-          <Intro />
-          <Projects />
-          <About />
-          <Contact />
-          <Footer />
-        </main>
-      )}
+      <main>
+        <Header />
+        <Intro />
+        <Projects />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
     </ThemeProvider>
   )
 }

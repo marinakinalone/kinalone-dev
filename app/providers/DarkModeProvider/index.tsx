@@ -5,11 +5,16 @@ import {
   type ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useSyncExternalStore,
 } from 'react'
-
-const STORAGE_KEY = 'darkMode'
+import {
+  applyThemeToDocument,
+  readStoredPreference,
+  resolveIsDark,
+  setStoredPreference,
+} from '../../lib/theme'
 
 const listeners = new Set<() => void>()
 
@@ -17,26 +22,30 @@ function subscribe(listener: () => void) {
   listeners.add(listener)
 
   const onStorage = (event: StorageEvent) => {
-    if (event.key === STORAGE_KEY) {
+    if (event.key === 'theme' || event.key === 'darkMode') {
+      listener()
+    }
+  }
+
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  const onSystemChange = () => {
+    if (readStoredPreference() === null) {
       listener()
     }
   }
 
   window.addEventListener('storage', onStorage)
+  mediaQuery.addEventListener('change', onSystemChange)
 
   return () => {
     listeners.delete(listener)
     window.removeEventListener('storage', onStorage)
+    mediaQuery.removeEventListener('change', onSystemChange)
   }
 }
 
 function getSnapshot() {
-  const stored = localStorage.getItem(STORAGE_KEY)
-  if (stored !== null) {
-    return stored === 'true'
-  }
-
-  return false
+  return resolveIsDark()
 }
 
 function getServerSnapshot() {
@@ -44,7 +53,7 @@ function getServerSnapshot() {
 }
 
 function setDarkMode(value: boolean) {
-  localStorage.setItem(STORAGE_KEY, String(value))
+  setStoredPreference(value)
   listeners.forEach((listener) => listener())
 }
 
@@ -58,6 +67,10 @@ const DarkModeContext = createContext<DarkModeContextValue | null>(null)
 export function DarkModeProvider({ children }: { children: ReactNode }) {
   const value = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
   const toggle = useCallback(() => setDarkMode(!getSnapshot()), [])
+
+  useEffect(() => {
+    applyThemeToDocument(value)
+  }, [value])
 
   const contextValue = useMemo(() => ({ value, toggle }), [value, toggle])
 
