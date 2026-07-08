@@ -6,9 +6,9 @@ import useScroll from '../../hooks/useScroll'
 import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
 import Title from '../ui/Title'
+import RainbowText from '../ui/animations/RainbowText'
 import MoreProjects from './MoreProjects'
 import ProjectCard from './ProjectCard'
-import RainbowText from '../ui/animations/RainbowText'
 
 export const STRINGS = {
   title: ' projects',

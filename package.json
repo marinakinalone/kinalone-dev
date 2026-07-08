@@ -10,10 +10,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . && npm run typecheck",
-    "lint:staged": "eslint $(git diff --cached --name-only --diff-filter=ACM \"*.ts\" \"*.tsx\" | sed 's| |\\\\ |g')",
+    "knip": "knip",
+    "madge": "madge --circular --extensions ts,tsx app",
     "prettier": "prettier --write **/*.{ts,tsx}",
-    "prettier:staged": "prettier --write $(git diff --cached --name-only --diff-filter=ACM \"*.ts\" \"*.tsx\" | sed 's| |\\\\ |g')",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.2.10",
@@ -29,7 +30,14 @@
     "classnames": "^2.3.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "husky": "^9.1.7",
+    "knip": "^6.25.0",
+    "lint-staged": "^17.0.8",
+    "madge": "^8.0.0",
     "typescript": "^5",
     "ua-parser-js": "^1.0.37"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --max-warnings 0"
   }
 }
