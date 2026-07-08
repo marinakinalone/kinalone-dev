@@ -9,7 +9,6 @@ import Subtitle from '../ui/Subtitle'
 import Text from '../ui/Text'
 import TextLink from '../ui/TextLink'
 import Title from '../ui/Title'
-import RainbowText from '../ui/animations/RainbowText'
 
 const STRINGS = {
   title: 'Marina Kinalone Simonnet',
