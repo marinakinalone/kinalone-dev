@@ -6,11 +6,13 @@ import useScroll from '../../hooks/useScroll'
 import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
 import Title from '../ui/Title'
+import RainbowText from '../ui/animations/RainbowText'
 import MoreProjects from './MoreProjects'
 import ProjectCard from './ProjectCard'
 
 export const STRINGS = {
-  title: 'highlighted projects',
+  title: ' projects',
+  animatedTitle: 'highlighted',
   cta: 'more projects',
 }
 
@@ -59,7 +61,10 @@ const Projects = () => {
   return (
     <>
       <TitleContainer id={SECTIONS.PROJECTS}>
-        <Title>{STRINGS.title}</Title>
+        <Title>
+          <RainbowText word={STRINGS.animatedTitle} />
+          {STRINGS.title}
+        </Title>
       </TitleContainer>
       <ProjectCardsContainer ref={ref}>
         {projects.map((project) => {
