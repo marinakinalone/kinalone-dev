@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../../styles/breakpoints'
 import Lightswitch from './Lightswitch'
 
 const navigationData = [
@@ -14,11 +15,20 @@ const navigationData = [
   },
 ]
 
-const NavigationContainer = styled.nav``
+const NavigationContainer = styled.nav`
+`
 
 const NavigationList = styled.ul`
   list-style-type: none;
-  padding-left: 0;
+  padding-left: ${(props) => props.theme.spacing.s};
+
+  @media ${device.tabletMinWidth} {
+    padding-left: ${(props) => props.theme.spacing.m};
+  }
+
+  @media ${device.desktopMinWidth} {
+    padding-left: ${(props) => props.theme.spacing.l};
+  }
 `
 
 const NavigationItem = styled.li`
@@ -27,10 +37,18 @@ const NavigationItem = styled.li`
 
     return `
     text-align: center;
-    min-height: 100px;
-    margin-bottom: ${spacing.xl};
+    min-height: 70px;
+    margin-bottom: ${spacing.l};
     display: flex;
-    justify-content: center;
+
+    @media ${device.tabletMinWidth} {
+      min-height: 80px;
+    }
+
+    @media ${device.desktopMinWidth} {
+      min-height: 100px;
+      margin-bottom: ${spacing.xl};
+    }
     &:hover {
       .button {
         color: ${color.hover};
@@ -54,33 +72,67 @@ const NavigationItem = styled.li`
 `
 
 const SwitchContainer = styled.li`
+  text-align: center;
+  min-height: 70px;
   display: flex;
-  justify-content: center;
+
+  @media ${device.tabletMinWidth} {
+    min-height: 80px;
+  }
+
+  @media ${device.desktopMinWidth} {
+    min-height: 100px;
+  }
 `
 
 const Button = styled.a`
   ${(props) => {
-    const { color } = props.theme
+    const { color, fontSize } = props.theme
 
     return `
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
     text-decoration: none;
     position: absolute;
     margin: 0 auto;
     border-radius: 50%;
     background-color: ${color.neutral};
-    border: 3px solid ${color.neutral};
+    border: 2px solid ${color.neutral};
+        font-size: ${fontSize.regular.xs};
+
+    
+    @media ${device.tabletMinWidth} {
+      width: 64px;
+      height: 64px;
+      }
+      
+      @media ${device.desktopMinWidth} {
+        font-size: ${fontSize.desktop.s};
+      width: 80px;
+      height: 80px;
+    }
     `
   }}
 `
 
 const Icon = styled.img`
   display: inline;
-  width: 50px;
-  margin-top: 15px;
-  margin-bottom: 18px;
+  width: 28px;
+  margin-top: calc(28px / 2.2);
+  margin-bottom: calc(28px / 1.5);
   filter: ${({ theme }) => theme.filter.primary};
+
+  @media ${device.tabletMinWidth} {
+    width: 32px;
+    margin-top: calc(32px / 2.2);
+    margin-bottom: calc(32px / 1.5);
+  }
+
+  @media ${device.desktopMinWidth} {
+    width: 40px;
+    margin-top: calc(40px / 2.2);
+    margin-bottom: calc(40px / 1.5);
+  }
 `
 
 const Navigation = () => {

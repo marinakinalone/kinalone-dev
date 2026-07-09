@@ -6,7 +6,7 @@ const HeaderContainer = styled.header`
     const { border, spacing } = props.theme
     return `
       border-bottom: ${border.regular};
-      padding: 0 ${spacing.ws} ;
+      padding: 0 ${spacing.xs} ;
       margin-bottom: ${spacing.l}; 
       margin-top: ${spacing.s};
     `

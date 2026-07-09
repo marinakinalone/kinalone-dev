@@ -8,8 +8,9 @@ interface ITextLinkProps {
   children: React.ReactNode
 }
 
-//TODO change color to theme
-const Link = styled.a``
+const Link = styled.a`
+  font-size: inherit;
+`
 
 const TextLink = ({
   href,

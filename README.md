@@ -22,14 +22,13 @@ portfolio-mks is my professional website to share my code projects (portfolio), 
 - TypeScript
 - NextJS
 - Styled components
-- Bun JS
 
 ## Installation
 
 ```bash
 nvm use
-bun i
-bun run dev
+npm install
+npm run dev
 ```
 
 ## Resources
