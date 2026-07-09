@@ -5,7 +5,7 @@ interface Size {
   xlarge: string
 }
 
-export const screenSize: Size = {
+const screenSize: Size = {
   small: '600px',
   medium: '768px',
   large: '1200px',

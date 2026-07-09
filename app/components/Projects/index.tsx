@@ -1,45 +1,32 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SECTIONS } from '../../constants/sections'
 import { projects } from '../../data/projects'
+import useInView from '../../hooks/useInView'
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import useScroll from '../../hooks/useScroll'
-import { device } from '../../styles/breakpoints'
-import Container from '../ui/Container'
+import useSectionAnimation from '../../hooks/useSectionAnimation'
 import Title from '../ui/Title'
+import AnimatedTitleSection from '../ui/animations/AnimatedTitleSection'
 import RainbowText from '../ui/animations/RainbowText'
+import SectionSpinner from '../ui/animations/SectionSpinner'
+import TypingText from '../ui/animations/TypingText'
 import MoreProjects from './MoreProjects'
 import ProjectCard from './ProjectCard'
+import { STRINGS } from './strings'
 
-export const STRINGS = {
-  title: ' projects',
-  animatedTitle: 'highlighted',
-  cta: 'more projects',
-}
 
-const TitleContainer = styled(Container)`
-  ${(props) => {
-    const { border, spacing } = props.theme
+const SectionWrapper = styled.section``
 
-    return `
-    border-top: ${border.highlight};
-    margin-bottom: ${spacing.s};
-    `
-  }}
+const TitleContainer = styled.div`
+  margin: -1px;
+  margin-bottom: ${(props) => props.theme.spacing.s};
 `
 
-const CtaContainer = styled(Container)`
-  ${(props) => {
-    const { color, spacing } = props.theme
-
-    return `
-    margin-bottom: ${spacing.xl};
-    margin-top: ${spacing.s};
-    border-right: 6rem solid ${color.neutral};
-    @media ${device.desktopMinWidth} {
-      border-right-width: 20rem;
-    }
-    `
-  }}
+const CtaContainer = styled.div`
+  margin: -1px;
+  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-top: ${(props) => props.theme.spacing.s};
 `
 
 const ProjectCardsContainer = styled.div`
@@ -49,33 +36,119 @@ const ProjectCardsContainer = styled.div`
   justify-content: space-between;
 `
 
+const CARD_STAGGER = 0
+const CARD_ANIM_DURATION = 500
+
 const Projects = () => {
   const { updateSection } = useScroll()
-  const ref = useRef(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const prefersReducedMotion = usePrefersReducedMotion()
+  const { canAnimate, isSkipped, isComplete, isEntrySection, markComplete } =
+    useSectionAnimation('projects')
+  const reached = useInView(sectionRef)
+  const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
+  const showSpinner = !active && !isComplete && !isSkipped
+  const [titleDone, setTitleDone] = useState(prefersReducedMotion || isSkipped)
+  const [showRainbow, setShowRainbow] = useState(prefersReducedMotion || isSkipped)
+  const [ctaTypingDone, setCtaTypingDone] = useState(prefersReducedMotion || isSkipped)
+  const cardsActive = titleDone || prefersReducedMotion || isSkipped
 
   useEffect(() => {
-    updateSection(SECTIONS.PROJECTS, ref)
-
+    updateSection(SECTIONS.PROJECTS, sectionRef)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (isSkipped) {
+      markComplete()
+    }
+  }, [isSkipped, markComplete])
+
+  useEffect(() => {
+    if (!ctaTypingDone || isSkipped || prefersReducedMotion) return
+
+    const timer = setTimeout(
+      () => markComplete(),
+      projects.length * CARD_STAGGER + CARD_ANIM_DURATION,
+    )
+    return () => clearTimeout(timer)
+  }, [ctaTypingDone, isSkipped, prefersReducedMotion, markComplete])
+
   return (
-    <>
-      <TitleContainer id={SECTIONS.PROJECTS}>
-        <Title>
-          <RainbowText word={STRINGS.animatedTitle} />
-          {STRINGS.title}
-        </Title>
+    <SectionWrapper ref={sectionRef} id={SECTIONS.PROJECTS}>
+      {active && (
+        <>
+      <TitleContainer>
+        <AnimatedTitleSection
+          title={`${STRINGS.animatedTitle}${STRINGS.title}`}
+          thickSide="top"
+          canAnimate={active}
+          forceComplete={isSkipped || isComplete}
+          ignoreInView
+          onTypingComplete={() => {
+            setTitleDone(true)
+            setShowRainbow(true)
+          }}
+          renderTitle={(_title, canType, onComplete) => (
+            <Title>
+              {showRainbow ? (
+                <>
+                  <RainbowText word={STRINGS.animatedTitle} />
+                  {STRINGS.title}
+                </>
+              ) : (
+                <TypingText
+                  text={`${STRINGS.animatedTitle}${STRINGS.title}`}
+                  duration={600}
+                  active={canType}
+                  onComplete={onComplete}
+                />
+              )}
+            </Title>
+          )}
+        />
       </TitleContainer>
-      <ProjectCardsContainer ref={ref}>
-        {projects.map((project) => {
+      <ProjectCardsContainer>
+        {projects.map((project, index) => {
           const { id, title, description, link } = project
-          return <ProjectCard key={id} title={title} description={description} link={link} />
+          return (
+            <ProjectCard
+              key={id}
+              title={title}
+              description={description}
+              link={link}
+              animationIndex={index}
+              parentActive={cardsActive}
+              staggerDelay={CARD_STAGGER}
+            />
+          )
         })}
       </ProjectCardsContainer>
       <CtaContainer>
-        <MoreProjects />
+        <AnimatedTitleSection
+          title={STRINGS.cta}
+          thickSide="right"
+          rightWidth="6rem"
+          rightWidthDesktop="20rem"
+          canAnimate={active && titleDone}
+          forceComplete={isSkipped || isComplete}
+          ignoreInView
+          renderTitle={(_title, canType, onComplete) => (
+            <MoreProjects
+              active={canType && !ctaTypingDone}
+              onComplete={() => {
+                setCtaTypingDone(true)
+                onComplete()
+              }}
+              showLink={ctaTypingDone || prefersReducedMotion || isSkipped}
+            />
+          )}
+        />
       </CtaContainer>
-    </>
+        </>
+      )}
+      {showSpinner && <SectionSpinner />}
+    </SectionWrapper>
   )
 }
 

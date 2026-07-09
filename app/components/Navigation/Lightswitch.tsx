@@ -7,17 +7,17 @@ const Wrapper = styled.label`
   position: absolute;
   display: block;
   width: 56px;
-  height: 36px;
+  height: 32px;
   margin: 0 auto;
 
   @media ${device.tabletMinWidth} {
-    width: 64px;
-    height: 40px;
+    width: 60px;
+    height: 34px;
   }
 
   @media ${device.desktopMinWidth} {
     width: 70px;
-    height: 40px;
+    height: 38px;
     transform: translateX(5px);
   }
 `
@@ -76,16 +76,24 @@ const Slider = styled.span`
       content: '';
       height: 24px;
       width: 24px;
-      left: 6px;
-      bottom: 6px;
+      left: 7px;
+      bottom: 4px;
       background-color: ${color.neutral};
       border-radius: 50%;
       transition: 0.4s;
     }
     @media ${device.tabletMinWidth} {
       &:before {
-        height: 28px;
-        width: 28px;
+      left: 5px;
+        height: 26px;
+        width: 26px;
+      }
+    }
+         @media ${device.desktopMinWidth} {
+      &:before {
+      left: 5px;
+        height: 30px;
+        width: 30px;
       }
     }
     `
@@ -94,38 +102,38 @@ const Slider = styled.span`
 
 const SwitchIcon = styled.img`
   position: absolute;
-  max-height: 16px;
+  max-height: 20px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
 
   @media ${device.tabletMinWidth} {
-    max-height: 18px;
+    max-height: 24px;
   }
 `
 
 const MoonIcon = styled(SwitchIcon)`
-  right: 10px;
+  right: 6px;
   left: auto;
 
   @media ${device.tabletMinWidth} {
-    right: 11px;
+    right: 6px;
   }
 
   @media ${device.desktopMinWidth} {
-    right: 12px;
+    right: 8px;
   }
 `
 
 const SunIcon = styled(SwitchIcon)`
-  left: 10px;
+  left: 7px;
 
   @media ${device.tabletMinWidth} {
-    left: 11px;
+    left: 7px;
   }
 
   @media ${device.desktopMinWidth} {
-    left: 12px;
+    left: 10px;
   }
 `
 

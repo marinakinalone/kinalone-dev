@@ -69,7 +69,7 @@ export const aboutLinks = {
 
 export const aboutClosing = {
   stormy:
-    'My cat Stormy supervises my coding sessions with particular interest in printers.',
+    'My coding assistant is my cat, Stormy. She always shows up to the morning standup meeting on time.',
   blogPrefix: 'I write occasionally at ',
   blogLabel: "l'Astroniste",
   quote: 'Technology without context is noise. {{bold}}I build with both in mind.{{/bold}}',
