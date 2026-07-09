@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../../styles/breakpoints'
 import Hero from '../Hero'
 import Navigation from '../Navigation'
 
@@ -10,12 +11,21 @@ const Container = styled.div`
 `
 
 const HeroContainer = styled.div`
-  flex: 7;
-  max-width: 70%;
+  flex: 8;
+  max-width: 78%;
+
+  @media ${device.tabletMinWidth} {
+    flex: 7;
+    max-width: 70%;
+  }
 `
 
 const NavigationContainer = styled.div`
-  flex: 3;
+  flex: 2;
+
+  @media ${device.tabletMinWidth} {
+    flex: 3;
+  }
 `
 
 const Intro = () => {

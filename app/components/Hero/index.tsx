@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { SECTIONS } from '../../constants/sections'
 import interpolate from '../../helpers/interpolate'
 import useScroll from '../../hooks/useScroll'
+import { device } from '../../styles/breakpoints'
 import Container from '../ui/Container'
 import SmallText from '../ui/SmallText'
 import Subtitle from '../ui/Subtitle'
@@ -13,12 +14,21 @@ import Title from '../ui/Title'
 const STRINGS = {
   title: 'Marina Kinalone Simonnet',
   subtitle: 'Software Engineer | UX-informed developer',
-  description:
-  'Driving {{bold}}frontend architecture decisions{{/bold}} while keeping {{bold}}users at the center{{/bold}}. Currently managing legacy-to-modern migration at {{bold}}Trustly{{/bold}}. Based in {{bold}}Lisbon, Portugal{{/bold}}.',
+    description1:
+    'Driving {{bold}}frontend architecture decisions{{/bold}} while keeping {{bold}}users at the center{{/bold}}.',
+    description2: 'Currently managing legacy-to-modern migration at {{bold}}Trustly{{/bold}}.',
+    description3: 'Based in {{bold}}Lisbon, Portugal{{/bold}}.',
   copyright: 'p.s.: drawing is from ',
   copyrightLink: 'amazing artist Lu Lo',
 }
 
+const StyledSubtitle = styled(Subtitle)`
+  margin-bottom: ${(props) => props.theme.spacing.m};
+`
+
+const DescriptionContainer = styled.div`
+  margin-bottom: ${(props) => props.theme.spacing.l};
+`
 const MainContainer = styled(Container)`
   padding: 0;
   display: flex;
@@ -42,7 +52,29 @@ const Portrait = styled.img`
   object-fit: contain;
   margin-left: auto;
 `
-const TextContainer = styled(Container)``
+const TextContainer = styled(Container)`
+  ${(props) => {
+    const { spacing, fontSize } = props.theme
+
+    return `
+      @media ${device.mobileMaxWidth} {
+        padding: ${spacing.xs} ${spacing.s};
+
+        h2 {
+          font-size: ${fontSize.mobile.l};
+        }
+
+        h3 {
+          font-size: ${fontSize.mobile.m};
+        }
+
+        p {
+          font-size: ${fontSize.mobile.s};
+        }
+      }
+    `
+  }}
+`
 
 const Hero = () => {
   const { updateSection } = useScroll()
@@ -65,10 +97,15 @@ const Hero = () => {
       </ImageContainer>
       <TextContainer>
         <Title>{STRINGS.title}</Title>
-        <Subtitle>
+        <StyledSubtitle>
           {STRINGS.subtitle}
-        </Subtitle>
-        <Text>{interpolate(STRINGS.description)}</Text>
+        </StyledSubtitle>
+        <DescriptionContainer>
+
+        <Text>{interpolate(STRINGS.description1)}</Text>
+        <Text>{interpolate(STRINGS.description2)}</Text>
+        <Text>{interpolate(STRINGS.description3)}</Text>
+        </DescriptionContainer>
         <SmallText>
           {STRINGS.copyright}
           <TextLink href="https://www.instagram.com/lulu.xalo/">{STRINGS.copyrightLink}</TextLink>

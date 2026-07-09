@@ -26,7 +26,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   
     main {
       @media ${device.mobileMaxWidth} {
-        margin: 0 0.5rem;
+        margin: 0 0.25rem;
       }
       @media ${device.tabletMinWidth} {
         margin: 0 7%;

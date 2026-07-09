@@ -11,6 +11,7 @@ import {
 } from '../../data/aboutCopy'
 import interpolate from '../../helpers/interpolate'
 import useScroll from '../../hooks/useScroll'
+import { device } from '../../styles/breakpoints'
 import BolderText from '../ui/BolderText'
 import Container from '../ui/Container'
 import Subtitle from '../ui/Subtitle'
@@ -34,7 +35,28 @@ const TitleContainer = styled(Container)`
 `
 
 const InnerContainer = styled(Container)`
-  padding: ${(props) => `${props.theme.spacing.m} ${props.theme.spacing.xl}`};
+  ${(props) => {
+    const { spacing, fontSize } = props.theme
+
+    return `
+      padding: ${spacing.m} ${spacing.s};
+
+      @media ${device.tabletMinWidth} {
+        padding: ${spacing.m} ${spacing.xl};
+      }
+
+      @media ${device.mobileMaxWidth} {
+        h3 {
+          font-size: ${fontSize.mobile.m};
+        }
+
+        p,
+        li {
+          font-size: ${fontSize.mobile.s};
+        }
+      }
+    `
+  }}
 `
 
 const Paragraph = styled(Text)`
@@ -66,7 +88,11 @@ const Portrait = styled.img`
     return `
       margin: ${spacing.xs};
       border: ${border.regular};
-      width: 300px;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      box-sizing: border-box;
      `
   }}
 `

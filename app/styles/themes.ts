@@ -5,18 +5,25 @@ const defaultTheme = {
   fontFamily: 'var(--font-fira-code), monospace',
   fontSize: {
     regular: {
+      xxs: '0.7rem',
       xs: '0.8rem',
       s: '1rem',
       m: '1.15rem',
-      l: '1.5',
+      l: '1.5rem',
       xl: '1.75rem',
     },
     desktop: {
+      xxs: '0.8rem',
       xs: '0.9rem',
       s: '1rem',
       m: '1.3rem',
-      l: '1.5',
+      l: '1.5rem',
       xl: '2rem',
+    },
+    mobile: {
+      l: '1.25rem',
+      m: '1.05rem',
+      s: '0.9rem',
     },
   },
   spacing: {
@@ -25,6 +32,7 @@ const defaultTheme = {
     m: '1.5rem',
     l: '2rem',
     xl: '2.5rem',
+    xxl: '3rem',
   },
   arrow: {
     textArrowSpace: '16',

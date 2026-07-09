@@ -15,7 +15,8 @@ const navigationData = [
   },
 ]
 
-const NavigationContainer = styled.nav``
+const NavigationContainer = styled.nav`
+`
 
 const NavigationList = styled.ul`
   list-style-type: none;
@@ -71,8 +72,17 @@ const NavigationItem = styled.li`
 `
 
 const SwitchContainer = styled.li`
+  text-align: center;
+  min-height: 70px;
   display: flex;
-  justify-content: center;
+
+  @media ${device.tabletMinWidth} {
+    min-height: 80px;
+  }
+
+  @media ${device.desktopMinWidth} {
+    min-height: 100px;
+  }
 `
 
 const Button = styled.a`

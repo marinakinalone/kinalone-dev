@@ -6,9 +6,13 @@ const SmallText = styled.p`
     const { fontSize } = props.theme
 
     return `
-    font-size: ${fontSize.regular.xs};
+    font-size: ${fontSize.regular.xxs};
     @media ${device.desktopMinWidth} {
-      font-size: ${fontSize.desktop.xs};
+      font-size: ${fontSize.desktop.xxs};
+    }
+
+    a {
+      font-size: inherit;
     }
     `
   }}

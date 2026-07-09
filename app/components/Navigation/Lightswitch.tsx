@@ -1,12 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDarkMode } from '../../providers/DarkModeProvider'
+import { device } from '../../styles/breakpoints'
 
 const Wrapper = styled.label`
   position: absolute;
-  width: 70px;
-  height: 35px;
-  margin-top: ${(props) => props.theme.spacing.xs};
+  display: block;
+  width: 56px;
+  height: 36px;
+  margin: 0 auto;
+
+  @media ${device.tabletMinWidth} {
+    width: 64px;
+    height: 40px;
+  }
+
+  @media ${device.desktopMinWidth} {
+    width: 70px;
+    height: 40px;
+    transform: translateX(5px);
+  }
 `
 
 const Switch = styled.input`
@@ -22,8 +35,22 @@ const Switch = styled.input`
         box-shadow: inset 0 0 0 1px ${color.neutral};
       }
       &:checked + .slider::before {
-        transform: translateX(34px);
+        transform: translateX(20px);
         background-color: ${color.neutral};
+      }
+      &:focus-visible + .slider {
+        outline: 2px dashed ${color.focus};
+        outline-offset: 2px;
+      }
+      @media ${device.tabletMinWidth} {
+        &:checked + .slider::before {
+          transform: translateX(24px);
+        }
+      }
+      @media ${device.desktopMinWidth} {
+        &:checked + .slider::before {
+          transform: translateX(30px);
+        }
       }
     `
   }}
@@ -42,33 +69,64 @@ const Slider = styled.span`
     bottom: 0;
     background-color: ${color.secondary};
     box-shadow: inset 0 0 0 1px ${color.neutral};
+    border-radius: 36px;
     transition: 0.4s;
     &:before {
       position: absolute;
       content: '';
-      height: 27px;
-      width: 27px;
-      left: 4px;
-      bottom: 4px;
+      height: 24px;
+      width: 24px;
+      left: 6px;
+      bottom: 6px;
       background-color: ${color.neutral};
+      border-radius: 50%;
       transition: 0.4s;
+    }
+    @media ${device.tabletMinWidth} {
+      &:before {
+        height: 28px;
+        width: 28px;
+      }
+    }
     `
   }}
-  }
 `
 
 const SwitchIcon = styled.img`
   position: absolute;
-  max-height: 30px;
-  bottom: 3px;
+  max-height: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  @media ${device.tabletMinWidth} {
+    max-height: 18px;
+  }
 `
 
 const MoonIcon = styled(SwitchIcon)`
-  left: 35px;
+  right: 10px;
+  left: auto;
+
+  @media ${device.tabletMinWidth} {
+    right: 11px;
+  }
+
+  @media ${device.desktopMinWidth} {
+    right: 12px;
+  }
 `
+
 const SunIcon = styled(SwitchIcon)`
-  display: inline;
-  left: 4px;
+  left: 10px;
+
+  @media ${device.tabletMinWidth} {
+    left: 11px;
+  }
+
+  @media ${device.desktopMinWidth} {
+    left: 12px;
+  }
 `
 
 const LIGHTSWITCH = 'lightswitch'
@@ -84,6 +142,7 @@ const Lightswitch = () => {
         name={LIGHTSWITCH}
         onChange={toggle}
         checked={isDark}
+        aria-label="Toggle dark mode"
       />
       <Slider className="slider" />
       {isDark ? (
