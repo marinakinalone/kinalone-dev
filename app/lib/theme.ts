@@ -2,7 +2,7 @@ export const THEME_STORAGE_KEY = 'theme'
 
 export type ThemePreference = 'light' | 'dark'
 
-export function getSystemPreference(): boolean {
+function getSystemPreference(): boolean {
   return window.matchMedia('(prefers-color-scheme: dark)').matches
 }
 

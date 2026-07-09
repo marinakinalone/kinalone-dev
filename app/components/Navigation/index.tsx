@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import { device } from '../../styles/breakpoints'
+import StaggeredFadeIn from '../ui/animations/StaggeredFadeIn'
 import Lightswitch from './Lightswitch'
 
 const navigationData = [
@@ -15,8 +17,9 @@ const navigationData = [
   },
 ]
 
-const NavigationContainer = styled.nav`
-`
+const STAGGER_DELAY = 300
+
+const NavigationContainer = styled.nav``
 
 const NavigationList = styled.ul`
   list-style-type: none;
@@ -67,6 +70,7 @@ const NavigationItem = styled.li`
       .icon {
         filter: ${filter.focus};
       }
+    }
     `
   }}
 `
@@ -135,28 +139,50 @@ const Icon = styled.img`
   }
 `
 
-const Navigation = () => {
+interface NavigationProps {
+  active?: boolean
+  skipped?: boolean
+}
+
+const Navigation = ({ active = false, skipped = false }: NavigationProps) => {
+  const prefersReducedMotion = usePrefersReducedMotion()
+  const showItems = active || skipped || prefersReducedMotion
+
   return (
     <NavigationContainer>
       <NavigationList>
-        {navigationData.map((item) => {
+        {navigationData.map((item, index) => {
           const { id } = item
 
           return (
             <NavigationItem key={id}>
-              <Button className="button" href={`#${id}`}>
-                <Icon
-                  className="icon"
-                  src={`./icons/navigation/${id}.svg`}
-                  alt={`go to '${id}' section`}
-                />
-                {item.id}
-              </Button>
+              <StaggeredFadeIn
+                $active={showItems}
+                $delay={index * STAGGER_DELAY}
+                $variant="slideDown"
+                $prefersReducedMotion={prefersReducedMotion || skipped}
+              >
+                <Button className="button" href={`#${id}`}>
+                  <Icon
+                    className="icon"
+                    src={`./icons/navigation/${id}.svg`}
+                    alt={`go to '${id}' section`}
+                  />
+                  {item.id}
+                </Button>
+              </StaggeredFadeIn>
             </NavigationItem>
           )
         })}
         <SwitchContainer>
-          <Lightswitch />
+          <StaggeredFadeIn
+            $active={showItems}
+            $delay={navigationData.length * STAGGER_DELAY}
+            $variant="slideDown"
+            $prefersReducedMotion={prefersReducedMotion || skipped}
+          >
+            <Lightswitch />
+          </StaggeredFadeIn>
         </SwitchContainer>
       </NavigationList>
     </NavigationContainer>

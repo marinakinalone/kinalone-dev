@@ -35,6 +35,7 @@ npm run dev
 
 - Portrait by [Lulu Xalo](https://www.instagram.com/lulu.xalo/)
 - [CSS filter generator to convert from black to target hex color](https://codepen.io/sosuke/pen/Pjoqqp)
+- Oneko cat cursor animation by [adryd325/oneko.js](https://github.com/adryd325/oneko.js) (MIT) — adapted into a React component (`app/hooks/useOneko.ts`, `app/components/Oneko/StormyCat.tsx`)
 
 ## Team
 
