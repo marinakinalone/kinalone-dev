@@ -50,7 +50,7 @@ const Contact = () => {
     useSectionAnimation('contact')
   const reached = useInView(ref)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   const [titleDone, setTitleDone] = useState(isSkipped || prefersReducedMotion)
   const listActive = titleDone || isSkipped || prefersReducedMotion
 
@@ -76,7 +76,7 @@ const Contact = () => {
   }, [listActive, isSkipped, prefersReducedMotion, markComplete])
 
   return (
-    <MainContainer id={SECTIONS.CONTACT} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.CONTACT} ref={ref} aria-label="Contact" $transparentBg $hideBorder>
       {active && (
         <AnimatedTitleSection
         title={STRINGS.title}
@@ -100,7 +100,7 @@ const Contact = () => {
                     $prefersReducedMotion={prefersReducedMotion || isSkipped}
                   >
                     <ContactLink href={link} target="_blank" rel="noopener noreferrer">
-                      <ContactIcon src={`./icons/contact/${icon}`} alt={id} />
+                      <ContactIcon src={`./icons/contact/${icon}`} alt="" aria-hidden="true" />
                       {title}
                     </ContactLink>
                   </StaggeredFadeIn>

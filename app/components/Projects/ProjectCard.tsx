@@ -48,11 +48,12 @@ const Card = styled.a`
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
       }
-    &:focus {
+    &:focus-visible {
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
-        outline: none;
         color: ${color.neutral};
+        outline: 2px dashed ${color.focus};
+        outline-offset: 0.2rem;
     }
     `
   }}

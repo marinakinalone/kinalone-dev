@@ -149,7 +149,7 @@ const Navigation = ({ active = false, skipped = false }: NavigationProps) => {
   const showItems = active || skipped || prefersReducedMotion
 
   return (
-    <NavigationContainer>
+    <NavigationContainer aria-label="Section navigation">
       <NavigationList>
         {navigationData.map((item, index) => {
           const { id } = item
@@ -162,12 +162,8 @@ const Navigation = ({ active = false, skipped = false }: NavigationProps) => {
                 $variant="slideDown"
                 $prefersReducedMotion={prefersReducedMotion || skipped}
               >
-                <Button className="button" href={`#${id}`}>
-                  <Icon
-                    className="icon"
-                    src={`./icons/navigation/${id}.svg`}
-                    alt={`go to '${id}' section`}
-                  />
+                <Button className="button" href={`#${id}`} aria-label={`go to '${id}' section`}>
+                  <Icon className="icon" src={`./icons/navigation/${id}.svg`} alt="" aria-hidden="true" />
                   {item.id}
                 </Button>
               </StaggeredFadeIn>

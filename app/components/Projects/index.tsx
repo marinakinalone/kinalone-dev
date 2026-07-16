@@ -47,7 +47,7 @@ const Projects = () => {
     useSectionAnimation('projects')
   const reached = useInView(sectionRef)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   const [titleDone, setTitleDone] = useState(prefersReducedMotion || isSkipped)
   const [showRainbow, setShowRainbow] = useState(prefersReducedMotion || isSkipped)
   const [ctaTypingDone, setCtaTypingDone] = useState(prefersReducedMotion || isSkipped)
@@ -75,7 +75,7 @@ const Projects = () => {
   }, [ctaTypingDone, isSkipped, prefersReducedMotion, markComplete])
 
   return (
-    <SectionWrapper ref={sectionRef} id={SECTIONS.PROJECTS}>
+    <SectionWrapper ref={sectionRef} id={SECTIONS.PROJECTS} aria-label="Projects">
       {active && (
         <>
       <TitleContainer>

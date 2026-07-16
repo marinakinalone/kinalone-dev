@@ -132,7 +132,7 @@ const About = () => {
     useSectionAnimation('about')
   const reached = useInView(ref)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   // Body traces/reveals in parallel with the title rather than waiting for the
   // title to finish typing, so the section reads as one quick beat.
   const shouldRunBody = active || isSkipped
@@ -259,7 +259,7 @@ const About = () => {
   ]
 
   return (
-    <MainContainer id={SECTIONS.ABOUT} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.ABOUT} ref={ref} aria-label="About" $transparentBg $hideBorder>
       {active && (
         <>
       <AnimatedTitleSection

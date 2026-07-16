@@ -129,7 +129,7 @@ const Hero = ({ onComplete }: HeroProps) => {
   }, [showFinal, typingStep, onComplete])
 
   return (
-    <MainContainer id={SECTIONS.INTRO} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.INTRO} ref={ref} aria-label="Introduction" $transparentBg $hideBorder>
       <BorderTraceBox phase={resolvedPhase}>
         <ImageContainer
           $grown={showFinal || isPhaseAtLeast('accentGrow')}
