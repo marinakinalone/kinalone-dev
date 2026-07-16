@@ -16,10 +16,12 @@ const SectionWrapper = styled.div`
 `
 
 const TitleBlock = styled(Container)<{
+  
   $revealed: boolean
   $prefersReducedMotion?: boolean
   $hasBody?: boolean
 }>`
+  padding: ${(props) => props.theme.spacing.s};
   background-color: ${(props) =>
     props.$revealed || props.$prefersReducedMotion
       ? props.theme.color.secondary

@@ -19,8 +19,7 @@ const LIST_STAGGER = 100
 const LIST_ANIM_DURATION = 200
 
 const MainContainer = styled(Container)`
-  padding: 0;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxl};
 `
 
 const ContactListContainer = styled.ul`
@@ -56,7 +55,7 @@ const Contact = () => {
   const listActive = titleDone || isSkipped || prefersReducedMotion
 
   useEffect(() => {
-    updateSection(SECTIONS.CONTACT, ref)
+    return updateSection(SECTIONS.CONTACT, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

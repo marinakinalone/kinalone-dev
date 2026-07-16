@@ -33,6 +33,7 @@ const defaultTheme = {
     l: '2rem',
     xl: '2.5rem',
     xxl: '3rem',
+    xxxl: '4rem',
   },
   arrow: {
     textArrowSpace: '16',

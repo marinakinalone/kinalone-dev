@@ -25,7 +25,7 @@ const TitleContainer = styled.div`
 
 const CtaContainer = styled.div`
   margin: -1px;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxxl};
   margin-top: ${(props) => props.theme.spacing.s};
 `
 
@@ -54,7 +54,7 @@ const Projects = () => {
   const cardsActive = titleDone || prefersReducedMotion || isSkipped
 
   useEffect(() => {
-    updateSection(SECTIONS.PROJECTS, sectionRef)
+    return updateSection(SECTIONS.PROJECTS, sectionRef)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

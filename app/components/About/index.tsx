@@ -34,8 +34,7 @@ const STRINGS = {
 }
 
 const MainContainer = styled(Container)`
-  padding: 0;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxxl};
 `
 
 const bodyTextStyles = css`
@@ -142,7 +141,7 @@ const About = () => {
   const bodyActive = showFinal || isPhaseAtLeast('revealBg')
 
   useEffect(() => {
-    updateSection(SECTIONS.ABOUT, ref)
+    return updateSection(SECTIONS.ABOUT, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
