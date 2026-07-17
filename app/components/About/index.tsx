@@ -18,6 +18,7 @@ import useSectionAnimation from '../../hooks/useSectionAnimation'
 import { device } from '../../styles/breakpoints'
 import StormyCat from '../Oneko/StormyCat'
 import Container from '../ui/Container'
+import HoverImage from '../ui/HoverImage'
 import Subtitle from '../ui/Subtitle'
 import TextLink from '../ui/TextLink'
 import AnimatedTitleSection from '../ui/animations/AnimatedTitleSection'
@@ -241,7 +242,21 @@ const About = () => {
       key: 'stormy',
       content: (
         <Paragraph>
-          {aboutClosing.stormy}
+          {aboutClosing.stormy.prefix}
+          <HoverImage
+            src="./stormy_portrait.png"
+            alt="Stormy the cat looking at the camera, wearing a pink floral bandana"
+          >
+            {aboutClosing.stormy.stormyLabel}
+          </HoverImage>
+          {aboutClosing.stormy.middle}
+          <HoverImage
+            src="./stormy_standup.png"
+            alt="Marina holding Stormy the cat during a morning standup"
+          >
+            {aboutClosing.stormy.standupLabel}
+          </HoverImage>
+          {aboutClosing.stormy.suffix}
           {!prefersReducedMotion && <StormyCat />}
         </Paragraph>
       ),
