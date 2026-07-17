@@ -23,8 +23,7 @@ const STRINGS = {
   subtitle: 'Software Engineer | UX-informed developer',
   description1:
     'Driving {{bold}}frontend architecture decisions{{/bold}} while keeping {{bold}}users at the center{{/bold}}.',
-  description2:
-    'Currently managing legacy-to-modern migration at {{bold}}Trustly{{/bold}}.',
+  description2: 'Currently managing legacy-to-modern migration at {{bold}}Trustly{{/bold}}.',
   description3: 'Based in {{bold}}Lisbon, Portugal{{/bold}}.',
   copyright: 'p.s.: drawing is from ',
   copyrightLink: 'amazing artist Lu Lo',
@@ -39,9 +38,9 @@ const DescriptionContainer = styled.div`
 `
 
 const MainContainer = styled(Container)`
-  padding: 0;
   display: flex;
   flex-direction: column;
+  margin-bottom: ${(props) => props.theme.spacing.xl};
 `
 
 const ImageContainer = styled.div<{
@@ -53,11 +52,8 @@ const ImageContainer = styled.div<{
   background-color: ${(props) => props.theme.color.highlight};
   border-left: 1rem solid
     ${(props) =>
-      props.$grown || props.$prefersReducedMotion
-        ? props.theme.color.neutral
-        : 'transparent'};
-  transition: border-color
-    ${(props) => (props.$prefersReducedMotion ? '0s' : '200ms')} ease-out;
+      props.$grown || props.$prefersReducedMotion ? props.theme.color.neutral : 'transparent'};
+  transition: border-color ${(props) => (props.$prefersReducedMotion ? '0s' : '200ms')} ease-out;
 `
 
 const Portrait = styled(FadeInImage)`
@@ -72,12 +68,10 @@ const TextContainer = styled(Container)<{
   $prefersReducedMotion?: boolean
 }>`
   position: relative;
+  padding: ${(props) => props.theme.spacing.s};
   background-color: ${(props) =>
-    props.$revealed || props.$prefersReducedMotion
-      ? props.theme.color.secondary
-      : 'transparent'};
-  transition: background-color
-    ${(props) => (props.$prefersReducedMotion ? '0s' : '200ms')} ease-out;
+    props.$revealed || props.$prefersReducedMotion ? props.theme.color.secondary : 'transparent'};
+  transition: background-color ${(props) => (props.$prefersReducedMotion ? '0s' : '200ms')} ease-out;
   border-color: transparent;
   ${(props) => {
     const { spacing, fontSize } = props.theme
@@ -113,7 +107,7 @@ const Hero = ({ onComplete }: HeroProps) => {
   const { canAnimate, isSkipped, isComplete } = useSectionAnimation('intro')
 
   useEffect(() => {
-    updateSection(SECTIONS.INTRO, ref)
+    return updateSection(SECTIONS.INTRO, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -135,7 +129,7 @@ const Hero = ({ onComplete }: HeroProps) => {
   }, [showFinal, typingStep, onComplete])
 
   return (
-    <MainContainer id={SECTIONS.INTRO} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.INTRO} ref={ref} aria-label="Introduction" $transparentBg $hideBorder>
       <BorderTraceBox phase={resolvedPhase}>
         <ImageContainer
           $grown={showFinal || isPhaseAtLeast('accentGrow')}

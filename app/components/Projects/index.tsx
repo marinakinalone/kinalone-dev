@@ -25,7 +25,7 @@ const TitleContainer = styled.div`
 
 const CtaContainer = styled.div`
   margin: -1px;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxxl};
   margin-top: ${(props) => props.theme.spacing.s};
 `
 
@@ -47,14 +47,14 @@ const Projects = () => {
     useSectionAnimation('projects')
   const reached = useInView(sectionRef)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   const [titleDone, setTitleDone] = useState(prefersReducedMotion || isSkipped)
   const [showRainbow, setShowRainbow] = useState(prefersReducedMotion || isSkipped)
   const [ctaTypingDone, setCtaTypingDone] = useState(prefersReducedMotion || isSkipped)
   const cardsActive = titleDone || prefersReducedMotion || isSkipped
 
   useEffect(() => {
-    updateSection(SECTIONS.PROJECTS, sectionRef)
+    return updateSection(SECTIONS.PROJECTS, sectionRef)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -75,7 +75,7 @@ const Projects = () => {
   }, [ctaTypingDone, isSkipped, prefersReducedMotion, markComplete])
 
   return (
-    <SectionWrapper ref={sectionRef} id={SECTIONS.PROJECTS}>
+    <SectionWrapper ref={sectionRef} id={SECTIONS.PROJECTS} aria-label="Projects">
       {active && (
         <>
       <TitleContainer>

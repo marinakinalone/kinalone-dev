@@ -7,13 +7,7 @@ import {
 import usePrefersReducedMotion from './usePrefersReducedMotion'
 
 export type AnimationPhase =
-  | 'idle'
-  | 'phase1'
-  | 'phase2'
-  | 'accentGrow'
-  | 'revealBg'
-  | 'typing'
-  | 'done'
+  'idle' | 'phase1' | 'phase2' | 'accentGrow' | 'revealBg' | 'typing' | 'done'
 
 interface PhaseTimings {
   phase1?: number

@@ -95,18 +95,22 @@ const AnimationSequenceProvider = ({ children }: { children: ReactNode }) => {
     [resolvedStates],
   )
 
-  // Sections animate independently as they scroll into view rather than
-  // waiting for the previous section to finish. Each section still gates its
-  // own start on being in view (via useInView), so this just removes the
-  // cross-section relay that made the page reveal feel slow and serialized.
+  // Sections reveal in order: a section may only start once the previous one
+  // has finished (or was skipped). This keeps the reveal from cascading out of
+  // order and stranding a spinner between an unfinished section and a later one
+  // that already animated. Each section additionally gates on being in view.
   const canAnimate = useCallback(
     (id: AnimationSectionId) => {
       const state = resolvedStates[id]
       if (state === 'skipped') return true
       if (state === 'complete') return false
-      return true
+
+      const index = ANIMATION_SECTIONS.indexOf(id)
+      if (index === 0) return true
+
+      return isComplete(ANIMATION_SECTIONS[index - 1])
     },
-    [resolvedStates],
+    [isComplete, resolvedStates],
   )
 
   const isWaiting = useCallback(() => false, [])

@@ -19,8 +19,7 @@ const LIST_STAGGER = 100
 const LIST_ANIM_DURATION = 200
 
 const MainContainer = styled(Container)`
-  padding: 0;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxl};
 `
 
 const ContactListContainer = styled.ul`
@@ -51,12 +50,12 @@ const Contact = () => {
     useSectionAnimation('contact')
   const reached = useInView(ref)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   const [titleDone, setTitleDone] = useState(isSkipped || prefersReducedMotion)
   const listActive = titleDone || isSkipped || prefersReducedMotion
 
   useEffect(() => {
-    updateSection(SECTIONS.CONTACT, ref)
+    return updateSection(SECTIONS.CONTACT, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -77,7 +76,7 @@ const Contact = () => {
   }, [listActive, isSkipped, prefersReducedMotion, markComplete])
 
   return (
-    <MainContainer id={SECTIONS.CONTACT} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.CONTACT} ref={ref} aria-label="Contact" $transparentBg $hideBorder>
       {active && (
         <AnimatedTitleSection
         title={STRINGS.title}
@@ -101,7 +100,7 @@ const Contact = () => {
                     $prefersReducedMotion={prefersReducedMotion || isSkipped}
                   >
                     <ContactLink href={link} target="_blank" rel="noopener noreferrer">
-                      <ContactIcon src={`./icons/contact/${icon}`} alt={id} />
+                      <ContactIcon src={`./icons/contact/${icon}`} alt="" aria-hidden="true" />
                       {title}
                     </ContactLink>
                   </StaggeredFadeIn>

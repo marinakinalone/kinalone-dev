@@ -18,6 +18,7 @@ import useSectionAnimation from '../../hooks/useSectionAnimation'
 import { device } from '../../styles/breakpoints'
 import StormyCat from '../Oneko/StormyCat'
 import Container from '../ui/Container'
+import HoverImage from '../ui/HoverImage'
 import Subtitle from '../ui/Subtitle'
 import TextLink from '../ui/TextLink'
 import AnimatedTitleSection from '../ui/animations/AnimatedTitleSection'
@@ -34,8 +35,7 @@ const STRINGS = {
 }
 
 const MainContainer = styled(Container)`
-  padding: 0;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxxl};
 `
 
 const bodyTextStyles = css`
@@ -133,7 +133,7 @@ const About = () => {
     useSectionAnimation('about')
   const reached = useInView(ref)
   const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
-  const showSpinner = !active && !isComplete && !isSkipped
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
   // Body traces/reveals in parallel with the title rather than waiting for the
   // title to finish typing, so the section reads as one quick beat.
   const shouldRunBody = active || isSkipped
@@ -142,7 +142,7 @@ const About = () => {
   const bodyActive = showFinal || isPhaseAtLeast('revealBg')
 
   useEffect(() => {
-    updateSection(SECTIONS.ABOUT, ref)
+    return updateSection(SECTIONS.ABOUT, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -242,7 +242,21 @@ const About = () => {
       key: 'stormy',
       content: (
         <Paragraph>
-          {aboutClosing.stormy}
+          {aboutClosing.stormy.prefix}
+          <HoverImage
+            src="./stormy_portrait.png"
+            alt="Stormy the cat looking at the camera, wearing a pink floral bandana"
+          >
+            {aboutClosing.stormy.stormyLabel}
+          </HoverImage>
+          {aboutClosing.stormy.middle}
+          <HoverImage
+            src="./stormy_standup.png"
+            alt="Marina holding Stormy the cat during a morning standup"
+          >
+            {aboutClosing.stormy.standupLabel}
+          </HoverImage>
+          {aboutClosing.stormy.suffix}
           {!prefersReducedMotion && <StormyCat />}
         </Paragraph>
       ),
@@ -260,7 +274,7 @@ const About = () => {
   ]
 
   return (
-    <MainContainer id={SECTIONS.ABOUT} ref={ref} $transparentBg $hideBorder>
+    <MainContainer id={SECTIONS.ABOUT} ref={ref} aria-label="About" $transparentBg $hideBorder>
       {active && (
         <>
       <AnimatedTitleSection
