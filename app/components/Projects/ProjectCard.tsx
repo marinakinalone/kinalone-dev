@@ -1,13 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import { getImageName } from '../../helpers/getImageName'
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import { device } from '../../styles/breakpoints'
+import StaggeredFadeIn from '../ui/animations/StaggeredFadeIn'
 
 interface IProjectCardProps {
   title: string
   description: string
   link: string
+  animationIndex?: number
+  parentActive?: boolean
+  staggerDelay?: number
 }
+
+const CardSlot = styled(StaggeredFadeIn)`
+  display: flex;
+  flex: 0 0 88%;
+  max-width: 88%;
+  margin: 1% auto;
+
+  @media ${device.tabletMinWidth} {
+    flex: 0 0 44%;
+    max-width: 44%;
+  }
+`
 
 const Card = styled.a`
   ${(props) => {
@@ -17,14 +34,11 @@ const Card = styled.a`
     text-decoration: none;
     border: ${border.regular};
     background: ${color.secondary};
-    margin: 1% auto;
     padding: 0 ${spacing.xs};
     display: flex;
     flex-direction: column;
-    max-width: 88%;
-    @media ${device.tabletMinWidth} {
-      max-width: 44%;
-    }
+    width: 100%;
+    box-sizing: border-box;
     @media ${device.desktopMinWidth} {
       padding: ${spacing.xs} ${spacing.s};
     }
@@ -34,11 +48,12 @@ const Card = styled.a`
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
       }
-    &:focus {
+    &:focus-visible {
         box-shadow: -6px 6px 0px 0px;
         transform: translate(4px, -4px);
-        outline: none;
         color: ${color.neutral};
+        outline: 2px dashed ${color.focus};
+        outline-offset: 0.2rem;
     }
     `
   }}
@@ -51,6 +66,10 @@ const CardCover = styled.img`
     return `
     border: ${border.regular};
     margin-top: ${spacing.s};
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    box-sizing: border-box;
     `
   }}
 `
@@ -73,15 +92,30 @@ const CardDescription = styled.p`
   }}
 `
 
-const ProjectCard = ({ title, description, link }: IProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  description,
+  link,
+  animationIndex = 0,
+  parentActive = true,
+  staggerDelay = 50,
+}: IProjectCardProps) => {
+  const prefersReducedMotion = usePrefersReducedMotion()
   const imageSource = './projects/' + getImageName(title) + '.png'
 
   return (
-    <Card href={link} target="_blank" rel="noopener noreferrer">
-      <CardCover src={imageSource} alt={'cover: ' + title} />
-      <CardTitle>{title}</CardTitle>
-      <CardDescription>{description}</CardDescription>
-    </Card>
+    <CardSlot
+      $active={parentActive}
+      $delay={animationIndex * staggerDelay}
+      $variant="fade"
+      $prefersReducedMotion={prefersReducedMotion}
+    >
+      <Card href={link} target="_blank" rel="noopener noreferrer">
+        <CardCover src={imageSource} alt={'cover: ' + title} />
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </Card>
+    </CardSlot>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { SECTIONS } from '../../constants/sections'
 import {
   aboutClosing,
@@ -10,14 +10,23 @@ import {
   aboutPhilosophy,
 } from '../../data/aboutCopy'
 import interpolate from '../../helpers/interpolate'
+import useAnimationPhase from '../../hooks/useAnimationPhase'
+import useInView from '../../hooks/useInView'
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import useScroll from '../../hooks/useScroll'
+import useSectionAnimation from '../../hooks/useSectionAnimation'
 import { device } from '../../styles/breakpoints'
-import BolderText from '../ui/BolderText'
+import StormyCat from '../Oneko/StormyCat'
 import Container from '../ui/Container'
+import HoverImage from '../ui/HoverImage'
 import Subtitle from '../ui/Subtitle'
-import Text from '../ui/Text'
 import TextLink from '../ui/TextLink'
-import Title from '../ui/Title'
+import AnimatedTitleSection from '../ui/animations/AnimatedTitleSection'
+import BorderTraceBox from '../ui/animations/BorderTraceBox'
+import SectionSpinner from '../ui/animations/SectionSpinner'
+import StaggeredFadeIn from '../ui/animations/StaggeredFadeIn'
+import TypingText from '../ui/animations/TypingText'
+import { RevealContent } from '../ui/animations/animationHelpers'
 
 const STRINGS = {
   title: 'about',
@@ -26,15 +35,37 @@ const STRINGS = {
 }
 
 const MainContainer = styled(Container)`
-  padding: 0;
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing.xxxl};
 `
 
-const TitleContainer = styled(Container)`
-  border-top: ${(props) => props.theme.border.highlight};
+const bodyTextStyles = css`
+  margin: ${(props) => props.theme.spacing.xs} auto;
+  line-height: 1.5rem;
 `
 
-const InnerContainer = styled(Container)`
+const Paragraph = styled.div`
+  ${bodyTextStyles}
+  margin-top: ${(props) => props.theme.spacing.m};
+`
+
+const Quote = styled.div`
+  ${bodyTextStyles}
+  margin-top: ${(props) => props.theme.spacing.m};
+  font-style: italic;
+`
+
+const InnerContainer = styled(Container)<{
+  $revealed: boolean
+  $prefersReducedMotion?: boolean
+}>`
+  background-color: ${(props) =>
+    props.$revealed || props.$prefersReducedMotion
+      ? props.theme.color.secondary
+      : 'transparent'};
+  transition: background-color
+    ${(props) => (props.$prefersReducedMotion ? '0s' : '0.3s')} ease-out;
+  border-color: transparent;
+  overflow: hidden;
   ${(props) => {
     const { spacing, fontSize } = props.theme
 
@@ -51,16 +82,14 @@ const InnerContainer = styled(Container)`
         }
 
         p,
+        ${Paragraph},
+        ${Quote},
         li {
           font-size: ${fontSize.mobile.s};
         }
       }
     `
   }}
-`
-
-const Paragraph = styled(Text)`
-  margin-top: ${(props) => props.theme.spacing.m};
 `
 
 const SectionTitle = styled(Subtitle)`
@@ -75,11 +104,6 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin-bottom: ${(props) => props.theme.spacing.xs};
-`
-
-const Quote = styled(Text)`
-  margin-top: ${(props) => props.theme.spacing.m};
-  font-style: italic;
 `
 
 const Portrait = styled.img`
@@ -97,68 +121,195 @@ const Portrait = styled.img`
   }}
 `
 
+const BODY_STAGGER = 70
+const BODY_ANIM_DURATION = 500
+
 const About = () => {
   const { updateSection } = useScroll()
-  const ref = useRef(null)
+  const ref = useRef<HTMLElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = usePrefersReducedMotion()
+  const { canAnimate, isSkipped, isComplete, isEntrySection, markComplete } =
+    useSectionAnimation('about')
+  const reached = useInView(ref)
+  const active = (canAnimate && (reached || isEntrySection)) || isSkipped || isComplete
+  const showSpinner = canAnimate && !active && !isComplete && !isSkipped
+  // Body traces/reveals in parallel with the title rather than waiting for the
+  // title to finish typing, so the section reads as one quick beat.
+  const shouldRunBody = active || isSkipped
+  const { phase, isPhaseAtLeast } = useAnimationPhase(shouldRunBody)
+  const showFinal = isSkipped || prefersReducedMotion
+  const bodyActive = showFinal || isPhaseAtLeast('revealBg')
 
   useEffect(() => {
-    updateSection(SECTIONS.ABOUT, ref)
-
+    return updateSection(SECTIONS.ABOUT, ref)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return (
-    <MainContainer id={SECTIONS.ABOUT}>
-      <TitleContainer>
-        <Title>{STRINGS.title}</Title>
-      </TitleContainer>
-      <InnerContainer ref={ref}>
+  useEffect(() => {
+    if (isSkipped) {
+      markComplete()
+    }
+  }, [isSkipped, markComplete])
+
+  useEffect(() => {
+    if (!bodyActive || isSkipped || prefersReducedMotion) return
+
+    const blockCount = 12
+    const timer = setTimeout(
+      () => markComplete(),
+      blockCount * BODY_STAGGER + BODY_ANIM_DURATION,
+    )
+    return () => clearTimeout(timer)
+  }, [bodyActive, isSkipped, prefersReducedMotion, markComplete])
+
+  const bodyBlocks = [
+    {
+      key: 'portrait',
+      content: (
         <Portrait
           src="./portrait_marinakinalone.jpg"
           alt="portrait of Marina Kinalone Simonnet with her cat, Stormy"
         />
-        <Subtitle>{STRINGS.subtitle}</Subtitle>
-        <Paragraph>{interpolate(aboutIntro)}</Paragraph>
-
-        <SectionTitle>{aboutPhilosophy.title}</SectionTitle>
-        {aboutPhilosophy.items.map((item) => (
-          <Paragraph key={item.lead}>
-            <BolderText>{item.lead}</BolderText> {item.body}
-          </Paragraph>
-        ))}
-
-        <SectionTitle>{aboutDifferent.title}</SectionTitle>
-        {aboutDifferent.paragraphs.map((paragraph) => (
-          <Paragraph key={paragraph.slice(0, 40)}>{interpolate(paragraph)}</Paragraph>
-        ))}
-
-        <SectionTitle>{aboutOutside.title}</SectionTitle>
-        <Paragraph>{interpolate(aboutOutside.intro)}</Paragraph>
+      ),
+    },
+    {
+      key: 'subtitle',
+      content: (
+        <Subtitle>
+          <TypingText text={STRINGS.subtitle} duration={1000} active={bodyActive} wrap />
+        </Subtitle>
+      ),
+    },
+    {
+      key: 'intro',
+      content: (
+        <Paragraph>
+          <TypingText text={interpolate(aboutIntro)} duration={700} active={bodyActive} wrap />
+        </Paragraph>
+      ),
+    },
+    { key: 'philosophy-title', content: <SectionTitle>{aboutPhilosophy.title}</SectionTitle> },
+    ...aboutPhilosophy.items.map((item) => ({
+      key: item.lead,
+      content: (
+        <Paragraph>
+          <TypingText
+            text={interpolate(`{{bold}}${item.lead}{{/bold}}`)}
+            duration={350}
+            active={bodyActive}
+            wrap
+          />{' '}
+          {item.body}
+        </Paragraph>
+      ),
+    })),
+    { key: 'different-title', content: <SectionTitle>{aboutDifferent.title}</SectionTitle> },
+    ...aboutDifferent.paragraphs.map((paragraph, index) => ({
+      key: `different-${index}`,
+      content: (
+        <Paragraph>
+          <TypingText
+            text={interpolate(paragraph)}
+            duration={400}
+            active={bodyActive}
+            wrap
+          />
+        </Paragraph>
+      ),
+    })),
+    { key: 'outside-title', content: <SectionTitle>{aboutOutside.title}</SectionTitle> },
+    { key: 'outside-intro', content: <Paragraph>{interpolate(aboutOutside.intro)}</Paragraph> },
+    ...aboutOutside.activities.map((activity, index) => ({
+      key: `activity-${index}`,
+      content: (
         <List>
-          {aboutOutside.activities.map((activity, index) => (
-            <ListItem key={index}>
-              {typeof activity === 'string' ? (
-                activity
-              ) : (
-                <>
-                  {activity.beforeLink}
-                  <TextLink href={aboutLinks[activity.link]}>
-                    {activity.linkLabel}
-                  </TextLink>
-                  {activity.afterLink}
-                </>
-              )}
-            </ListItem>
-          ))}
+          <ListItem>
+            {typeof activity === 'string' ? (
+              activity
+            ) : (
+              <>
+                {activity.beforeLink}
+                <TextLink href={aboutLinks[activity.link]}>{activity.linkLabel}</TextLink>
+                {activity.afterLink}
+              </>
+            )}
+          </ListItem>
         </List>
-
-        <Paragraph>{aboutClosing.stormy}</Paragraph>
+      ),
+    })),
+    {
+      key: 'stormy',
+      content: (
+        <Paragraph>
+          {aboutClosing.stormy.prefix}
+          <HoverImage
+            src="./stormy_portrait.png"
+            alt="Stormy the cat looking at the camera, wearing a pink floral bandana"
+          >
+            {aboutClosing.stormy.stormyLabel}
+          </HoverImage>
+          {aboutClosing.stormy.middle}
+          <HoverImage
+            src="./stormy_standup.png"
+            alt="Marina holding Stormy the cat during a morning standup"
+          >
+            {aboutClosing.stormy.standupLabel}
+          </HoverImage>
+          {aboutClosing.stormy.suffix}
+          {!prefersReducedMotion && <StormyCat />}
+        </Paragraph>
+      ),
+    },
+    {
+      key: 'blog',
+      content: (
         <Paragraph>
           {aboutClosing.blogPrefix}
           <TextLink href={aboutLinks.astroniste}>{aboutClosing.blogLabel}</TextLink>.
         </Paragraph>
-        <Quote>{interpolate(aboutClosing.quote)}</Quote>
-      </InnerContainer>
+      ),
+    },
+    { key: 'quote', content: <Quote>{interpolate(aboutClosing.quote)}</Quote> },
+  ]
+
+  return (
+    <MainContainer id={SECTIONS.ABOUT} ref={ref} aria-label="About" $transparentBg $hideBorder>
+      {active && (
+        <>
+      <AnimatedTitleSection
+        title={STRINGS.title}
+        thickSide="top"
+        canAnimate={active}
+        forceComplete={isSkipped || isComplete}
+        ignoreInView
+      />
+      <div ref={bodyRef}>
+        <BorderTraceBox phase={showFinal ? 'done' : phase}>
+          <InnerContainer
+            $revealed={showFinal || isPhaseAtLeast('revealBg')}
+            $prefersReducedMotion={prefersReducedMotion}
+            $transparentBg
+          >
+            <RevealContent $visible={bodyActive} $prefersReducedMotion={prefersReducedMotion}>
+              {bodyBlocks.map((block, index) => (
+                <StaggeredFadeIn
+                  key={block.key}
+                  $active={bodyActive}
+                  $delay={index * BODY_STAGGER}
+                  $variant="fade"
+                  $prefersReducedMotion={prefersReducedMotion || isSkipped}
+                >
+                  {block.content}
+                </StaggeredFadeIn>
+              ))}
+            </RevealContent>
+          </InnerContainer>
+        </BorderTraceBox>
+      </div>
+        </>
+      )}
+      {showSpinner && <SectionSpinner />}
     </MainContainer>
   )
 }
